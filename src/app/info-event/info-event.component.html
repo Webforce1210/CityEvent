@@ -1,1 +1,110 @@
-<p>info-event works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/fil_dactu', userId]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" [routerLink]="['/fil_dactu', userId]">Actualités</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/creation_event', userId]">Ajouter un événement</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Mes informations
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" [routerLink]="['/creation_event', userId]">Profil</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/messages', userId]">Messages</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/mes_activites', userId]">Mes activités</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" [routerLink]="['/parametres', userId]">Compte</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <div class="container" *ngIf="!notFound; else alert">
+        <header class="event__header" [ngStyle]="{'background': 'url(/assets/paris_freepik.png) no-repeat center / cover'}">
+            <div class="event__header__title">
+                <h1>{{event.title}}</h1>
+                <a [routerLink]="['/inscription_activite', userId]">Participer</a>
+            </div>
+        </header>
+        <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Informations</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="participants-tab" data-bs-toggle="tab" data-bs-target="#participants" type="button" role="tab" aria-controls="participants" aria-selected="false">Participants</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat" type="button" role="tab" aria-controls="chat" aria-selected="false">Chat</button>
+            </li>
+        </ul>
+    
+        <section class="tab-content" id="myTabContent">
+            <article class="tab-pane fade show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h2>Informations</h2>
+    
+                <p class="my-4">{{event.description}}</p>
+    
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                    <span class="px-3">{{event.date | date: 'd/MM/yyyy à HH:mm'}}</span>
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                    <span class="px-3">{{event.adresse}}</span>
+                </p>
+                <figure class="map text-center">
+                    <img src="/assets/map.png" alt="carte où se trouve l'événement">
+                </figure>
+            </article>
+            <article class="tab-pane fade" id="participants" role="tabpanel" aria-labelledby="participants-tab">
+                <div class="user-group" *ngFor="let user of participants">
+                    <div class="d-flex align-self-center my-3">
+                        <div class="bg-secondary rounded-circle p-4 avatar" *ngIf="user.avatar === null; else avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                              </svg>
+                        </div>
+                        <ng-template #avatar>
+                            avatrar
+                        </ng-template>
+                        <div class="px-3">
+                            <h3 class="h4">{{ user.pseudo }}</h3>
+                            <p>{{ user.events[0].role }}</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                chat
+            </article>
+        </section>
+    </div>
+    <ng-template #alert>
+        <section class="container my-3">
+            <div class="alert alert-danger">
+                <h1>Erreur 404</h1>
+                <p>Cet événement n'existe pas</p>
+            </div>
+        </section>
+    </ng-template>
+</main>
+

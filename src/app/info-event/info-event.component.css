@@ -1,0 +1,33 @@
+.event__header {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.event__header__title {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    min-width: 240px;
+    height: 130px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.map > img {
+    max-width: 100%;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+    text-align: center;
+}
+
+@media (min-width:800px) {
+    .map > img {
+        max-width: 700px;
+    }
+}

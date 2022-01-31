@@ -1,0 +1,123 @@
+{
+    "lastActivities": [
+        {
+            "id": "0001",
+            "title": "Event1",
+            "adresse":  "Lieu1",
+            "description":  "Description1"
+        },
+        {
+            "id": "0002",
+            "title": "Event2",
+            "adresse":  "Lieu2",
+            "description":  "Description2"
+        },
+        {
+            "id": "0003",
+            "title": "Event3",
+            "adresse":  "Lieu3",
+            "description":  "Description3"
+        },
+        {
+            "id": "0004",
+            "title": "Event4",
+            "adresse":  "Lieu4",
+            "description":  "Description4"
+        }
+    ],
+
+    "usersList": [
+        {
+            "id":1,
+            "pseudo":"John",
+            "avatar": null,
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Organisateur"
+                },
+                {
+                    "id": "0002",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0004",
+                    "role": "Participant"
+                }
+            ]
+        },
+        {
+            "id":2,
+            "pseudo":"Jane",
+            "avatar": "jane.png",
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0002",
+                    "role": "Organisateur"
+                },
+                {
+                    "id": "0003",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0004",
+                    "role": "Participant"
+                }
+            ]
+        },
+        {
+            "id":3,
+            "pseudo":"Kelly",
+            "avatar": null,
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0002",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "role": "Organisateur"
+                },
+                {
+                    "id": "0004",
+                    "role": "Participant"
+                }
+            ]
+        },
+        {
+            "id":4,
+            "pseudo":"Mathieu",
+            "avatar": null,
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0002",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0004",
+                    "role": "Organisateur"
+                }
+            ]
+        }
+    ]
+}
