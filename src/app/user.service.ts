@@ -18,7 +18,9 @@ export class UserService {
     if(user === undefined) {
       throw new Error('User not found');
     } else {
-      return new User(user.id, user.pseudo, user.events, user.avatar);
+      const entity = new User(user.id, user.pseudo, user.events, user.avatar);
+      entity.hobbies = user.hobbies;
+      return entity;
     }
   }
 

@@ -44,7 +44,8 @@
                     "id": "0003",
                     "role": "Participant"
                 }
-            ]
+            ],
+            "hobbies": ["football", "sport"]
         },
         {
             "id":2,
@@ -63,7 +64,8 @@
                     "id": "0003",
                     "role": "Participant"
                 }
-            ]
+            ],
+            "hobbies": ["cinema", "natation"]
         },
         {
             "id":3,
@@ -86,7 +88,8 @@
                     "id": "0004",
                     "role": "Participant"
                 }
-            ]
+            ],
+            "hobbies": ["Tricot", "cinema", "promenade"]
         },
         {
             "id":4,
@@ -109,7 +112,8 @@
                     "id": "0004",
                     "role": "Organisateur"
                 }
-            ]
+            ],
+            "hobbies": ["football", "vélo"]
         }
     ]
 }

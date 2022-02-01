@@ -1,4 +1,5 @@
 export class User {
+    hobbies:string[] = [];
     
     constructor(
         public id:number, 

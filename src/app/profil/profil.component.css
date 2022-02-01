@@ -1,0 +1,22 @@
+.header__avatar {
+    padding: 0 50px 0 30px;
+    border-right: 1px solid #FFF;
+}
+
+.profil__info {
+    padding: 0 40px;
+}
+
+.card h3 {
+    color: #262A8D;
+    font-size: 36px;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+}
+
+.hobbies {
+    list-style: none;
+}

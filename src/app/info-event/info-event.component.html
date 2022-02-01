@@ -1,37 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" [routerLink]="['/fil_dactu', userId]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-            </svg>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" [routerLink]="['/fil_dactu', userId]">Actualités</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/creation_event', userId]">Ajouter un événement</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Mes informations
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" [routerLink]="['/creation_event', userId]">Profil</a></li>
-                        <li><a class="dropdown-item" [routerLink]="['/messages', userId]">Messages</a></li>
-                        <li><a class="dropdown-item" [routerLink]="['/mes_activites', userId]">Mes activités</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" [routerLink]="['/parametres', userId]">Compte</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<app-navbar [userId]="userId"></app-navbar>
 
 <main>
     <div class="container" *ngIf="!notFound; else alert">
@@ -115,9 +82,6 @@
         </section>
     </ng-template>
 </main>
-<footer class="bg-dark p-5 text-white footer">
-    <div class="rounded-circle bg-light logo">
-        <img src="/assets/pngegg.png" alt="logo city event">
-    </div>
-</footer>
+
+<app-footer></app-footer>
 

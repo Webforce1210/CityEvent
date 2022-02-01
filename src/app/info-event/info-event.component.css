@@ -49,28 +49,6 @@
     bottom: 0;
 }
 
-.footer {
-    height: 250px;
-}
-
-.footer, .logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.logo {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-}
-
-.logo > img {
-    width: 50px;
-}
-
 @media (min-width:800px) {
     .map > img {
         max-width: 700px;

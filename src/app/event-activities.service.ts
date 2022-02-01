@@ -22,4 +22,17 @@ export class EventActivitiesService {
         return event;
     }
   }
+
+  getEventsById(eventsId:number[]):EventActivity[] {
+    const events:EventActivity[] = [];
+    this.lastEvents.forEach(element => {
+      const id = parseInt(element.id);
+      if(eventsId.find(item => item === id)) {
+        const eventUser = new EventActivity(element.id, element.title);
+        eventUser.adresse = element.adresse;
+        events.push(eventUser);
+      }
+    });
+    return events;
+  }
 }
