@@ -43,10 +43,6 @@
                 {
                     "id": "0003",
                     "role": "Participant"
-                },
-                {
-                    "id": "0004",
-                    "role": "Participant"
                 }
             ]
         },
@@ -65,10 +61,6 @@
                 },
                 {
                     "id": "0003",
-                    "role": "Participant"
-                },
-                {
-                    "id": "0004",
                     "role": "Participant"
                 }
             ]

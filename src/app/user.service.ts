@@ -23,16 +23,17 @@ export class UserService {
   }
 
   findEventParticipants(eventId:number):User[] {
-    const data = this.users.filter(user => {
+    const users:User[] = [];
+
+    this.users.forEach(user => {
       const events = user.events;
       if(events.length > 0 ) {
         const item = events.find(event => parseInt(event.id) === eventId);
         if(item !== undefined) {
-          return new User(user.id, user.pseudo, [item], user.avatar);
+          users.push(new User(user.id, user.pseudo, [item], user.avatar));
         }
       }
-      return null;
     });
-    return data;
+    return users;
   }
 }
