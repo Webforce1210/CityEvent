@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -17,6 +17,7 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
+import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,13 @@ import { InscriptionActiviteComponent } from './inscription-activite/inscription
     ParametresComponent,
     PaiementComponent,
     ContactComponent,
-    InscriptionActiviteComponent
+    InscriptionActiviteComponent,
+    PaiementinfosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
