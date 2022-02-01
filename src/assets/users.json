@@ -1,0 +1,19 @@
+{
+    "users" : [
+    {
+        "id":"1",
+        "name":"paul",
+        "imgprofil":"/assets/img/PhotoProfil.jpg"
+    },
+    {
+        "id":"2",
+        "name":"paulo",
+        "imgprofil":"/assets/img/PhotoProfil.jpg"
+    },
+    {
+        "id":"3",
+        "name":"paulette",
+        "imgprofil":"/assets/img/PhotoProfil.jpg"
+    }
+    ]
+}

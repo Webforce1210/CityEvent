@@ -1,1 +1,79 @@
-<p>compte works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-arrow-left-circle" style="font-weight:bolder;"></i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex">
+            <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Connexion</button>
+            <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Inscription</button>
+        </form>
+        </div>
+    </div>
+</nav>
+
+<header [ngStyle]="{'background': 'url(/assets/img/wallpaper.jpg) no-repeat center / cover '}" class="container-fluid">
+    <div class="d-flex">
+        <div class="row">
+            <div class="col">
+                <img src="{{imgprofil}}" alt="" style="border-radius: 100%; margin: 10%; height: 80%; max-height: 200px">
+            </div>
+            <div class="col" style="padding-top: 30%;">
+                <div style="margin: 15%;">
+                    <input type="text" placeholder="{{name}}" readonly>
+                </div>
+                <div style="margin: 15%;">
+                    <input type="text" placeholder="{{localisation}}" readonly>
+                </div>
+                <button class="btn-success" style="margin-left: 80%;margin-bottom: 15px;position: relative; bottom: 30px;"><i class="bi bi-pencil-square" style="font-size: 1.5rem;"></i></button>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<div style="padding: 5px;">
+    <button class="btn-light"><i class="bi bi-tsunami" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-wrench" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-wind" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-robot" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-life-preserver" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-music-note-beamed" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-incognito" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-film" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-dribbble" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-dice-6" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-controller" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-cart" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-camera-reels" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-camera" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-boombox" style="font-size: 2rem;"></i></button>
+    <button class="btn-light"><i class="bi bi-binoculars" style="font-size: 2rem;"></i></button>
+</div>
+
+
+
+<div class="d-grid gap-2 m-2 col-11 mx-auto">
+    <button class="btn btn-outline-secondary btn-lg" type="button" [routerLink]="['/mes_activites/:userid']" style="font-size: 2.5em; font-weight: bolder; color:black; text-align: left; padding-left: 20%;"> <i class="bi bi-activity" style="font-size: 2rem;color:rgb(43, 40, 238);height: 36px;"></i> Activités </button>
+    <!-- routerLink Activity -->
+
+    <button class="btn btn-outline-secondary btn-lg" type="button" [routerLink]="['/messages','dfjdfjd']" style="font-size: 2.5em; font-weight: bolder; color:black;text-align: left; padding-left: 20%; "><i class="bi bi-envelope" style="font-size: 2rem;color:orange"></i> Messages</button>
+    <!-- routerLink Messagerie -->
+
+    <button class="btn btn-outline-secondary btn-lg" type="button" [routerLink]="['/parametres/:userid']" style="font-size: 2.5em; font-weight: bolder; color:black;text-align: left; padding-left: 20%;">
+        <i class="bi bi-tools" style="font-size: 2rem;color:red"></i> Paramètres</button>
+    <!-- routerLink Params -->
+
+    <button class="btn btn-outline-secondary btn-lg" type="button" [routerLink]="['/paiement/:userid']" style="font-size: 2.5em; font-weight: bolder; color:black;text-align: left; padding-left: 20%;"><i class="bi bi-credit-card" style="font-size: 2rem;color:rgb(187, 11, 134);height: 36px;"></i> Paiements</button>
+    <!-- routerLink Paiement -->
+
+    <button class="btn btn-outline-secondary btn-lg" type="button" [routerLink]="['/contact/:userid']" style="font-size: 2.5em; font-weight: bolder; color:black;text-align: left; padding-left: 20%;"> <i class="bi bi-patch-question" style="font-size: 2rem;color:green"></i> Aides</button>
+    <!-- routerLink Aides -->
+</div>
+
+
+<footer class="fixed-bottom" style="height: 10%;background: black; text-align:center; align-items: center; padding: 10px; ">
+    <img src="/assets/img/logo.png" alt="" style="height: 60px; background: white; padding: 5px; margin: auto; border-radius: 60px;">
+</footer>
