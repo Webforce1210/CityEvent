@@ -1,1 +1,71 @@
-<p>inscription-activite works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid navbarDiv">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0yLjExNyAxMmw3LjUyNyA2LjIzNS0uNjQ0Ljc2NS05LTcuNTIxIDktNy40NzkuNjQ1Ljc2NC03LjUyOSA2LjIzNmgyMS44ODR2MWgtMjEuODgzeiIvPjwvc3ZnPg==" class="fleche">
+        <img src="/assets/img/pngegg.png" alt="navbarlogo" class="navbarLogo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+    </div>
+  </nav>
+
+<div class="innerDivBody" *ngIf="!paiement">
+    <h1>Participer a l'activité</h1>
+    <div class="innerDivDetails">
+        <div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nom</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Prenom</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Prenom">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Lieu</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Lieu"></textarea>
+            </div>    
+                <div>
+                    <p>Aimez vous les sensations fortes?</p>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <label for="oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <label for="non">Non</label>
+                    </div>
+                    <p>Avez vous deja fait du sport?</p>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <label for="oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <label for="non">Non</label>
+                    </div>
+                    <p>Aimez vous le sport?</p>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <label for="oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <label for="non">Non</label>
+                    </div>
+                </div>
+                <div>
+                    <p class="innerDivBottomText">* La participation a cet evenement nécéssite un don de 5€</p>
+                </div>
+        </div>
+    </div>
+    <div>
+        <button href="#" class="btn btn-outline-danger" (click)= "goToPayment()">Payer et Participer</button>
+    </div>
+</div>
+
+<app-paiement *ngIf="paiement"></app-paiement>
+
+<footer>
+        <p class="footerText">Ⓒ City Event</p>
+</footer>

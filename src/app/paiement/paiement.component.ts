@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-paiement',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaiementComponent implements OnInit {
 
+
+  
   constructor() { }
+
 
   ngOnInit(): void {
   }

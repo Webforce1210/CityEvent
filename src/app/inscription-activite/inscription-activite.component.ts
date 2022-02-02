@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-inscription-activite',
@@ -9,6 +10,11 @@ export class InscriptionActiviteComponent implements OnInit {
 
   constructor() { }
 
+paiement: boolean = false;
+
+goToPayment(){
+  this.paiement = !this.paiement;
+}
   ngOnInit(): void {
   }
 
