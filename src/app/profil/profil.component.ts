@@ -15,6 +15,7 @@ export class ProfilComponent implements OnInit {
   userId!:number;
   user!:User;
   events:EventActivity[] = [];
+  styles = {background: '#0d6efd'};
 
   constructor(
     private userService:UserService,
@@ -27,6 +28,9 @@ export class ProfilComponent implements OnInit {
     try {
       this.userId = parseInt(this.route.snapshot.params['userid']);
       this.user = this.userService.findUserById(this.userId);
+      if(this.user.cover !== null) {
+        this.styles.background = `center / cover no-repeat url(/assets/avatars/${this.user.cover})`;
+      }
       const eventIds:number[] = [];
       this.user.events.forEach(event => {
         eventIds.push(parseInt(event.id));

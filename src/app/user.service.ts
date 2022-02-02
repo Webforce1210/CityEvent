@@ -20,6 +20,9 @@ export class UserService {
     } else {
       const entity = new User(user.id, user.pseudo, user.events, user.avatar);
       entity.hobbies = user.hobbies;
+      entity.stars = user.stars;
+      entity.cover = user.cover;
+      entity.region = user.region;
       return entity;
     }
   }

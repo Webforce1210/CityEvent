@@ -31,6 +31,7 @@
             "id":1,
             "pseudo":"John",
             "avatar": null,
+            "cover": null,
             "events": [
                 {
                     "id": "0001",
@@ -45,12 +46,15 @@
                     "role": "Participant"
                 }
             ],
-            "hobbies": ["football", "sport"]
+            "hobbies": ["football", "sport"],
+            "stars": [1,1,0,0,0],
+            "region": "Paris"
         },
         {
             "id":2,
             "pseudo":"Jane",
             "avatar": "jane.png",
+            "cover": "cover_user.png",
             "events": [
                 {
                     "id": "0001",
@@ -65,12 +69,15 @@
                     "role": "Participant"
                 }
             ],
-            "hobbies": ["cinema", "natation"]
+            "hobbies": ["cinema", "natation"],
+            "stars":[1,1,1,1,1],
+            "region": "Picardie"
         },
         {
             "id":3,
             "pseudo":"Kelly",
             "avatar": null,
+            "cover": null,
             "events": [
                 {
                     "id": "0001",
@@ -89,12 +96,15 @@
                     "role": "Participant"
                 }
             ],
-            "hobbies": ["Tricot", "cinema", "promenade"]
+            "hobbies": ["Tricot", "cinema", "promenade"],
+            "stars":[1,1,1,1,0],
+            "region": "Marseille"
         },
         {
             "id":4,
             "pseudo":"Mathieu",
             "avatar": null,
+            "cover": null,
             "events": [
                 {
                     "id": "0001",
@@ -113,7 +123,9 @@
                     "role": "Organisateur"
                 }
             ],
-            "hobbies": ["football", "vélo"]
+            "hobbies": ["football", "vélo"],
+            "stars":[0,0,0,0,0],
+            "region": "Vendée"
         }
     ]
 }

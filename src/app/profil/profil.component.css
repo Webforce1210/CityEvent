@@ -1,6 +1,11 @@
 .header__avatar {
     padding: 0 50px 0 30px;
-    border-right: 1px solid #FFF;
+}
+
+@media (min-width:537px) {
+    .header__avatar {
+        border-right: 1px solid #FFF;
+    }
 }
 
 .profil__info {
@@ -12,6 +17,15 @@
     font-size: 36px;
 }
 
+.profile__events {
+    padding: 10px;
+}
+
+.profile__events .card {
+    max-width: 530px;
+    margin: 0px auto;
+}
+
 .avatar {
     width: 200px;
     height: 200px;
@@ -19,4 +33,9 @@
 
 .hobbies {
     list-style: none;
+}
+
+.separator {
+    background-color: #C4C4C4;
+    height: 15px;
 }
