@@ -1,0 +1,58 @@
+{
+    "Users":[
+        {
+            "id": "007",
+            "name":"Perso1",
+            "email":"@Perso1",
+            "password": "dmlkazdkazmkd",
+            "discussions":[
+                {
+                    "id": "message_dest:001",
+                    "messages":
+                    [
+                        {
+                            "id":"1",
+                            "content":"message1",
+                            "Type":true
+                        },
+                        {
+                            "id":"2",
+                            "content":"message2",
+                            "Type":true
+                        },
+                        {
+                            "id":"3",
+                            "content":"message3",
+                            "Type":true
+                        },
+                        {
+                            "id":"4",
+                            "content":"message4",
+                            "Type":true
+                        },
+                        {
+                            "id":"5",
+                            "content":"reponse1",
+                            "Type":false
+                        },
+                        {
+                            "id":"6",
+                            "content":"reponse2",
+                            "Type":false
+                        },
+                        {
+                            "id":"7",
+                            "content":"reponse3",
+                            "Type":false
+                        },
+                        {
+                            "id":"8",
+                            "content":"reponse4",
+                            "Type": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

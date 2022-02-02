@@ -1,0 +1,50 @@
+{
+    "lastActivities":[
+        {
+            "id": "0001",
+            "title":"Event1",
+            "adresse":"Lieu1",
+            "description":"Description1"
+        },
+        {
+            "id": "0002",
+            "title":"Event2",
+            "adresse":"Lieu2",
+            "description":"Description2"
+        },
+        {
+            "id": "0003",
+            "title":"Event3",
+            "adresse":"Lieu3",
+            "description":"Description3"
+        },
+        {
+            "id": "0004",
+            "title":"Event4",
+            "adresse":"Lieu4",
+            "description":"Description4"
+        }
+    ],
+    "User":[
+        {
+            "id":"1",
+            "name":"Prenom1",
+            "first_name":"Nom1"
+        },
+        {
+            "id":"2",
+            "name":"Prenom2",
+            "first_name":"Nom2"
+        },
+        {
+            "id":"3",
+            "name":"Prenom3",
+            "first_name":"Nom3"
+        },
+        {
+            "id":"4",
+            "name":"Prenom4",
+            "first_name":"Nom4"
+        }
+    ]
+}

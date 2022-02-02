@@ -10,6 +10,8 @@ import { InfoEventComponent } from './info-event/info-event.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
 import { MesActivitesComponent } from './mes-activites/mes-activites.component';
+import { MessageGroupeComponent } from './message-groupe/message-groupe.component';
+import { MessagesComponent } from './messages/messages.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ProfilComponent } from './profil/profil.component';
@@ -57,7 +59,7 @@ const routes: Routes = [
   },
   {
     path: "messages/:userid",
-    component: MessageChannel
+    component: MessagesComponent
   },
   {
     path: "paiement/:userid",
@@ -70,6 +72,10 @@ const routes: Routes = [
   {
     path: "profil/:userid",
     component: ProfilComponent
+  },
+  {
+    path: "messages/:userid/:Destid",
+    component: MessageGroupeComponent
   }
 ];
 

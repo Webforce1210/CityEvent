@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div *ngIf="group">
-        <button class="btn btn-danger" (click)= "grouped()">retour</button>
+    <div>
+        <button class="btn btn-danger"[routerLink]="['messages/:userid']">retour</button>
     </div>
     <div class="container-fluid">
     <a class="navbar-brand" href="#">City Event</a>
@@ -22,7 +22,8 @@
     </div>
     </div>
 </nav>
-<div *ngIf="group">
+
+<div>
     <div class="text-center">
         <h1>Groupe Alpha</h1>
     </div>
@@ -37,14 +38,14 @@
                         <p>Heure</p>
                     </div>
                     <div>
-                        <div class="mes1" *ngFor="let message of Message">
+                        <div class="mes1">
                             <!-- <img src="img/image_8.png" alt="" class="mess"> -->
-                            <p>{{message.content}}</p>
+                            <p></p>
                         </div>
                     </div>
                     <div>
-                        <div class="mes2" *ngFor="let reponse of Reponse">
-                            <p>{{reponse.content}}</p>
+                        <div class="mes2">
+                            <p></p>
                             <!-- <img src="img/image_7.png" alt="" class="mess"> -->
                         </div>  
                     </div>
@@ -59,12 +60,12 @@
 
                         <div class="col " id="text">
                             <form>
-                                <input type="text" id="text" [formControl]="contentValue" >
+                                <input type="text" id="text" [formControl]="contentValue">
                             </form>
                         </div>
                         
                         <div class="col">
-                            <button type="button" class="btn btn-light"(click)="newMess()">
+                            <button type="button" class="btn btn-light"(click)="NewMess()">
                                 ENVOYER
                             </button>
                         </div>
@@ -72,25 +73,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<div *ngIf="list" >
-    <div class="text-center row">
-
-        <div *ngFor="">
-            <h1></h1>
-        </div>
-
-        <div>
-            <input class="form-control col-5" type="search" placeholder="Search" aria-label="Search">
-        </div>
-
-        <div>
-            <p>{{LastMessage}}</p>
-        </div>
-
-        <button type="button" class="btn btn-info col-6">Discussion</button>
-        <button type="button" class="btn btn-light col-6"(click)= "grouped()">Groupe</button>
     </div>
 </div>
