@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
 })
 export class ProfilComponent implements OnInit {
   
-  userId!:number;
+  userId!:string;
   user!:User;
   events:EventActivity[] = [];
   styles = {background: '#0d6efd'};
@@ -26,15 +26,18 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     try {
-      this.userId = parseInt(this.route.snapshot.params['userid']);
+      this.userId = this.route.snapshot.params['userid'];
       this.user = this.userService.findUserById(this.userId);
       if(this.user.cover !== null) {
         this.styles.background = `center / cover no-repeat url(/assets/avatars/${this.user.cover})`;
       }
-      const eventIds:number[] = [];
-      this.user.events.forEach(event => {
-        eventIds.push(parseInt(event.id));
-      });
+      const eventIds:string[] = [];
+      if (this.user.events) {
+        this.user.events.forEach(event => {
+          eventIds.push(event.id);
+        });
+      }
+      
       this.events = this.eventService.getEventsById(eventIds);
     } catch (error) {
       this.router.navigateByUrl('/login');

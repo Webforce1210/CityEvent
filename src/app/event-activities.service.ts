@@ -15,8 +15,8 @@ export class EventActivitiesService {
   userEvents: EventActivity[] = [];
   userCreditCardInfos: CreditCardInfo[] = [];
 
-  getEventById(id:number):EventActivity {
-    const data = this.lastEvents.find(event => parseInt(event.id) === id);
+  getEventById(id:string):EventActivity {
+    const data = this.lastEvents.find(event => event.id === id);
     if(data === undefined) {
         throw new Error('Event not found');
     } else {
@@ -27,10 +27,10 @@ export class EventActivitiesService {
     }
   }
 
-  getEventsById(eventsId:number[]):EventActivity[] {
+  getEventsById(eventsId:string[]):EventActivity[] {
       const events:EventActivity[] = [];
       this.lastEvents.forEach(element => {
-      const id = parseInt(element.id);
+      const id = element.id;
       if(eventsId.find(item => item === id)) {
         const eventUser = new EventActivity(element.id, element.title);
         eventUser.adresse = element.adresse;

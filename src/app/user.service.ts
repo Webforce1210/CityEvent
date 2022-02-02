@@ -13,12 +13,12 @@ export class UserService {
     this.users = myData.usersList;
   }
 
-  findUserById(id:number): User {
+  findUserById(id:string): User {
     const user = this.users.find(user => user.id === id);
     if(user === undefined) {
       throw new Error('User not found');
     } else {
-      const entity = new User(user.id, user.pseudo, user.events, user.avatar);
+      const entity = new User(user.id);
       entity.hobbies = user.hobbies;
       entity.stars = user.stars;
       entity.cover = user.cover;
@@ -27,15 +27,15 @@ export class UserService {
     }
   }
 
-  findEventParticipants(eventId:number):User[] {
+  findEventParticipants(eventId:string):User[] {
     const users:User[] = [];
 
     this.users.forEach(user => {
       const events = user.events;
-      if(events.length > 0 ) {
-        const item = events.find(event => parseInt(event.id) === eventId);
+      if(events && events.length > 0 ) {
+        const item = events.find(event => event.id === eventId);
         if(item !== undefined) {
-          users.push(new User(user.id, user.pseudo, [item], user.avatar));
+          users.push(new User(user.id));
         }
       }
     });

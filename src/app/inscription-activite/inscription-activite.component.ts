@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,6 +6,8 @@ import { FormControl } from '@angular/forms';
   templateUrl: './inscription-activite.component.html',
   styleUrls: ['./inscription-activite.component.css']
 })
+
+
 export class InscriptionActiviteComponent implements OnInit {
 
   constructor() { }

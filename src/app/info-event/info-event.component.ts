@@ -12,7 +12,7 @@ import { UserService } from '../user.service';
 })
 export class InfoEventComponent implements OnInit {
   
-  userId!:number;
+  userId!:string;
   event!:EventActivity;
   notFound:boolean = false;
   participants:User[] = [];
@@ -28,7 +28,7 @@ export class InfoEventComponent implements OnInit {
     this.checkSession();
     this.findEvent();
     if(!this.notFound) {
-      this.participants = this.userService.findEventParticipants(parseInt(this.event.id));
+      this.participants = this.userService.findEventParticipants(this.event.id);
     }
   }
 
@@ -42,15 +42,15 @@ export class InfoEventComponent implements OnInit {
 
   private checkSession(): void {
     try {
-      const id:number = this.getRouterParam('userid');
+      const id:string = this.getRouterParam('userid');
       this.userId = this.userService.findUserById(id).id;
     } catch (error) {
       this.router.navigateByUrl('/login');
     }
   }
 
-  private getRouterParam(param:string):number {
-    return parseInt(this.route.snapshot.params[param])
+  private getRouterParam(param:string):string {
+    return this.route.snapshot.params[param];
   }
 
 }

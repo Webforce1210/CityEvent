@@ -64,7 +64,7 @@
     </div>
 </div>
 
-<app-paiement *ngIf="paiement"></app-paiement>
+<app-paiement *ngIf="paiement" [nom] = "nom.value" [prenom] = "prenom.value" [lieu] = "lieu.value"></app-paiement>
 
 <footer>
         <p class="footerText">Ⓒ City Event</p>
