@@ -24,5 +24,64 @@
             "adresse":  "Lieu4",
             "description":  "Description4"
         }
+    ],
+
+
+    "Users": [
+        {
+            "id": "1",
+            "name": "Thomas",
+            "email": "email1@gmail.com",
+            "password":  "password1",
+            "hobbies": ["sport", "cinema", "art", "litterature"],
+            "region": "hautdefrance"
+              
+        },
+        {
+            "id": "2",
+            "name": "Benoit",
+            "email": "email2@gmail.com",
+            "password":  "password2",
+            "hobbies": ["art", "litterature"],
+            "region": "ilederance"
+        },
+        {
+            "id": "3",
+            "email": "email3@gmail.com",
+            "name": "Sophie",
+            "password":  "password3",
+            "hobbies": ["sport"],
+            "region": "auvergne"
+        },
+        {
+            "id": "4",
+            "name": "Marie",
+            "email": "email4@gmail.com",
+            "password":  "password4",
+            "hobbies": ["sport", "cinema"],
+            "region": "limousin"
+        }
+       
+    ],
+
+    "Hobbies" : [
+        
+            "sport",
+            "cinema",
+            "art",
+            "litterature"
+        
+    ],
+
+    "Region" : [
+
+        
+             "hautdefrance",
+             "iledefrance",
+             "auvergne",
+             "limousin"
+        
     ]
+
+
 }
