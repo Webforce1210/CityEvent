@@ -17,6 +17,8 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { InscriptionActiviteComponent } from './inscription-activite/inscription
     ParametresComponent,
     PaiementComponent,
     ContactComponent,
-    InscriptionActiviteComponent
+    InscriptionActiviteComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
