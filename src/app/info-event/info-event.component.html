@@ -1,1 +1,161 @@
-<p>info-event works!</p>
+<app-navbar [userId]="userId"></app-navbar>
+
+<main>
+    <div class="container" *ngIf="!notFound; else alert">
+        <header class="event__header"
+            [ngStyle]="{'background': 'url(/assets/paris_freepik.png) no-repeat center / cover'}">
+            <div class="event__header__title">
+                <h1>{{event.title}}</h1>
+                <a [routerLink]="['/inscription_activite', userId]" class="btn btn-outline-light">Participer</a>
+            </div>
+        </header>
+        <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">Informations</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="participants-tab" data-bs-toggle="tab" data-bs-target="#participants"
+                    type="button" role="tab" aria-controls="participants" aria-selected="false">Participants</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat" type="button"
+                    role="tab" aria-controls="chat" aria-selected="false">Chat</button>
+            </li>
+        </ul>
+
+        <section class="tab-content" id="myTabContent">
+            <article class="tab-pane fade show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h2>Informations</h2>
+
+                <p class="my-4">{{event.description}}</p>
+
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                    </svg>
+                    <span class="px-3">{{event.date | date: 'd/MM/yyyy à HH:mm'}}</span>
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                    </svg>
+                    <span class="px-3">{{event.adresse}}</span>
+                </p>
+                <figure class="map text-center">
+                    <img src="/assets/map.png" alt="carte où se trouve l'événement">
+                </figure>
+            </article>
+            <article class="tab-pane fade" id="participants" role="tabpanel" aria-labelledby="participants-tab">
+                <div class="user-group" *ngFor="let user of participants">
+                    <div class="d-flex align-self-center">
+                        <div class="avatar-container">
+                            <div class="bg-secondary rounded-circle p-4 avatar"
+                                *ngIf="user.avatar === null; else avatar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                </svg>
+                            </div>
+                            <ng-template #avatar>
+                                <img [src]="'/assets/avatars/'+ user.avatar" alt="avatar de {{user.pseudo}}"
+                                    class="rounded-circle avatar">
+                            </ng-template>
+                            <div class="flag" *ngIf="user.events[0].role === 'Organisateur'">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                    class="bi bi-award" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z" />
+                                    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="px-3">
+                            <h3 class="h4">{{ user.pseudo }}</h3>
+                            <p [ngClass]="{'admin': user.events[0].role === 'Organisateur'}">{{ user.events[0].role }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                <div class="chat-block">
+                    <div class="p-3" *ngIf="messages.length === 0">
+                        <p class="text-center fs-5">Le chat est vide.</p>
+                    </div>
+                    <div class="message-container" *ngFor="let message of messages">
+                        <p [ngClass]="{'text-end':  message.userid === userId}">
+                            {{ message.date | date: 'd/MM/yyyy à HH:mm' }}, par {{ message.author.pseudo }}
+                        </p>
+                        <div class="content" [ngClass]="{'ms-auto': message.userid === userId}">
+                            <div class="d-flex bg-primary content-block"
+                                [ngClass]="{'bg-light': message.userid !== userId }">
+                                <div class="avatar-container me-2">
+                                    <div class="bg-secondary rounded-circle p-4 avatar"
+                                        *ngIf="message.author.avatar === null; else avatar">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
+                                            class="bi bi-person" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                        </svg>
+                                    </div>
+                                    <ng-template #avatar>
+                                        <img [src]="'/assets/avatars/'+ message.author.avatar"
+                                            alt="avatar de {{message.author.pseudo}}" class="rounded-circle avatar">
+                                    </ng-template>
+                                </div>
+                                <p
+                                    [ngClass]="{'ms-auto': message.userid === userId, 'text-white': message.userid === userId  }">
+                                    {{ message.message }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger m-3" *ngIf="error">
+                        Votre message doit faire plus de trois caractères.
+                    </div>
+                    <div class="add-message">
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-2 col-md-1">
+                                    <label for="message" title="envoyer un message">
+                                        <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.6667 0C22.7668 0 29.3333 6.56649 29.3333 14.6667C29.3333 15.0298 29.3201 15.3898 29.2942 15.7462C28.7234 15.4576 28.1213 15.2216 27.4945 15.0447C27.4982 14.9191 27.5 14.7931 27.5 14.6667C27.5 7.57901 21.7543 1.83333 14.6667 1.83333C7.57901 1.83333 1.83333 7.57901 1.83333 14.6667C1.83333 21.7543 7.57901 27.5 14.6667 27.5C14.7931 27.5 14.9191 27.4982 15.0447 27.4945C15.2216 28.1213 15.4576 28.7234 15.7462 29.2942C15.3898 29.3201 15.0298 29.3333 14.6667 29.3333C6.56649 29.3333 0 22.7668 0 14.6667C0 6.56649 6.56649 0 14.6667 0ZM9.45023 19.1167C11.045 20.7216 13.1963 21.437 15.2872 21.261C15.2718 21.3017 15.2568 21.3427 15.2421 21.3842C15.0447 21.9417 14.895 22.5218 14.7978 23.1195C12.3934 23.1535 9.97864 22.2494 8.14977 20.409C7.79293 20.0498 7.79476 19.4694 8.15387 19.1126C8.51298 18.7558 9.09338 18.7576 9.45023 19.1167ZM19.25 10.0833C20.2625 10.0833 21.0833 10.9041 21.0833 11.9167C21.0833 12.9292 20.2625 13.75 19.25 13.75C18.2375 13.75 17.4167 12.9292 17.4167 11.9167C17.4167 10.9041 18.2375 10.0833 19.25 10.0833ZM10.0833 10.0833C11.0959 10.0833 11.9167 10.9041 11.9167 11.9167C11.9167 12.9292 11.0959 13.75 10.0833 13.75C9.07081 13.75 8.25 12.9292 8.25 11.9167C8.25 10.9041 9.07081 10.0833 10.0833 10.0833ZM33 24.75C33 29.3063 29.3063 33 24.75 33C20.1937 33 16.5 29.3063 16.5 24.75C16.5 20.1937 20.1937 16.5 24.75 16.5C29.3063 16.5 33 20.1937 33 24.75ZM25.6667 21.0833C25.6667 20.5771 25.2563 20.1667 24.75 20.1667C24.2437 20.1667 23.8333 20.5771 23.8333 21.0833V23.8333H21.0833C20.5771 23.8333 20.1667 24.2437 20.1667 24.75C20.1667 25.2563 20.5771 25.6667 21.0833 25.6667H23.8333V28.4167C23.8333 28.9229 24.2437 29.3333 24.75 29.3333C25.2563 29.3333 25.6667 28.9229 25.6667 28.4167V25.6667H28.4167C28.9229 25.6667 29.3333 25.2563 29.3333 24.75C29.3333 24.2437 28.9229 23.8333 28.4167 23.8333H25.6667V21.0833Z"
+                                                fill="white" />
+                                        </svg>
+                                    </label>
+                                </div>
+                                <div class="col-7 col-md-10">
+                                    <input type="text" class="form-control rounded-pill" id="message"
+                                        [formControl]="newMessageValue" placeholder="Nouveau message">
+                                </div>
+                                <div class="col-2 col-md-1">
+                                    <button (click)="appendMessage()"
+                                        class="btn btn-outline-light p-0 px-2 rounded-circle"
+                                        title="envoyer un message"><i class="bi bi-caret-right fs-4"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <ng-template #alert>
+        <section class="container my-3">
+            <div class="alert alert-danger">
+                <h1>Erreur 404</h1>
+                <p>Cet événement n'existe pas</p>
+            </div>
+        </section>
+    </ng-template>
+</main>
+
+<app-footer></app-footer>
