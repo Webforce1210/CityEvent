@@ -42,7 +42,7 @@ const routes: Routes = [
     component: FilDactuComponent
   },
   {
-    path: "info_event/:userid",
+    path: "info_event/:eventid/:userid",
     component: InfoEventComponent
   },
   {

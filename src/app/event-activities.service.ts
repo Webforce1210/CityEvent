@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
+
 import { EventActivity } from './models/EventActivity.model';
 let myData = require("../assets/data.json");
-=======
-import { EventActivity } from './models/EventActivity.model';
-let myData = require ("../assets/data.json");
->>>>>>> edfb4336ddad4206d3a4af757eaf8703780f081c
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +10,34 @@ let myData = require ("../assets/data.json");
 export class EventActivitiesService {
 
   constructor() { }
-<<<<<<< HEAD
-  lastEvents: EventActivity[]=myData.lastActivities;
-=======
 
-  lastEvents: EventActivity[] = myData.lastActivities;
->>>>>>> edfb4336ddad4206d3a4af757eaf8703780f081c
+  lastEvents: EventActivity[]=myData.lastActivities;
+
+
+
+  getEventById(id:number):EventActivity {
+    const data = this.lastEvents.find(event => parseInt(event.id) === id);
+    if(data === undefined) {
+        throw new Error('Event not found');
+    } else {
+        const event = new EventActivity(data.id, data.title);
+        event.adresse = data.adresse;
+        event.description = data.description;
+        return event;
+    }
+  }
+
+  getEventsById(eventsId:number[]):EventActivity[] {
+    const events:EventActivity[] = [];
+    this.lastEvents.forEach(element => {
+      const id = parseInt(element.id);
+      if(eventsId.find(item => item === id)) {
+        const eventUser = new EventActivity(element.id, element.title);
+        eventUser.adresse = element.adresse;
+        events.push(eventUser);
+      }
+    });
+    return events;
+  }
 }
+

@@ -1,52 +1,5 @@
 {
-<<<<<<< HEAD
-    "lastActivities":[
-        {
-            "id": "0001",
-            "title":"Event1",
-            "adresse":"Lieu1",
-            "description":"Description1"
-        },
-        {
-            "id": "0002",
-            "title":"Event2",
-            "adresse":"Lieu2",
-            "description":"Description2"
-        },
-        {
-            "id": "0003",
-            "title":"Event3",
-            "adresse":"Lieu3",
-            "description":"Description3"
-        },
-        {
-            "id": "0004",
-            "title":"Event4",
-            "adresse":"Lieu4",
-            "description":"Description4"
-        }
-    ],
-    "User":[
-        {
-            "id":"1",
-            "name":"Prenom1",
-            "first_name":"Nom1"
-        },
-        {
-            "id":"2",
-            "name":"Prenom2",
-            "first_name":"Nom2"
-        },
-        {
-            "id":"3",
-            "name":"Prenom3",
-            "first_name":"Nom3"
-        },
-        {
-            "id":"4",
-            "name":"Prenom4",
-            "first_name":"Nom4"
-=======
+
     "lastActivities": [
         {
             "id": "0001",
@@ -71,7 +24,110 @@
             "title": "Event4",
             "adresse":  "Lieu4",
             "description":  "Description4"
->>>>>>> edfb4336ddad4206d3a4af757eaf8703780f081c
+
+        }
+    ],
+
+    "usersList": [
+        {
+            "id":"1",
+            "pseudo":"John",
+            "avatar": null,
+            "cover": null,
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Organisateur"
+                },
+                {
+                    "id": "0002",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "role": "Participant"
+                }
+            ],
+            "hobbies": ["football", "sport"],
+            "stars": [1,1,0,0,0],
+            "region": "Paris"
+        },
+        {
+            "id":"2",
+            "pseudo":"Jane",
+            "avatar": "jane.png",
+            "cover": "cover_user.png",
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0002",
+                    "role": "Organisateur"
+                },
+                {
+                    "id": "0003",
+                    "role": "Participant"
+                }
+            ],
+            "hobbies": ["cinema", "natation"],
+            "stars":[1,1,1,1,1],
+            "region": "Picardie"
+        },
+        {
+            "id":"3",
+            "pseudo":"Kelly",
+            "avatar": null,
+            "cover": null,
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0002",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "role": "Organisateur"
+                },
+                {
+                    "id": "0004",
+                    "role": "Participant"
+                }
+            ],
+            "hobbies": ["Tricot", "cinema", "promenade"],
+            "stars":[1,1,1,1,0],
+            "region": "Marseille"
+        },
+        {
+            "id":"4",
+            "pseudo":"Mathieu",
+            "avatar": null,
+            "cover": null,
+            "events": [
+                {
+                    "id": "0001",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0002",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "role": "Participant"
+                },
+                {
+                    "id": "0004",
+                    "role": "Organisateur"
+                }
+            ],
+            "hobbies": ["football", "vélo"],
+            "stars":[0,0,0,0,0],
+            "region": "Vendée"
         }
     ]
 }

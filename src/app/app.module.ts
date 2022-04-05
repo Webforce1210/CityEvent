@@ -17,7 +17,8 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
-import { MessageGroupeComponent } from './message-groupe/message-groupe.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MessageGroupeComponent } from './message-groupe/message-groupe.componen
     PaiementComponent,
     ContactComponent,
     InscriptionActiviteComponent,
-    MessageGroupeComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

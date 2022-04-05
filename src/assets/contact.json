@@ -1,0 +1,43 @@
+{
+
+    "listcontact":[
+        {
+            "id":"01",
+            "propid":3,
+            "contacts":[
+                {
+                    "id":1,
+                    "pseudo":"John",
+                    "avatar": null
+                },
+                {
+                    "id":2,
+                    "pseudo":"Jane",
+                    "avatar": "jane.png"
+                }
+            ]
+        },
+        {
+            "id":"02",
+            "propid":4,
+            "contacts":[
+                {
+                    "id":1,
+                    "pseudo":"John",
+                    "avatar": null
+                },
+                {
+                    "id":2,
+                    "pseudo":"Jane",
+                    "avatar": "jane.png"
+                },
+                {
+                    "id":3,
+                    "pseudo":"Kelly",
+                    "avatar": null
+                }
+            ]
+        }
+        
+    ]
+}

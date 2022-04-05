@@ -1,1 +1,87 @@
-<p>info-event works!</p>
+<app-navbar [userId]="userId"></app-navbar>
+
+<main>
+    <div class="container" *ngIf="!notFound; else alert">
+        <header class="event__header" [ngStyle]="{'background': 'url(/assets/paris_freepik.png) no-repeat center / cover'}">
+            <div class="event__header__title">
+                <h1>{{event.title}}</h1>
+                <a [routerLink]="['/inscription_activite', userId]" class="btn btn-outline-light">Participer</a>
+            </div>
+        </header>
+        <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Informations</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="participants-tab" data-bs-toggle="tab" data-bs-target="#participants" type="button" role="tab" aria-controls="participants" aria-selected="false">Participants</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat" type="button" role="tab" aria-controls="chat" aria-selected="false">Chat</button>
+            </li>
+        </ul>
+    
+        <section class="tab-content" id="myTabContent">
+            <article class="tab-pane fade show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h2>Informations</h2>
+    
+                <p class="my-4">{{event.description}}</p>
+    
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                    <span class="px-3">{{event.date | date: 'd/MM/yyyy à HH:mm'}}</span>
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                    <span class="px-3">{{event.adresse}}</span>
+                </p>
+                <figure class="map text-center">
+                    <img src="/assets/map.png" alt="carte où se trouve l'événement">
+                </figure>
+            </article>
+            <article class="tab-pane fade" id="participants" role="tabpanel" aria-labelledby="participants-tab">
+                <div class="user-group" *ngFor="let user of participants">
+                    <div class="d-flex align-self-center">
+                        <div class="avatar-container">
+                            <div class="bg-secondary rounded-circle p-4 avatar" *ngIf="user.avatar === null; else avatar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" class="bi bi-person" viewBox="0 0 16 16">
+                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                </svg>
+                            </div>
+                            <ng-template #avatar>
+                                <img [src]="'/assets/avatars/'+ user.avatar" alt="avatar de {{user.pseudo}}" class="rounded-circle avatar">
+                            </ng-template>
+                            <div class="flag" *ngIf=" user.events[0].role === 'Organisateur'">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-award" viewBox="0 0 16 16">
+                                    <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+                                    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="px-3">
+                            <h3 class="h4">{{ user.pseudo }}</h3>
+                            <p [ngClass]="{'admin': user.events[0].role === 'Organisateur'}">{{ user.events[0].role }}</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
+                chat
+            </article>
+        </section>
+    </div>
+    <ng-template #alert>
+        <section class="container my-3">
+            <div class="alert alert-danger">
+                <h1>Erreur 404</h1>
+                <p>Cet événement n'existe pas</p>
+            </div>
+        </section>
+    </ng-template>
+</main>
+
+<app-footer></app-footer>
+

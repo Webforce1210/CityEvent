@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../contact.service';
+import { ListContact } from '../models/Contact.model';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storage:ContactService) { }
+  userId!:string;
+  Contacts:ListContact[]=[];
 
   ngOnInit(): void {
+    this.storage.getContactByid(this.userId);
+    
+  }
+
+  GetContact(){
+
+
+
   }
 
 }

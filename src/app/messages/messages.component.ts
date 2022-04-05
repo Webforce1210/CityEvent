@@ -22,10 +22,11 @@ contentValue = new FormControl("");
 
   constructor(public router: Router,private storage:UserActivitiesService) { }
 
+  userId!:number;
   User:UserActivity[]=[];
   Message:Message[]=[];
   Reponse:Message[]=[];
-  Discussion:Discussion[]=[];
+  Discussions:Discussion[]=[];
   LastMessage: string = "";
   Contacts:ListContact[]=[];
 

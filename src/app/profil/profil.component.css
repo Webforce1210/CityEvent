@@ -1,0 +1,41 @@
+.header__avatar {
+    padding: 0 50px 0 30px;
+}
+
+@media (min-width:537px) {
+    .header__avatar {
+        border-right: 1px solid #FFF;
+    }
+}
+
+.profil__info {
+    padding: 0 40px;
+}
+
+.card h3 {
+    color: #262A8D;
+    font-size: 36px;
+}
+
+.profile__events {
+    padding: 10px;
+}
+
+.profile__events .card {
+    max-width: 530px;
+    margin: 0px auto;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+}
+
+.hobbies {
+    list-style: none;
+}
+
+.separator {
+    background-color: #C4C4C4;
+    height: 15px;
+}
