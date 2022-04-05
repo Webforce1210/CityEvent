@@ -1,3 +1,7 @@
+.navbar{
+    height: 8rem;
+}
+
 .teamBackground{
     background: url(/assets/img/team.jpg);
     background-size: cover;
