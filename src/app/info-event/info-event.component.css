@@ -20,12 +20,12 @@
     margin-bottom: 15px;
 }
 
-.map > img {
+.map>img {
     max-width: 100%;
 }
 
 .user-group {
-    margin: 4rem auto; 
+    margin: 4rem auto;
     max-width: 350px;
 }
 
@@ -49,8 +49,46 @@
     bottom: 0;
 }
 
+.chat-block {
+    border-radius: 20px;
+    border: 1px solid #000;
+    margin: 20px;
+}
+
+.chat-block .content-block {
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.message-container {
+    margin: 20px;
+}
+
+.add-message {
+    border-radius: 5px;
+    color: #fff;
+    padding: 20px;
+    background-color: #000;
+    margin: 10px;
+}
+
+.content::after {
+    content: ' ';
+    display: block;
+    height: 0;
+    width: 0;
+    border-top: 30px solid #000;
+    border-right: 30px solid transparent;
+    border-left: 30px solid transparent;
+    margin-left: 25px;
+}
+
 @media (min-width:800px) {
-    .map > img {
+    .map>img {
         max-width: 700px;
+    }
+
+    .chat-block .content {
+        max-width: 55%;
     }
 }
