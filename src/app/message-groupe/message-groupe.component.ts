@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Message } from '../Models/Message.model';
-import { Discussion } from '../Models/Discussion.model';
+import { Message } from '../models/Message.model';
+import { Discussion } from '../models/Discussion.model';
 import {Router, ActivatedRoute} from '@angular/router';
 import { UserActivitiesService } from '../user-activities.service';
 import { FormControl} from '@angular/forms';

@@ -69,3 +69,7 @@ svg{
     margin: auto;
     background-color: black;
 }
+.contact{
+    display: flex;
+    justify-content: right;
+}

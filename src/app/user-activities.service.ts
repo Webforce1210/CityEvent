@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { UserActivity } from './Models/UserActivity.model';
-import { Message } from './Models/Message.model';
-import { Discussion } from './Models/Discussion.model';
+import { UserActivity } from './models/UserActivity.model';
+import { Message } from './models/Message.model';
+import { Discussion } from './models/Discussion.model';
 let uniqid = require('uniqid');
 let myData = require("../assets/UserMessage.json");
 
@@ -29,6 +29,7 @@ export class UserActivitiesService {
     newMess.id = uniqid();
     newMess.content = content;
     this.Send.push(newMess.content);
+    console.log(this.Send)
   } 
 
   lastMessages(){
