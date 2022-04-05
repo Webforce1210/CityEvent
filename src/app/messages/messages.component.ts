@@ -18,38 +18,38 @@ import { Router } from '@angular/router';
 
 export class MessagesComponent implements OnInit {
 
-contentValue = new FormControl("");
+// contentValue = new FormControl("");
 
   constructor(public router: Router,private storage:UserActivitiesService) { }
 
-  userId!:number;
-  User:UserActivity[]=[];
-  Message:Message[]=[];
-  Reponse:Message[]=[];
-  Discussions:Discussion[]=[];
-  LastMessage: string = "";
-  Contacts:ListContact[]=[];
+  userId!:string;
+//   User:UserActivity[]=[];
+//   Message:Message[]=[];
+//   Reponse:Message[]=[];
+//   Discussions:Discussion[]=[];
+//   LastMessage: string = "";
+//   Contacts:ListContact[]=[];
 
 
   ngOnInit(): void {
-    this.storage.lastMessages();
-    this.LastMessage=this.storage.lastMessage
-    console.log(this.storage.AllMessage)
+    // this.storage.lastMessages();
+    // this.LastMessage=this.storage.lastMessage
+    // console.log(this.storage.AllMessage)
   }
 
-Contact:boolean=false;
-list:boolean=!this.Contact;
+// Contact:boolean=false;
+// list:boolean=!this.Contact;
 
-MessView(){
-  this.Contact=!this.Contact
-  this.list=!this.list
-};
+// MessView(){
+//   this.Contact=!this.Contact
+//   this.list=!this.list
+// };
 
-newMess(){
-  this.storage.create(this.contentValue.value);
-}
-redirect(){
-  this.router.navigate(['contact/01'])
-}
+// newMess(){
+//   this.storage.create(this.contentValue.value);
+// }
+// redirect(){
+//   this.router.navigate(['contact/01'])
+// }
 }
 
