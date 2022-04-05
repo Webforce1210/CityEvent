@@ -85,6 +85,9 @@
             </article>
             <article class="tab-pane fade" id="chat" role="tabpanel" aria-labelledby="chat-tab">
                 <div class="chat-block">
+                    <div class="p-3" *ngIf="messages.length === 0">
+                        <p class="text-center fs-5">Le chat est vide.</p>
+                    </div>
                     <div class="message-container" *ngFor="let message of messages">
                         <p [ngClass]="{'text-end':  message.userid === userId}">
                             {{ message.date | date: 'd/MM/yyyy à HH:mm' }}, par {{ message.author.pseudo }}
@@ -112,6 +115,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="alert alert-danger m-3" *ngIf="error">
                         Votre message doit faire plus de trois caractères.
                     </div>
