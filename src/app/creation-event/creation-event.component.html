@@ -2,20 +2,20 @@
     <div class="container-fluid bg-light" id="navbar-default">
         <div class="row" >
           <div class="col-9">
-  <img id="logo" src="/assets/logo.png" *ngIf="screen1">
+  <img id="logo" [routerLink]="['/map/:userid']" src="/assets/logo.png" *ngIf="screen1">
   <img (click)="ecran1()" id="logo" src="/assets/pinclipart_1.png" *ngIf="screen2">
 
           </div>
-         <div class="col-3 py-4">
-            <div class="row" id="default-nav-buttons">
-                <div class="col-6 py-4 nav-button"><button type="button" class="btn btn-outline-primary">Connexion</button></div>
-                <div class="col-6 py-4 nav-buttons"><button type ="button" class="btn btn-outline-primary">Incription</button></div>
+
+         <div class="col-3 d-flex justify-content-end align-items-center py-4 ">
+               <button [routerLink]="['/']" type="button" class="btn btn-outline-primary">Accueil</button>
+               <button [routerLink]="['/profil/:userid']"type ="button" class="btn btn-outline-primary">Profil</button>
                             
-                            <div>
+                        
                           </div>
+                      
                         </div>
-                        </div>
-                </div>
+                
 </div>
 
 <div id="mobile-navbar">
@@ -32,8 +32,8 @@
                       <img src="/assets/icons8-menu-24.png">
                     </button>
                     <div class="dropdown-menu" >
-                      <a class="dropdown-item" href="#">Accueil</a>
-                      <a class="dropdown-item" href="#">Profil</a>
+                      <a class="dropdown-item" [routerLink]="['/']">Accueil</a>
+                      <a class="dropdown-item" [routerLink]="['/profil/:userid']">Profil</a>
                     </div>
                   </div>
                             
@@ -63,72 +63,36 @@
     
                     <input type="text" class="form-control text-center" id="event-address" value="" placeholder="Adresse de l'événement" [formControl]="addressValue">
                   </div>
-    <div id="date-picker">
-                  <input type="text" id="select-date1" class= "datepicker" placeholder="Date de début" [formControl]="startDateValue">
-                
-                  <input type="text" id="select-date2" class= "datepicker" placeholder="Date de fin (facultatif)" [formControl]="endDateValue">
+
+
+                  <div class="form-group" id="datetime">            
+    <div class=" container-fluid my-4" id="date-picker">
+
+
+      <label for="select-date1">Date de début :</label>
+      <input type="date"  id="select-date1" class= "mx-4 datepicker" placeholder="Date de début" [formControl]="startDateValue">
+
+
+      <label  for="select-date2">Date de fin :</label>
+      <input type="date" id="select-date2" class= "mx-4 datepicker" placeholder="Date de fin (facultatif)" [formControl]="endDateValue">
                 </div>
-                <div id="hour-picker">
-                    <select class="selectstyle form-select d-inline-block champ container-fluid text-center" id="select-hour1"[formControl]="startTimeValue" >
-                      <option value="">Heure de début</option>
-                      <option value="00h00">00h00</option>
-                      <option value="01h00">01h00</option>
-                      <option value="02h00">02h00</option>
-                      <option value="03h00">03h00</option>
-                      <option value="04h00">04h00</option>
-                      <option value="05h00">05h00</option>
-                      <option value="06h00">06h00</option>
-                      <option value="07h00">07h00</option>
-                      <option value="08h00">08h00</option>
-                      <option value="09h00">09h00</option>
-                      <option value="10h00">10h00</option>
-                      <option value="11h00">11h00</option>
-                      <option value="12h00">12h00</option>
-                      <option value="13h00">13h00</option>
-                      <option value="14h00">14h00</option>
-                      <option value="15h00">15h00</option>
-                      <option value="16h00">16h00</option>
-                      <option value="17h00">17h00</option>
-                      <option value="18h00">18h00</option>
-                      <option value="19h00">19h00</option>
-                      <option value="20h00">20h00</option>
-                      <option value="21h00">21h00</option>
-                      <option value="22h00">22h00</option>
-                      <option value="23h00">23h00</option>
-                    </select>
-                    <select class="form-select d-inline-block champ container-fluid text-center" id="select-hour2" [formControl]="endTimeValue">
-                      <option value="">Heure de fin</option>
-                      <option value="00h00">00h00</option>
-                      <option value="01h00">01h00</option>
-                      <option value="02h00">02h00</option>
-                      <option value="03h00">03h00</option>
-                      <option value="04h00">04h00</option>
-                      <option value="05h00">05h00</option>
-                      <option value="06h00">06h00</option>
-                      <option value="07h00">07h00</option>
-                      <option value="08h00">08h00</option>
-                      <option value="09h00">09h00</option>
-                      <option value="10h00">10h00</option>
-                      <option value="11h00">11h00</option>
-                      <option value="12h00">12h00</option>
-                      <option value="13h00">13h00</option>
-                      <option value="14h00">14h00</option>
-                      <option value="15h00">15h00</option>
-                      <option value="16h00">16h00</option>
-                      <option value="17h00">17h00</option>
-                      <option value="18h00">18h00</option>
-                      <option value="19h00">19h00</option>
-                      <option value="20h00">20h00</option>
-                      <option value="21h00">21h00</option>
-                      <option value="22h00">22h00</option>
-                      <option value="23h00">23h00</option>
-                    </select>
-                  </div>
+              </div>
+                
+                <div class="container-fluid" id="hour-picker">
+                              <label for="select-hour1">Heure de début :</label>
+                    <input type="time" size="2" class="mx-4 champ text-center" id="select-hour1"  min="00:00" max="23:59" required [formControl]="startTimeValue" >
+               
+              
+                    <label for="select-hour2">Heure de fin (facultatif) :</label>
+                    <input type="time" class=" mx-4 champ text-center" id="select-hour2" min="00:00" max="23:59" [formControl]="endTimeValue">
+                  </div> 
     
                   <div class="form-group champ text-center">
                     <input type="text" class="form-control text-center" id="pax" placeholder="Nombre de participants" [formControl]="participantsValue">
                   </div>
     
+
+
                   <div class="form-group champ">
                     <input type="text" class="form-control text-center" id="budget" placeholder="Budget nécessaire" required [formControl]="priceValue">
                   </div>
@@ -167,10 +131,10 @@
     <div class="carte" id="carte"></div>
     
     
-    <div id="quick-menu">
-        <div id="home"> <img class="icons" src="/assets/logo.png"> </div>
-        <div id="map"><img class="icons" src="/assets/map.png"> </div>
-        <div id="event-creation"><img class="icons" src="/assets/plus.png"></div>
+    <div class="container-fluid d-flex" id="quick-menu">
+        <div id="home"> <img class="icons" [routerLink]="['/']" src="/assets/logo.png"> </div>
+        <div id="map"><img class="icons" [routerLink]="['/map/:userid']" src="/assets/map.png"> </div>
+        
     </div>
     
     <footer>
