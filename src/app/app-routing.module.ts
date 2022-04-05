@@ -48,7 +48,7 @@ const routes: Routes = [
     component: InscriptionActiviteComponent
   },
   {
-    path: "login",
+    path: "login/:mode",
     component: LoginSignupComponent
   },
   {

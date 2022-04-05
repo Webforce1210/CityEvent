@@ -5,6 +5,7 @@ export class User {
     region?: string;
     email?: string;
     password?: string;
+    regions: string[] = [];
 
     constructor(
         public id: string,
