@@ -11,33 +11,30 @@ import { UserService } from '../user.service';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-  
-  userId!:string;
-  user!:User;
-  events:EventActivity[] = [];
-  styles = {background: '#0d6efd'};
+
+  userId!: string;
+  user!: User;
+  events: EventActivity[] = [];
+  styles = { background: '#0d6efd' };
 
   constructor(
-    private userService:UserService,
-    private route:ActivatedRoute,
-    private router:Router,
-    private eventService:EventActivitiesService
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private eventService: EventActivitiesService
   ) { }
 
   ngOnInit(): void {
     try {
       this.userId = this.route.snapshot.params['userid'];
       this.user = this.userService.findUserById(this.userId);
-      if(this.user.cover !== null) {
+      if (this.user.cover !== null) {
         this.styles.background = `center / cover no-repeat url(/assets/avatars/${this.user.cover})`;
       }
-      const eventIds:string[] = [];
-      if (this.user.events) {
-        this.user.events.forEach(event => {
-          eventIds.push(event.id);
-        });
-      }
-      
+      const eventIds: string[] = [];
+      this.user.events.forEach(event => {
+        eventIds.push(event.id);
+      });
       this.events = this.eventService.getEventsById(eventIds);
     } catch (error) {
       this.router.navigateByUrl('/login');
