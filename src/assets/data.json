@@ -27,8 +27,10 @@
     ],
     "usersList": [
         {
-            "id": 1,
+            "id": "1",
             "pseudo": "John",
+            "email": "email1@gmail.com",
+            "password": "password1",
             "avatar": null,
             "cover": null,
             "events": [
@@ -59,10 +61,12 @@
             "region": "Paris"
         },
         {
-            "id": 2,
+            "id": "2",
             "pseudo": "Jane",
             "avatar": "jane.png",
             "cover": "cover_user.png",
+            "email": "email2@gmail.com",
+            "password": "password2",
             "events": [
                 {
                     "id": "0001",
@@ -91,8 +95,10 @@
             "region": "Picardie"
         },
         {
-            "id": 3,
+            "id": "3",
             "pseudo": "Kelly",
+            "email": "email3@gmail.com",
+            "password": "password3",
             "avatar": null,
             "cover": null,
             "events": [
@@ -128,8 +134,10 @@
             "region": "Marseille"
         },
         {
-            "id": 4,
+            "id": "4",
             "pseudo": "Mathieu",
+            "email": "email4@gmail.com",
+            "password": "password4",
             "avatar": null,
             "cover": null,
             "events": [
@@ -167,42 +175,42 @@
     "messagesChat": [
         {
             "id": "0001",
-            "userid": 1,
+            "userid": "1",
             "message": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "eventId": "0001",
             "date": "2021-09-18T15:00:00"
         },
         {
             "id": "0002",
-            "userid": 2,
+            "userid": "2",
             "message": "Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
             "eventId": "0001",
             "date": "2021-09-19T15:00:00"
         },
         {
             "id": "0003",
-            "userid": 3,
+            "userid": "3",
             "message": "Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
             "eventId": "0002",
             "date": "2021-09-20T15:00:00"
         },
         {
             "id": "0004",
-            "userid": 1,
+            "userid": "1",
             "message": "Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
             "eventId": "0002",
             "date": "2021-09-21T14:00:00"
         },
         {
             "id": "0005",
-            "userid": 4,
+            "userid": "4",
             "message": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
             "eventId": "0001",
             "date": "2021-09-21T15:00:00"
         },
         {
             "id": "0006",
-            "userid": 2,
+            "userid": "2",
             "message": "Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
             "eventId": "0001",
             "date": "2021-09-22T15:00:00"

@@ -6,7 +6,7 @@ export class Message {
 
     constructor(
         public id: string,
-        public userid: number,
+        public userid: string,
         public message: string,
         public eventId: string,
         public date: string

@@ -1,13 +1,15 @@
 export class User {
-    hobbies:string[] = [];
-    stars:number[] = [0,0,0,0,0];
-    cover?:string;
-    region?:string;
-    
+    hobbies: string[] = [];
+    stars: number[] = [0, 0, 0, 0, 0];
+    cover?: string;
+    region?: string;
+    email?: string;
+    password?: string;
+
     constructor(
-        public id:number, 
-        public pseudo:string,
-        public events:{id:string,role:string}[],
-        public avatar?:string
-    ) {}
+        public id: string,
+        public pseudo: string,
+        public events: { id: string, role: string }[],
+        public avatar?: string
+    ) { }
 }
