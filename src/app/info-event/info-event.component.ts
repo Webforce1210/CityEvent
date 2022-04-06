@@ -36,7 +36,7 @@ export class InfoEventComponent implements OnInit {
     this.checkSession();
     this.findEvent();
     if (!this.notFound) {
-      this.participants = this.userService.findEventParticipants(parseInt(this.event.id));
+      this.participants = this.userService.findEventParticipants(this.event.id);
       this.messages = this.messageService.findEventMessages(this.event.id);
     }
   }

@@ -23,7 +23,7 @@ export class EventActivitiesService {
     }
   }
 
-  getEventsById(eventsId: number[]): EventActivity[] {
+  getEventsById(eventsId: any[]): EventActivity[] {
     const events: EventActivity[] = [];
     this.lastEvents.forEach(element => {
       const id = parseInt(element.id);

@@ -1,3 +1,6 @@
+import { CreditCardInfo } from "./CreditCardInfo.model";
+import { EventActivity } from "./EventActivity.model";
+
 export class User {
     hobbies: string[] = [];
     stars: number[] = [0, 0, 0, 0, 0];

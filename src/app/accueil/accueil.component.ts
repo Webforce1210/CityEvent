@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventActivitiesService } from '../event-activities.service';
+import { EventActivity } from '../models/EventActivity.model';
 
 @Component({
   selector: 'app-accueil',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private EventServices: EventActivitiesService) { }
+
+lastEvents: EventActivity[] = [];
 
   ngOnInit(): void {
-  }
+    this.lastEvents = this.EventServices.lastEvents;
+
+
+}
+
 
 }

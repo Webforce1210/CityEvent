@@ -1,0 +1,90 @@
+.navbar{
+    height: 8rem;
+}
+
+.teamBackground{
+    background: url(/assets/img/team.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 30rem;
+    display: inline-block;
+    text-align: center;
+}
+
+#logo{
+    max-height: 7rem;
+}
+
+#appleLogo{
+    max-height: 3rem;
+    padding-left: 2rem;
+}
+
+#googleLogo{
+    max-height: 3.5rem;
+}
+
+#teamText{
+    padding-top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#mapDiv{
+    /* overflow: hidden;
+    background: url(/assets/img/map.png);
+    background-size: cover;
+    background-repeat: no-repeat; */
+    /* min-height: 30rem; */
+    height: 20rem;
+    width: 100%;
+}
+
+.mapImg{
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    padding-top: 2rem;
+    /* padding-bottom: 6rem; */
+}
+
+/* .mapImg{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+} */
+
+.mapDivText{
+    background-color: white;
+    border: white;
+    border-radius: 10px;
+    max-height: 7rem;
+    max-width: 24rem;
+}
+
+.mapText{
+    font-size: 2rem;
+}
+
+.cardModify{
+    justify-content: center;
+    padding: 3rem;
+}
+
+.tourImg{
+    min-width: 100%;
+    max-height: 100%;
+}
+
+#footerDiv{
+    height: 7rem;
+    background-color: black;
+}
+
+.footerText{
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    padding-top: 2rem;
+}

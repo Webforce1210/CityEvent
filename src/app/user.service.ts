@@ -27,7 +27,7 @@ export class UserService {
     }
   }
 
-  findEventParticipants(eventId: number): User[] {
+  findEventParticipants(eventId: any): User[] {
     const users: User[] = [];
 
     this.users.forEach(user => {
