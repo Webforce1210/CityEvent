@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { UserActivity } from './models/UserActivity.model';
-import { Message } from './models/Message.model';
 import { Discussion } from './models/Discussion.model';
-let uniqid = require('uniqid');
-let myData = require("../assets/UserMessage.json");
-
+import { MessagePrive } from './models/MessagePrive.model';
+let myData = require("../assets/data.json");
 
 
 @Injectable({
@@ -13,66 +10,36 @@ let myData = require("../assets/UserMessage.json");
 
 export class UserActivitiesService {
 
-  constructor() {}
-  AllMessage:Message[]=[];
-  Send:string []=[];
-  Recu:string []=[];
-  initialized: boolean = false;
-  lastMessage: string = ""; 
-  currentUser:  UserActivity  = new UserActivity(uniqid());
-  discussions:  Discussion = new Discussion();
-  messages: Message = new Message();
-  Users =  myData.Users;
+  discussion:Discussion[] = myData.discussion;
+  messages:MessagePrive[]=[];
 
-  create(content:string){
-    let newMess= new Message();
-    newMess.id = uniqid();
-    newMess.content = content;
-    this.Send.push(newMess.content);
-    console.log(this.Send)
-  } 
-
-  lastMessages(){
-    let maxi = this.AllMessage.length;
-    for (let i=0 ; i<this.AllMessage.length; i++){
-      if (i === maxi-1){
-        this.lastMessage = this.AllMessage[i].content
-      }
-    }
+  constructor(){
+    this.discussion=myData.discussion;
   }
 
-  getUser(id:string|null ){
-    for (let user of this.Users){
-      if (user.id===id){
-        this.currentUser=user;
-        break
+  public findDiscussionMessages(discId:string){
+    const messages:any = [];
+    this.discussion.forEach(element=>{
+      if(element.id === discId ){
+        messages.push(element.messages)
       }
-    }
+    });
+    return messages;
   }
 
-  getMessagesofUser(Destid:string|null){
-    let messid="message_dest:" + Destid;
-    for(let mess of this.currentUser.discussions){
-      if(messid===mess.id){
-        this.discussions = mess;
-        this.AllMessage=this.discussions.messages;
-        break
-      }
-    }
+  public LastMessage(){
+    
   }
 
-  TriMess(){
-    for(let mess of this.AllMessage){
-      if(mess.Type === true){
-        this.Send.push(mess.content)
-      }
-      else{
-        this.Recu.push(mess.content)
-      }
-      
-      
+  getDiscussionById(id:string):Discussion{
+    const data = this.discussion.find(discussion=>discussion.id === id);
+    if(data===undefined){
+      throw new Error('Discussion not found');
+    }else{
+      const discussion = new Discussion(data.id);
+      discussion.messages=data.messages;
+      return discussion;
     }
-    console.log(this.Send);
   }
 }
 

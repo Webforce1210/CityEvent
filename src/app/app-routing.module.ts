@@ -74,7 +74,7 @@ const routes: Routes = [
     component: ProfilComponent
   },
   {
-    path: "messages/:userid/:Destid",
+    path: "messages/:userid/:discid",
     component: MessageGroupeComponent
   }
 ];

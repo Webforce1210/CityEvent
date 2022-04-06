@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Message } from '../models/Message.model';
+import { ActivatedRoute } from '@angular/router';
 import { Discussion } from '../models/Discussion.model';
-import {Router, ActivatedRoute} from '@angular/router';
 import { UserActivitiesService } from '../user-activities.service';
-import { FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-message-groupe',
@@ -12,24 +11,27 @@ import { FormControl} from '@angular/forms';
 })
 export class MessageGroupeComponent implements OnInit {
 
-  User:[]=[];
-  Message:Message[]=[];
-  Reponse:Message[]=[];
-  Discussion:Discussion[]=[];
-  contentValue = new FormControl("");
-  
+  messages:any=[];
+  discussion!:Discussion;
 
-  constructor(private route :ActivatedRoute,private storage:UserActivitiesService) { }
 
+  constructor(
+    private userService:UserActivitiesService,
+    private route:ActivatedRoute) {
+
+  }
   ngOnInit(): void {
-    this.storage.create("fzfz");
-    this.storage.getUser("007");
-    this.storage.getMessagesofUser("001");
-    // this.storage.getMessage();
-    this.storage.TriMess();
+    this.findDiscussion();
+    this.messages=this.userService.findDiscussionMessages(this.discussion.id)
   }
-  NewMess(){
-    this.storage.create(this.contentValue.value);
+
+  private findDiscussion():void{
+      this.discussion = this.userService.getDiscussionById(this.getRouterParam('discid'));
   }
+
+  private getRouterParam(param: string): string {
+    return this.route.snapshot.params[param];
+  }
+
 }
 

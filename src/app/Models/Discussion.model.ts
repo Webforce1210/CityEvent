@@ -1,10 +1,11 @@
-import { Message } from "./Message.model";
+import { MessagePrive } from "./MessagePrive.model";
 
 export class Discussion {
 
-    id:string="";
-    messages:Message[]=[];
+    id:string;
+    messages:MessagePrive[]=[];
 
-    constructor (){
+    constructor (id:string=""){
+        this.id=id;
     }
 }
