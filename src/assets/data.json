@@ -304,5 +304,24 @@
             "eventId": "0001",
             "date": "2021-09-22T15:00:00"
         }
+    ],
+    "regions": [
+        "hautdefrance",
+        "iledefrance",
+        "limousin",
+        "auvergne"
+    ],
+    "hobbies": [
+        "sport",
+        "cinema",
+        "litterature",
+        "art",
+        "football",
+        "sport",
+        "vélo",
+        "Tricot",
+        "cinema",
+        "promenade",
+        "natation"
     ]
 }

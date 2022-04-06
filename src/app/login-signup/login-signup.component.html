@@ -8,25 +8,30 @@
     </header>
     <article class="container">
         <header>
-            <h1 class="connexion__title">Inscription à City Event</h1>
+            <h1 class="connexion__title">Connexion à City Event</h1>
         </header>
         <form action="account.html" class="connexion__form" method="post">
             <p class="text-danger fw-bold text-center my-3" *ngIf="error">
-                Le mot de passe ou l'email est faux.
+                Le mot de passe ou l'email est faux
             </p>
+
             <div class="email">
-                <input type="text" name="email" id="email" [formControl]="emailValue" class="input__signin"
+                <input type="text" name="email" class="input__signin" [formControl]="emailValue"
                     placeholder="adresse email">
             </div>
+
             <div class="password">
                 <input type="password" class="input__signin" [formControl]="passwordValue" name="password" id="password"
                     placeholder="mot de passe">
             </div>
-            <p class="text-center connexion__info forgot">Mot de passe oublié ?</p>
-            <input type="submit" value="connexion" (click)="login()" class="connexion__submit">
-            <p class="text-center connexion__info fw-bold sign">
-                <a href="signup1.html">Inscription</a>
-            </p>
+
+            <div class="d-flex justify-content-center flex-column">
+                <p class="text-center connexion__info forgot">Mot de passe oublié ?</p>
+                <input type="submit" value="connexion" (click)="login()" class="connexion__submit">
+                <p class="text-center connexion__info fw-bold sign">
+                    <a routerLink="/register">Inscription</a>
+                </p>
+            </div>
         </form>
     </article>
 
