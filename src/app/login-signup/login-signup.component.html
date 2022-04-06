@@ -8,45 +8,28 @@
     </header>
     <article class="container">
         <header>
-            <h1 class="connexion__title">Inscription à City Event</h1>
+            <h1 class="connexion__title">Connexion à City Event</h1>
         </header>
         <form action="account.html" class="connexion__form" method="post">
             <p class="text-danger fw-bold text-center my-3" *ngIf="error">
-                {{ (isRegistered === true) ? messages.register : messages.login }}
+                Le mot de passe ou l'email est faux
             </p>
 
-            <div class="name" *ngIf="isRegistered">
-                <input type="text" class="input__signup" name="name" id="name" placeholder="nom">
-            </div>
-
             <div class="email">
-                <input type="text" name="email"
-                    [ngClass]="{'input__signup': isRegistered, 'input__signin': !isRegistered}" id="email"
-                    [formControl]="emailValue" placeholder="adresse email">
+                <input type="text" name="email" class="input__signin" [formControl]="emailValue"
+                    placeholder="adresse email">
             </div>
 
             <div class="password">
-                <input type="password" [ngClass]="{'input__signup': isRegistered, 'input__signin': !isRegistered}"
-                    [formControl]="passwordValue" name="password" id="password" placeholder="mot de passe">
+                <input type="password" class="input__signin" [formControl]="passwordValue" name="password" id="password"
+                    placeholder="mot de passe">
             </div>
 
-            <div class="password" *ngIf="isRegistered">
-                <input type="confirm" class="input__signup" name="confirm" id="confirm"
-                    placeholder="confirmer mot de passe">
-            </div>
-
-            <div *ngIf="isRegistered" class="d-flex justify-content-center flex-column">
-                <input type="submit" value="suivant" class="connexion__submit">
-                <p class="text-center connexion__info fw-bold sign">
-                    <a routerLink="/login/connexion">Connexion</a>
-                </p>
-            </div>
-
-            <div *ngIf="!isRegistered" class="d-flex justify-content-center flex-column">
+            <div class="d-flex justify-content-center flex-column">
                 <p class="text-center connexion__info forgot">Mot de passe oublié ?</p>
                 <input type="submit" value="connexion" (click)="login()" class="connexion__submit">
                 <p class="text-center connexion__info fw-bold sign">
-                    <a routerLink="/login/register">Inscription</a>
+                    <a routerLink="/register">Inscription</a>
                 </p>
             </div>
         </form>

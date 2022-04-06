@@ -1,0 +1,110 @@
+<section class="connexion">
+    <header class="container-fluid">
+        <div class="logo2">
+            <a routerLink="">
+                <img [src]="'/assets/pngegg.png'" alt="logo city event">
+            </a>
+        </div>
+    </header>
+    <article class="container">
+        <header>
+            <h1 class="connexion__title">Inscription à City Event</h1>
+        </header>
+        <form action="" class="connexion__form" method="post">
+
+            <p class="text-center text-danger fw-bold" id="alert" style="display: none;">
+                Le formulaire est mal rempli.
+            </p>
+
+            <section class="first-step">
+                <div class="form-flex">
+                    <div class="name">
+                        <input type="text" (focusout)="validateName()" class="input__signup" name="name" id="name"
+                            placeholder="nom" [formControl]="nameValue">
+                        <p class="feedback">
+                            <span class="text-danger fw-bold" style="display: none;" id="name-feedback">
+                                Le nom doit être compris entre 3 et 180 caractères
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="email">
+                        <input type="text" (focusout)="validateEmail()" name="email" class="input__signup" id="email"
+                            [formControl]="emailValue" placeholder="adresse email">
+                        <p class="feedback">
+                            <span class="text-danger fw-bold" style="display: none;" id="email-feedback">
+                                Un email doit respecter la structure suivante : yyy@xxxx.dd.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="password">
+                        <input type="password" (focusout)="validatePassword()" class="input__signup"
+                            [formControl]="passwordValue" name="password" id="password" placeholder="mot de passe">
+                        <p class="feedback">
+                            <span class="text-danger fw-bold" style="display: none;" id="password-feedback">
+                                Le mot doit passe doit faire entre 7 et 255 caractères.
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="password">
+                        <input type="password" (focusout)="validateConfirm()" class="input__signup"
+                            [formControl]="confirmValue" name="confirm" id="confirm"
+                            placeholder="confirmer mot de passe">
+                        <p class="feedback">
+                            <span class="text-danger fw-bold" style="display: none;" id="confirm-feedback">
+                                Le mot de passe de confirmation est différent.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="second-step">
+                <div class="form-flex">
+                    <div class="name">
+                        <select multiple="true" size="3" (focusout)="selectChangeHandler($event)" name="hobbies[]"
+                            id="hobbies" class="input__signup form-select">
+                            <option value="{{hobby}}" *ngFor="let hobby of hobbies">{{hobby}}</option>
+                        </select>
+                        <p class="feedback"></p>
+                    </div>
+                    <div class="region">
+                        <select (change)="selectChangeHandler($event)" name="region" id="region" class="input__signup">
+                            <option value="0" disabled selected>Région</option>
+                            <option value="{{region}}" *ngFor="let region of regions">{{region}}</option>
+                        </select>
+                        <p class="feedback"></p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="d-flex justify-content-center flex-column">
+                <div class="first-step">
+                    <div class="form-flex">
+                        <input type="submit" (click)="validateFirstStep($event)" value="suivant"
+                            class="connexion__submit">
+                    </div>
+                </div>
+
+                <div class="second-step">
+                    <div class="text-center">
+                        <p class="mb-2 mt-4">
+                            <a href="#" (click)="changeStep($event)" class="fw-bold text-decoration-none text-reset">
+                                <i class="bi bi-arrow-left"></i> Etape précédente
+                            </a>
+                        </p>
+
+                        <input type="submit" (click)="register()" value="inscription" class="connexion__submit">
+                    </div>
+                </div>
+
+                <p class="text-center connexion__info fw-bold sign">
+                    <a routerLink="/login">Connexion</a>
+                </p>
+            </div>
+        </form>
+    </article>
+
+</section>

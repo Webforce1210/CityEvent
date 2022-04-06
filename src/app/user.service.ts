@@ -58,4 +58,12 @@ export class UserService {
   appendUser(user: User) {
     this.users.push(user);
   }
+
+  findHobbies() {
+    return myData.hobbies;
+  }
+
+  findRegions() {
+    return myData.regions;
+  }
 }
