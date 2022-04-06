@@ -1,0 +1,50 @@
+<app-navbar-offline></app-navbar-offline>
+
+<main>
+    <div class="container" *ngIf="!notFound; else alert">
+        <header class="event__header"
+            [ngStyle]="{'background': 'url(/assets/paris_freepik.png) no-repeat center / cover'}">
+            <div class="event__header__title">
+                <h1>{{event.title}}</h1>
+                <a [routerLink]="['/inscription_activite', userId]" class="btn btn-outline-light">Participer</a>
+            </div>
+        </header>
+        <section class="tab-content" id="myTabContent">
+            <article class="tab-pane fade show active p-3" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h2>Informations</h2>
+
+                <p class="my-4">{{event.description}}</p>
+
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-calendar" viewBox="0 0 16 16">
+                        <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                    </svg>
+                    <span class="px-3">{{event.date | date: 'd/MM/yyyy à HH:mm'}}</span>
+                </p>
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                    </svg>
+                    <span class="px-3">{{event.adresse}}</span>
+                </p>
+                <figure class="map text-center">
+                    <img src="/assets/map.png" alt="carte où se trouve l'événement">
+                </figure>
+            </article>
+        </section>
+    </div>
+    <ng-template #alert>
+        <section class="container my-3">
+            <div class="alert alert-danger">
+                <h1>Erreur 404</h1>
+                <p>Cet événement n'existe pas</p>
+            </div>
+        </section>
+    </ng-template>
+</main>
+
+<app-footer></app-footer>

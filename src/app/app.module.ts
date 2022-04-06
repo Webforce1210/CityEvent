@@ -20,6 +20,8 @@ import { InscriptionActiviteComponent } from './inscription-activite/inscription
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
+import { NavbarOfflineComponent } from './navbar-offline/navbar-offline.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FooterComponent } from './footer/footer.component';
     ContactComponent,
     InscriptionActiviteComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    InfoEventOfflineComponent,
+    NavbarOfflineComponent
   ],
   imports: [
     BrowserModule,

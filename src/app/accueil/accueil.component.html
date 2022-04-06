@@ -34,7 +34,7 @@
               <h5 class="card-title">{{ activite.title }}</h5>
               <p class="card-text">{{ activite.description }}</p>
               <p class="card-text">{{ activite.adresse }}</p>
-              <button href="#" class="btn btn-outline-danger">En savoir plus</button>
+              <button href="#" class="btn btn-outline-danger" [routerLink]="['/info_event/', activite.id]">En savoir plus</button>
             </div>
         </div>
     </div>
