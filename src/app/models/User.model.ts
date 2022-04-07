@@ -12,7 +12,7 @@ export class User {
     constructor(
         public id: string,
         public pseudo: string,
-        public events: { id: string, role: string }[],
+        public events: EventActivity[],
         public avatar?: string | null
     ) { }
 }
