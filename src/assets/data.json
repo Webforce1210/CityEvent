@@ -37,14 +37,29 @@
             "events": [
                 {
                     "id": "0001",
+                    "title": "Title1",
+                    "adresse": "Adresse1",
+                    "description": "Description1",
+                    "date": "Date1",
+                    "active": true,
                     "role": "Organisateur"
                 },
                 {
                     "id": "0002",
+                    "title": "Title2",
+                    "adresse": "Adresse2",
+                    "description": "Description1",
+                    "date": "Date2",
+                    "active": true,
                     "role": "Participant"
                 },
                 {
                     "id": "0003",
+                    "title": "Title3",
+                    "adresse": "Adresse3",
+                    "description": "Description3",
+                    "date": "Date3",
+                    "active": true,
                     "role": "Participant"
                 }
             ],
@@ -71,15 +86,48 @@
             "events": [
                 {
                     "id": "0001",
-                    "role": "Participant"
-                },
-                {
-                    "id": "0002",
+                    "title": "Title1",
+                    "adresse": "Adresse1",
+                    "description": "Description1",
+                    "date": "Date1",
+                    "active": true,
                     "role": "Organisateur"
                 },
                 {
-                    "id": "0003",
+                    "id": "0002",
+                    "title": "Title2",
+                    "adresse": "Adresse2",
+                    "description": "Description1",
+                    "date": "Date2",
+                    "active": true,
                     "role": "Participant"
+                },
+                {
+                    "id": "0003",
+                    "title": "Title3",
+                    "adresse": "Adresse3",
+                    "description": "Description3",
+                    "date": "Date3",
+                    "active": true,
+                    "role": "Participant"
+                }
+            ],
+            "cardInfos": [
+                {
+                    "id": "id1",
+                    "userId": "1",
+                    "username": "Username1",
+                    "cardNumber": 123478231011121,
+                    "expirationDate": "01/01",
+                    "cvc": 456
+                },
+                {
+                    "id": "id2",
+                    "userId": "1",
+                    "username": "Username1",
+                    "cardNumber": 124145763682888,
+                    "expirationDate": "01/03",
+                    "cvc": 123
                 }
             ],
             "hobbies": [
@@ -105,18 +153,29 @@
             "events": [
                 {
                     "id": "0001",
+                    "title": "Title1",
+                    "adresse": "Adresse1",
+                    "description": "Description1",
+                    "date": "Date1",
+                    "active": true,
                     "role": "Participant"
                 },
                 {
                     "id": "0002",
-                    "role": "Participant"
-                },
-                {
-                    "id": "0003",
+                    "title": "Title2",
+                    "adresse": "Adresse2",
+                    "description": "Description1",
+                    "date": "Date2",
+                    "active": true,
                     "role": "Organisateur"
                 },
                 {
-                    "id": "0004",
+                    "id": "0003",
+                    "title": "Title3",
+                    "adresse": "Adresse3",
+                    "description": "Description3",
+                    "date": "Date3",
+                    "active": true,
                     "role": "Participant"
                 }
             ],
@@ -134,6 +193,7 @@
             ],
             "region": "Marseille"
         },
+        
         {
             "id": "4",
             "pseudo": "Mathieu",
@@ -144,19 +204,48 @@
             "events": [
                 {
                     "id": "0001",
+                    "title": "Title1",
+                    "adresse": "Adresse1",
+                    "description": "Description1",
+                    "date": "Date1",
+                    "active": true,
                     "role": "Participant"
                 },
                 {
                     "id": "0002",
+                    "title": "Title2",
+                    "adresse": "Adresse2",
+                    "description": "Description1",
+                    "date": "Date2",
+                    "active": true,
                     "role": "Participant"
                 },
                 {
                     "id": "0003",
-                    "role": "Participant"
+                    "title": "Title3",
+                    "adresse": "Adresse3",
+                    "description": "Description3",
+                    "date": "Date3",
+                    "active": true,
+                    "role": "Organisateur"
+                }
+            ],
+            "cardInfos": [
+                {
+                    "id": "id1",
+                    "userId": "1",
+                    "username": "Username1",
+                    "cardNumber": 123456786411121,
+                    "expirationDate": "01/01",
+                    "cvc": 456
                 },
                 {
-                    "id": "0004",
-                    "role": "Organisateur"
+                    "id": "id2",
+                    "userId": "1",
+                    "username": "Username1",
+                    "cardNumber": 124142463282888,
+                    "expirationDate": "01/03",
+                    "cvc": 123
                 }
             ],
             "hobbies": [
@@ -216,5 +305,24 @@
             "eventId": "0001",
             "date": "2021-09-22T15:00:00"
         }
+    ],
+    "regions": [
+        "hautdefrance",
+        "iledefrance",
+        "limousin",
+        "auvergne"
+    ],
+    "hobbies": [
+        "sport",
+        "cinema",
+        "litterature",
+        "art",
+        "football",
+        "sport",
+        "vélo",
+        "Tricot",
+        "cinema",
+        "promenade",
+        "natation"
     ]
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { FormControl } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
-import { User } from '../models/User.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-signup',
@@ -10,11 +9,13 @@ import { User } from '../models/User.model';
   styleUrls: ['./login-signup.component.css']
 })
 export class LoginSignupComponent implements OnInit {
+
   emailValue = new FormControl("");
   passwordValue = new FormControl("");
+
   error: boolean = false;
 
-  constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,10 +29,6 @@ export class LoginSignupComponent implements OnInit {
     } else {
       this.error = true;
     }
-  }
-
-  register(user: User) {
-    this.userService.appendUser(user);
   }
 
 }

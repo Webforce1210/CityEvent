@@ -31,9 +31,9 @@ export class ProfilComponent implements OnInit {
       if (this.user.cover !== null) {
         this.styles.background = `center / cover no-repeat url(/assets/avatars/${this.user.cover})`;
       }
-      const eventIds: number[] = [];
+      const eventIds: string[] = [];
       this.user.events.forEach(event => {
-        eventIds.push(parseInt(event.id));
+        eventIds.push(event.id);
       });
       this.events = this.eventService.getEventsById(eventIds);
     } catch (error) {

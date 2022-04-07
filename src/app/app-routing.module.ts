@@ -15,6 +15,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ProfilComponent } from './profil/profil.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginSignupComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
   },
   {
     path: "mes_activites/:userid",

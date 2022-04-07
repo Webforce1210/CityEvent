@@ -10,9 +10,7 @@ export class EventActivitiesService {
 
   constructor() { }
 
-  lastEvents: EventActivity[]=myData.lastActivities;
-
-
+  lastEvents: EventActivity[] = myData.lastActivities;
 
   getEventById(id: string): EventActivity {
     const data = this.lastEvents.find(event => event.id === id);
@@ -26,7 +24,7 @@ export class EventActivitiesService {
     }
   }
 
-  getEventsById(eventsId: number[]): EventActivity[] {
+  getEventsById(eventsId: any[]): EventActivity[] {
     const events: EventActivity[] = [];
     this.lastEvents.forEach(element => {
       const id = parseInt(element.id);
@@ -39,4 +37,3 @@ export class EventActivitiesService {
     return events;
   }
 }
-

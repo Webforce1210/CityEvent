@@ -3,11 +3,12 @@ export class EventActivity {
     title: string;
     adresse: string ="";
     description: string = "";
-    date:Date;
+    date: string = "";
+    active: boolean = true;
+    role: string = "Participant";
 
     constructor(id: string = "", title: string = "") {
         this.id = id;
         this.title = title;
-        this.date = new Date();
     }
 }
