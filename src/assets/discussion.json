@@ -1,0 +1,36 @@
+{
+    "discussion":[{
+        "id":"1",
+        "userid":["1","2"],
+        "messages":[{
+            "id":"1",
+            "userid":"1",
+            "message":"hello World",
+            "date":"2021-09-18T15:00:00"
+        },{            
+            "id":"2",
+            "userid":"2",
+            "message":"Bonjour",
+            "date":"2021-09-18T15:00:00"}]
+    },
+    {
+        "id":"2",
+        "userid":["1","2","3"],
+        "messages":[{
+            "id":"1",
+            "userid":"1",
+            "message":"mess3",
+            "date":"2021-09-18T15:00:00"
+        },{            
+            "id":"2",
+            "userid":"2",
+            "message":"MESS4",
+            "date":"2021-09-18T15:00:00"},
+        {
+            "id":"3",
+            "userid":"3",
+            "message":"MESS5fuaegoalfa",
+            "date":"2021-09-18T15:00:00"
+        }]
+    }]
+}

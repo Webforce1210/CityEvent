@@ -1,4 +1,4 @@
-<app-navbar [userId]="userId"> </app-navbar>
+<app-navbar [userId]="userId"></app-navbar>
 <div>
     <div class="text-center row">
 
@@ -10,9 +10,11 @@
             <input class="form-control col-5" type="search" placeholder="Search" aria-label="Search">
         </div>
 
-        <div>
+        <div *ngFor="let discu of mydiscussion"  class="mt-3">
             <div>
-                <button type="button" class="btn btn-primary">Banana</button>
+                <p>{{dest.pseudo}}</p>
+                <p></p>
+                <button type="button" class="btn btn-primary">{{listMessage}}</button>
             </div>
         </div>
         <button type="button" class="btn btn-light">Contact</button>
