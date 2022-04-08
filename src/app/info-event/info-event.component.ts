@@ -39,6 +39,7 @@ export class InfoEventComponent implements OnInit {
       this.participants = this.userService.findEventParticipants(this.event.id);
       this.messages = this.messageService.findEventMessages(this.event.id);
     }
+    console.log(this.event);
   }
 
   appendMessage() {
