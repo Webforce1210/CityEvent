@@ -17,7 +17,7 @@ import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
   {
-    path: "home",
+    path: "",
     component: AccueilComponent
   },
   {

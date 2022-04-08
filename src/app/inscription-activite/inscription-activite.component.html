@@ -1,5 +1,60 @@
 <app-navbar></app-navbar>
 
-<p>inscription-activite works!</p>
+<div class="innerDivBody" *ngIf="!paiementButton">
+    <h1>Participer a l'activité</h1>
+    <div class="innerDivDetails">
+        <div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nom</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nom" [formControl] ="nom">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Prenom</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Prenom" [formControl] ="prenom">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Lieu</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Lieu" [formControl] ="lieu"></textarea>
+            </div>    
+                <div>
+                    <p>Aimez vous les sensations fortes?</p>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <label for="oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <label for="non">Non</label>
+                    </div>
+                    <p>Avez vous deja fait du sport?</p>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <label for="oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <label for="non">Non</label>
+                    </div>
+                    <p>Aimez vous le sport?</p>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <label for="oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <label for="non">Non</label>
+                    </div>
+                </div>
+                <div>
+                    <p class="innerDivBottomText">* La participation a cet evenement nécéssite un don de 5€ minimum.</p>
+                </div>
+        </div>
+    </div>
+    <div>
+        <button href="#" id="paymentButton" class="btn btn-outline-danger" (click)= "goToPayment()">Payer et Participer</button>
+    </div>
+</div>
+
+<app-paiement *ngIf="paiementButton"></app-paiement>
 
 <app-footer></app-footer>
