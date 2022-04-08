@@ -1,1 +1,122 @@
-<p>compte works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" onclick="window.history.back()">
+            <i class="bi bi-x"></i>
+        </button>
+        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="d-flex">
+            <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Connexion</button>
+            <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Inscription</button>
+        </form>
+        </div> -->
+    </div>
+</nav>
+<!-- <h2>Add/ Remove Attributes </h2>
+<input #inputElement type='text'>
+    <button (click)="addAttribute()">Set Attribute</button>
+    <button (click)="removeAttribute()">Remove Attribute</button> -->
+    
+    <header  class="container-fluid" [style.background]="'url(./../assets/avatars/'+useravat+')'" [style.backgroundSize]="'cover'">
+
+    <div class="container d-flex">
+        
+            <button class="btn btn-danger" type="button" (click)="toggleReadonly()"> <!--onclick="modif()" removeAttribute()-->
+                    <i class="bi bi-pencil-square" id="btn_modif"></i>
+            </button>
+
+        <div class="row justify-content-around">
+            
+            <div class="col-3 align-self-center container">
+                <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil" alt="image de profil">
+                <!-- <input type="file" src="../../assets/img/{{user ? user.avatar : ''}}" alt="" [readonly]="isReadonly"> -->
+            </div>
+            <div class="col-7 align-self-center" id="inputgroup">
+                <div class="input-group">
+                    <div class="input-group-text bg-transparent border-0 no-margin-right">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+                    <input #inputElement type="text" class="form-control user bg-transparent border-0 text-white" value="{{user ? user.pseudo: ''}}" [readonly]="isReadonly">
+                </div>
+                
+
+                <div class="input-group">
+                    <div class="input-group-text bg-transparent border-0 no-margin-right">
+                        <i class="bi bi-geo"></i>
+                    </div>
+                    <input #inputElement type="text" class="form-control user textarea-autosize bg-transparent border-0 text-white" value="{{user ? user.region: ''}}"  [readonly]="isReadonly">
+                </div>
+
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</header>
+
+
+
+<div id="boutons" class="d-flex justify-content-around flex-wrap inline-block">
+<!-- <button *ngFor="let logoActivity of Users"></button> -->
+<!-- {{user ? user.hobbies : ''}} -->
+<div class="d-flex no-wrap" *ngIf="user !== null">
+    <div *ngFor="let hobby of user.hobbies">
+        <button class="btn btn-light btn-activity">
+            <i [ngClass]="[
+                logoHobby[hobby]
+            ]"
+            ></i>
+            <!-- [ngClass]="[ isFavorite ? 'btn-success' : 'btn-danger']"
+logoHobby[hobby] -->
+        </button>
+    </div>
+</div>
+
+    <!-- <button class="btn btn-light btn-activity"><i class="bi bi-tsunami icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-wrench icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-wind icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-robot icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-life-preserver icon-activity"></i></button> -->
+    <!-- <button class="btn btn-light btn-activity"><i class="bi bi-music-note-beamed icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-incognito icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-film icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-dribbble icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-dice-6 icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-controller icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-cart icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-camera-reels icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-camera icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-boombox icon-activity"></i></button>
+    <button class="btn btn-light btn-activity"><i class="bi bi-binoculars icon-activity"></i></button> -->
+</div>
+
+
+
+<div class="d-grid gap-2 m-2 col-11 mx-auto">
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/mes_activites/:userid']"> <i class="bi bi-activity"></i> Activités </button>
+    <!-- routerLink Activity -->
+
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/messages','dfjdfjd']"><i class="bi bi-envelope"></i> Messages</button>
+    <!-- routerLink Messagerie -->
+
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/parametres/:userid']">
+        <i class="bi bi-tools"></i> Paramètres</button>
+    <!-- routerLink Params -->
+
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/paiement/:userid']"><i class="bi bi-credit-card"></i> Paiements</button>
+    <!-- routerLink Paiement -->
+
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/contact/:userid']"> <i class="bi bi-patch-question"></i> Aides</button>
+    <!-- routerLink Aides -->
+
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['']"> <i class="bi bi-power"></i> Déconnexion </button>
+    <!-- routerLink Accueil -->
+
+</div>
+
+
+<div class="fixe-bottom">
+    <img src="/assets/img/pngegg.png" alt="logo" id="footerimg">
+</div>

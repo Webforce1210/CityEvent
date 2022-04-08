@@ -13,6 +13,11 @@ export class User {
         public id: string,
         public pseudo: string,
         public events: EventActivity[],
-        public avatar?: string | null
+        public avatar?: string | null,
+        public name?: string
+        
+        // public region: string,
+        // public cover: string,
+        // public hobbies?: string
     ) { }
 }

@@ -35,8 +35,8 @@
             "pseudo": "John",
             "email": "email1@gmail.com",
             "password": "password1",
-            "avatar": null,
-            "cover": null,
+            "avatar": "benoit.jpg",
+            "cover": "wallpaper.jpg",
             "events": [
                 {
                     "id": "0001",

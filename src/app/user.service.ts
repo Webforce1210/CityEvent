@@ -13,7 +13,11 @@ export class UserService {
     this.users = myData.usersList;
   }
 
-  findUserById(id: string): User {
+  findUserById(id: string| null): User{ // | null
+
+    if( id === null){
+      throw new Error("id is null");
+    }
     const user = this.users.find(user => user.id === id);
     if (user === undefined) {
       throw new Error('User not found');
@@ -37,7 +41,7 @@ export class UserService {
       if (events.length > 0) {
         const item = events.find(event => event.id === eventId);
         if (item !== undefined) {
-          users.push(new User(user.id, user.pseudo, [item], user.avatar));
+          users.push(new User(user.id, user.pseudo,  [item], user.avatar));
         }
       }
     });
@@ -68,4 +72,34 @@ export class UserService {
   findRegions() {
     return myData.regions;
   }
+
+  //import Flo
+  initialized: boolean = false;
+  init() {
+    if(this.initialized) {
+      return;
+    } 
+    console.log(myData.usersList);
+    
+    // for (const user of myData.usersList) {
+    //   this.users.push(new User( user.pseudo, user.region, user.avatar, user.cover, user.hobbies))
+    //   //user.id,
+    // }
+    this.initialized = true;
+    };
+
+    update(user:User | null){
+
+      for(let i=0;i<this.users.length;i++){
+        if(user && user.id ===this.users[i].id ){
+          this.users[i].pseudo = user.pseudo;
+          this.users[i].region= user.region;
+        }
+      }
+    
+    }
+
+
+
+
 }
