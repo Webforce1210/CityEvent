@@ -30,10 +30,12 @@ export class UserService {
   findEventParticipants(eventId: any): User[] {
     const users: User[] = [];
 
+
+
     this.users.forEach(user => {
       const events = user.events;
       if (events.length > 0) {
-        const item = events.find(event => parseInt(event.id) === eventId);
+        const item = events.find(event => event.id === eventId);
         if (item !== undefined) {
           users.push(new User(user.id, user.pseudo, [item], user.avatar));
         }
