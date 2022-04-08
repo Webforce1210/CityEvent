@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Discussion } from '../models/Discussion.model';
 import { UserService } from '../user.service';
 import { MessagePrive } from '../models/MessagePrive.model';
-import { table } from 'console';
 import { User } from '../models/User.model';
 
 
@@ -17,29 +16,29 @@ import { User } from '../models/User.model';
 export class MessagesComponent implements OnInit {
 
   userId!:string;
-  discId!:string;
   mydiscussion!:Discussion[];
   mydiscussionmessages!:MessagePrive[];
-  listMessage:string[]=[];
-  destids!:string[];
-  dest!:User;
+  destids:string[]=[];
   destid!:string;
-  disclast!:string
+  tabdiscu: MessagePrive[]=[];
+  dest: User[]=[];
+  name:Discussion[]=[];
 
 
   constructor(private router: Router,
     private storage:UserActivitiesService, 
     private route :ActivatedRoute, 
-    private userService: UserService) { }
+    private userService: UserService) {}
   
   ngOnInit(): void {
     this.checkSession();
     this.mydiscussion = this.storage.AfficheDiscussion(this.userId);
     this.trieDisc();
-    this.dest = this.userService.findUserById(this.destid);
+    this.name.push(this.nameDisc())
+    console.log(this.name)
   }
 
-  private checkSession(): void {
+  private checkSession():void {
     try {
       const id: string = this.getRouterParam('userid');
       this.userId = this.userService.findUserById(id).id;
@@ -51,25 +50,27 @@ export class MessagesComponent implements OnInit {
     return this.route.snapshot.params[param];
   }
   
-  public LastMessages(discId:string){
-    let Message = this.mydiscussionmessages[this.mydiscussionmessages.length-1].message
-    return Message;
-    }
+  public LastMessages(){
+    this.tabdiscu.push(this.mydiscussionmessages[this.mydiscussionmessages.length-1]);
+  }
 
-private trieDisc(){
-  this.mydiscussion.forEach(e => {
-  this.mydiscussionmessages = this.storage.findDiscussionMessages(e.id);
-  this.discId = e.id;
-  this.destids = e.userid
-    this.destids.forEach(elem=>{
-      if(elem != this.userId ){
-        this.destid = elem
-      }
-    })
-  });
-  console.log(this.mydiscussion)
-}
 
+  private trieDisc(){
+    this.mydiscussion.forEach(e => {
+      this.mydiscussionmessages = this.storage.findDiscussionMessages(e.id);
+      this.LastMessages();
+    });
+  }
+
+  private nameDisc(){ 
+    let discussion = new Discussion()
+    this.mydiscussion.forEach(e => {
+      discussion.name = e.name
+      discussion.id = e.id
+      discussion.messages=e.messages
+    });return discussion
+    
+  }
 }
 
 

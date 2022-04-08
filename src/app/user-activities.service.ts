@@ -31,11 +31,32 @@ export class UserActivitiesService {
     return messages;
     
   }
+
+  public NameDiscussion(discId:string){
+    let name:string[]=[];
+    this.discussion.forEach(element=>{
+      if(element.id === discId){
+        if(element.name !== undefined){
+          name.push(element.name)
+        }else{
+          element.userid.forEach(elem => {
+            name.push(this.userService.findUserById(elem).pseudo)
+          });
+        }
+      }
+      
+    });
+    return name;
+  }
+
+
+
 // recuperation de toutes les discussion de l'utilisateur
   public AfficheDiscussion(UserId:string){
     const mydiscussion:Discussion [] = [];
     this.discussion.forEach(element => {
       if(element.userid.includes(UserId)){
+        
         mydiscussion.push(element);
       }
     });
