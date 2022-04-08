@@ -19,6 +19,7 @@ export class EventActivitiesService {
       const event = new EventActivity(data.id, data.title);
       event.adresse = data.adresse;
       event.description = data.description;
+      event.date = data.date;
       return event;
     }
   }

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { EventActivity } from '../models/EventActivity.model';
-import uniqid from 'uniqid';
+let uniqid = require('uniqid');
 import { NOMEM } from 'dns';
 
 @Component({
@@ -13,18 +13,18 @@ import { NOMEM } from 'dns';
 
 export class PaiementComponent implements OnInit {
 
-nomPrenom = new FormControl("");
-numeroDeCarte = new FormControl("");
-dateDexpiration = new FormControl("");
-cvc = new FormControl("");
+  nomPrenom = new FormControl("");
+  numeroDeCarte = new FormControl("");
+  dateDexpiration = new FormControl("");
+  cvc = new FormControl("");
 
-@Input() nom: string = "";
-@Input() prenom: string = "";
-@Input() lieu: string = "";
+  @Input() nom: string = "";
+  @Input() prenom: string = "";
+  @Input() lieu: string = "";
 
-  
+
   constructor() { }
-  
+
   ngOnInit(): void {
   }
 

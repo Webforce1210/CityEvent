@@ -4,7 +4,7 @@ import { EventActivity } from "./EventActivity.model";
 export class User {
     hobbies: string[] = [];
     stars: number[] = [0, 0, 0, 0, 0];
-    cover?: string;
+    cover?: string | null;
     region?: string;
     email?: string;
     password?: string;
@@ -12,7 +12,7 @@ export class User {
     constructor(
         public id: string,
         public pseudo: string,
-        public events: { id: string, role: string }[],
-        public avatar?: string
+        public events: EventActivity[],
+        public avatar?: string | null
     ) { }
 }
