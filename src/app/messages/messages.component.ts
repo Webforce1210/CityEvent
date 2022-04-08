@@ -19,11 +19,12 @@ export class MessagesComponent implements OnInit {
   userId!:string;
   discId!:string;
   mydiscussion!:Discussion[];
-  mylast!:MessagePrive[];
+  mydiscussionmessages!:MessagePrive[];
   listMessage:string[]=[];
   destids!:string[];
   dest!:User;
   destid!:string;
+  disclast!:string
 
 
   constructor(private router: Router,
@@ -32,11 +33,9 @@ export class MessagesComponent implements OnInit {
     private userService: UserService) { }
   
   ngOnInit(): void {
-
     this.checkSession();
     this.mydiscussion = this.storage.AfficheDiscussion(this.userId);
     this.trieDisc();
-    console.log(this.listMessage)
     this.dest = this.userService.findUserById(this.destid);
   }
 
@@ -52,25 +51,23 @@ export class MessagesComponent implements OnInit {
     return this.route.snapshot.params[param];
   }
   
-  public LastMessages(){
-    let Message = this.mylast[this.mylast.length-1].message
+  public LastMessages(discId:string){
+    let Message = this.mydiscussionmessages[this.mydiscussionmessages.length-1].message
     return Message;
     }
 
 private trieDisc(){
   this.mydiscussion.forEach(e => {
-
-    this.mylast = this.storage.findDiscussionMessages(e.id);
-
-    this.discId = e.id;
-    this.destids = e.userid
+  this.mydiscussionmessages = this.storage.findDiscussionMessages(e.id);
+  this.discId = e.id;
+  this.destids = e.userid
     this.destids.forEach(elem=>{
       if(elem != this.userId ){
         this.destid = elem
       }
     })
-    this.listMessage.push(this.LastMessages());
   });
+  console.log(this.mydiscussion)
 }
 
 }

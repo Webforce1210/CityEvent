@@ -29,6 +29,7 @@ export class UserActivitiesService {
       }
     });
     return messages;
+    
   }
 // recuperation de toutes les discussion de l'utilisateur
   public AfficheDiscussion(UserId:string){
