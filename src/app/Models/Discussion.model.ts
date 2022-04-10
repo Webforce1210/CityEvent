@@ -6,6 +6,7 @@ export class Discussion {
     name?:string;
     userid:string[]=[];
     messages:MessagePrive[]=[];
+    lastmessages?:string;
 
     constructor (id:string=""){
         this.id=id;

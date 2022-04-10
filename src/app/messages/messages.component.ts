@@ -5,6 +5,7 @@ import { Discussion } from '../models/Discussion.model';
 import { UserService } from '../user.service';
 import { MessagePrive } from '../models/MessagePrive.model';
 import { User } from '../models/User.model';
+import { takeLast } from 'rxjs';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class MessagesComponent implements OnInit {
   tabdiscu: MessagePrive[]=[];
   dest: User[]=[];
   name:Discussion[]=[];
+  takelastmess!:MessagePrive;
 
 
   constructor(private router: Router,
@@ -33,10 +35,10 @@ export class MessagesComponent implements OnInit {
   ngOnInit(): void {
     this.checkSession();
     this.mydiscussion = this.storage.AfficheDiscussion(this.userId);
+    console.log(this.mydiscussion);
     this.trieDisc();
-    this.name.push(this.nameDisc())
-    console.log(this.name)
-  }
+    
+}
 
   private checkSession():void {
     try {
@@ -51,25 +53,14 @@ export class MessagesComponent implements OnInit {
   }
   
   public LastMessages(){
-    this.tabdiscu.push(this.mydiscussionmessages[this.mydiscussionmessages.length-1]);
+    return this.mydiscussionmessages[this.mydiscussionmessages.length-1]
   }
 
 
   private trieDisc(){
     this.mydiscussion.forEach(e => {
       this.mydiscussionmessages = this.storage.findDiscussionMessages(e.id);
-      this.LastMessages();
     });
-  }
-
-  private nameDisc(){ 
-    let discussion = new Discussion()
-    this.mydiscussion.forEach(e => {
-      discussion.name = e.name
-      discussion.id = e.id
-      discussion.messages=e.messages
-    });return discussion
-    
   }
 }
 

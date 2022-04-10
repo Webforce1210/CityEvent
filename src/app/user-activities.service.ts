@@ -56,8 +56,15 @@ export class UserActivitiesService {
     const mydiscussion:Discussion [] = [];
     this.discussion.forEach(element => {
       if(element.userid.includes(UserId)){
-        
         mydiscussion.push(element);
+        if(element.name===undefined){
+          element.userid.forEach(e => {
+            if(e!==UserId){
+              element.name = this.userService.findUserById(e).pseudo
+            }
+          });
+        }
+        element.lastmessages=element.messages[element.messages.length-1].message
       }
     });
     return mydiscussion;
