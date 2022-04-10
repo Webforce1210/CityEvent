@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+#filtre {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    padding: 5%;
+    background-color: darkgray;
+    border-radius: 10px;
+}
+select {
+    margin: 10px 0;
+}

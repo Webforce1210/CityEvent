@@ -1,1 +1,33 @@
 <p>fil-dactu works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" [routerLink]="['/compte', userId]">
+          <i class="bi bi-x"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="d-flex">
+          <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Connexion</button>
+          <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Inscription</button>
+      </form>
+      </div>
+  </div>
+</nav>
+
+
+<div id="filtre">
+  <h3 class="d-flex justify-content-center">Filtrer par :</h3>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Lieu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Activité</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
