@@ -4,6 +4,7 @@ export class EventActivity {
     adresse: string ="";
     description: string = "";
     date: string = "";
+    activity:string="";
     active: boolean = true;
     role: string = "Participant";
 

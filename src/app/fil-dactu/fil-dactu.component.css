@@ -1,15 +1,18 @@
 * {
     box-sizing: border-box;
 }
-
+/* div filtre */
 #filtre {
     width: 80%;
     margin-left: 10%;
     margin-top: 10%;
     padding: 5%;
-    background-color: darkgray;
+    background-color: rgb(225, 222, 222);
     border-radius: 10px;
+    box-shadow: 8px 8px 8px  rgb(191, 191, 191);
 }
 select {
     margin: 10px 0;
 }
+/* div résultats */
+

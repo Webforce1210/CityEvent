@@ -1,6 +1,22 @@
+/* réinitialisation pour les dimensions */
 * {
     box-sizing: border-box;
 }
+
+/* redimensionnement du bouton x du compte pour avoir la meme taille que le hamburger */
+#xbtn{
+    height: 2em;
+    width: 2.8em;
+    padding: 0;
+}
+.bi-x{
+    font-size: 2.5rem;
+    margin: 0;
+    position: relative;
+    top:-2px
+}
+
+/* dimensionnement du header */
 header {
     /* background: url(../../assets/img/wallpaper.jpg) no-repeat center / cover;  */
     min-height: 110px;

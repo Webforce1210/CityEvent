@@ -1,9 +1,8 @@
-<p>fil-dactu works!</p>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
       <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" [routerLink]="['/compte', userId]">
-          <i class="bi bi-x"></i>
+      <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]">
+          <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <form class="d-flex">
@@ -30,4 +29,25 @@
     <option value="2">Two</option>
     <option value="3">Three</option>
   </select>
+</div>
+<br>
+<div class="d-flex justify-content-center" *ngFor="let item of allEvents">
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ item.title }}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
+    <li class="list-group-item">{{item.adresse}}</li>
+    <li class="list-group-item">{{item.activity}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+<br>
 </div>

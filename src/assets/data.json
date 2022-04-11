@@ -5,28 +5,32 @@
             "title": "Event1",
             "adresse": "Lieu1",
             "description": "Description1",
-            "date": "2021-12-18T15:00:00"
+            "date": "2021-12-18T15:00:00",
+            "activity": "basket"
         },
         {
             "id": "0002",
             "title": "Event2",
             "adresse": "Lieu2",
             "description": "Description2",
-            "date": "2022-01-18T15:00:00"
+            "date": "2022-01-18T15:00:00",
+            "activity": "plongee"
         },
         {
             "id": "0003",
             "title": "Event3",
             "adresse": "Lieu3",
             "description": "Description3",
-            "date": "2022-03-18T15:00:00"
+            "date": "2022-03-18T15:00:00",
+            "activity": "foot"
         },
         {
             "id": "0004",
             "title": "Event4",
             "adresse": "Lieu4",
             "description": "Description4",
-            "date": "2022-09-18T15:00:00"
+            "date": "2022-09-18T15:00:00",
+            "activity": "theatre"
         }
     ],
     "usersList": [

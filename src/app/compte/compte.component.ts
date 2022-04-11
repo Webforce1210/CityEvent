@@ -3,8 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../models/User.model';
 import { UserService } from '../user.service';
 import { FormControl } from '@angular/forms';
+import { isEmpty } from 'rxjs';
 import { userInfo } from 'os';
-import { MesActivitesComponent } from '../mes-activites/mes-activites.component';
+
 
 @Component({
   selector: 'app-compte',
@@ -12,12 +13,7 @@ import { MesActivitesComponent } from '../mes-activites/mes-activites.component'
   styleUrls: ['./compte.component.css']
 })
 
-// Hobbies:[]=[{sport ='"<i class="bi bi-incognito icon-activity"></i>"'}
-//   ,
-//   cinema='"<i class="bi bi-incognito icon-activity"></i>"',
-//   art:'<i class="bi bi-incognito icon-activity"></i>',
-//   litterature:<i class="bi bi-incognito icon-activity"></i>"
-// ]
+
 
 
 export class CompteComponent implements OnInit {
@@ -44,6 +40,9 @@ export class CompteComponent implements OnInit {
   nameValue = new FormControl ("");
 
   regionValue = new FormControl ("");
+  // useravat2:string ='';
+  useravat2:string | null | undefined = null;
+  
 
   ngOnInit(): void {
     this.storage.init();
@@ -57,16 +56,24 @@ export class CompteComponent implements OnInit {
   })
     console.log(this.user);
     console.log(this.user?.hobbies);
-    // console.log((this.user?.hobbies[1]));
-
-  
+    console.log((this.user?.cover));
+    // console.log(this.useravat2);
+    this.useravat2 = this.user?.cover;
+   console.log(this.useravat2);
+   
     
   }
-
+// getBackground(){
+//   if(this.user?.cover == ''){
+//     return this.useravat = 'wallpaper.jpg';
+//   } else{
+//     this.useravat = this.user?.cover;
+//   }
+// }
 
     
-  useravat : string= "wallpaper.jpg"; // faire l'acquisition en dynamique
-  useravat2 : string = "wallpaper2.jpg";
+  useravat : string = "wallpaper.jpg"; // faire l'acquisition en dynamique
+  
   
   
   
@@ -81,7 +88,7 @@ export class CompteComponent implements OnInit {
   //   }
 
   // }
-  updateTask(){
+  updateTask(){ // A finir
 
     if(this.user){
     this.user.pseudo = this.nameValue.value;
@@ -93,18 +100,19 @@ export class CompteComponent implements OnInit {
     this.router.navigate(['/compte/1']);
     }
   
-addAttribute() {
-  this.renderer.setAttribute(this.inputElement.nativeElement, 'readOnly', 'isReadOnly' );
-}
-removeAttribute() {
-  this.renderer.removeAttribute(this.inputElement.nativeElement, 'readOnly');
-}
+// addAttribute() {
+//   this.renderer.setAttribute(this.inputElement.nativeElement, 'readOnly', 'isReadOnly' );
+// }
+// removeAttribute() {
+//   this.renderer.removeAttribute(this.inputElement.nativeElement, 'readOnly');
+// }
 
 
   
 // bouton modification  -> popup modifier ou voir en tant que invité
 toggleReadonly() {
   this.isReadonly = !this.isReadonly;
+
 }
 
 }
