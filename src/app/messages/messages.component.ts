@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { UserActivitiesService } from '../user-activities.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Discussion } from '../models/Discussion.model';
 import { UserService } from '../user.service';
 import { MessagePrive } from '../models/MessagePrive.model';
 import { User } from '../models/User.model';
-import { takeLast } from 'rxjs';
 
 
 @Component({

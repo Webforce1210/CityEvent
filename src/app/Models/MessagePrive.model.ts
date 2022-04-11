@@ -8,7 +8,7 @@ export class MessagePrive {
         public id: string,
         public userid: string,
         public message: string,
-        public date: string,
+        public date: string
     ) {
         this.createdAt = new Date(date);
     }

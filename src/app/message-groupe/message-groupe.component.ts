@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Discussion } from '../models/Discussion.model';
 import { MessagePrive } from '../models/MessagePrive.model';
 import { UserActivitiesService } from '../user-activities.service';
-let uniqid =require('uniqid');
+import { UserService } from '../user.service';
+let uniqid= require('uniqid');
 
 @Component({
   selector: 'app-message-groupe',
@@ -13,7 +14,7 @@ let uniqid =require('uniqid');
 })
 export class MessageGroupeComponent implements OnInit {
 
-  userId!: string;
+  userId!:string;
   messages:MessagePrive[]=[];
   newMessageValue= new FormControl("");
   discussion!:Discussion;
@@ -21,14 +22,33 @@ export class MessageGroupeComponent implements OnInit {
 
   constructor(
     private userService:UserActivitiesService,
-    private route:ActivatedRoute) {
+    private route:ActivatedRoute,
+    private storage: UserService,
+    private router:Router) {
 
   }
   ngOnInit(): void {
+    this.checkSession();
     this.findDiscussion();
-    this.messages=this.userService.findDiscussionMessages(this.discussion.id)
+    this.messages = this.userService.findDiscussionMessages(this.discussion.id)
+    console.log(this.messages);
+    this.ATTENTION();
+    
   }
 
+  private checkSession():void {
+    try {
+      const id: string = this.getRouterParam('userid');
+      this.userId = this.storage.findUserById(id).id;
+    } catch (error) {
+      this.router.navigateByUrl('/login');
+    }
+  }
+  ATTENTION(){
+    this.messages.forEach(e=>{
+      console.log(e.date);
+    })
+  }
   addMessage(){
     const message = new MessagePrive(
       uniqid(),
