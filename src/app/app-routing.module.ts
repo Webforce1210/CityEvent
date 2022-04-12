@@ -6,6 +6,7 @@ import { CompteComponent } from './compte/compte.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreationEventComponent } from './creation-event/creation-event.component';
 import { FilDactuComponent } from './fil-dactu/fil-dactu.component';
+import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
 import { InfoEventComponent } from './info-event/info-event.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: "info_event/:eventid/:userid",
     component: InfoEventComponent
+  },
+  {
+    path: "info_event/:eventid",
+    component: InfoEventOfflineComponent
   },
   {
     path: "inscription_activite/:userid",
