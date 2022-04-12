@@ -6,6 +6,7 @@ import { CompteComponent } from './compte/compte.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreationEventComponent } from './creation-event/creation-event.component';
 import { FilDactuComponent } from './fil-dactu/fil-dactu.component';
+import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
 import { InfoEventComponent } from './info-event/info-event.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
@@ -14,6 +15,7 @@ import { PaiementComponent } from './paiement/paiement.component';
 import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ProfilComponent } from './profil/profil.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -41,8 +43,12 @@ const routes: Routes = [
     component: FilDactuComponent
   },
   {
-    path: "info_event/:userid",
+    path: "info_event/:eventid/:userid",
     component: InfoEventComponent
+  },
+  {
+    path: "info_event/:eventid",
+    component: InfoEventOfflineComponent
   },
   {
     path: "inscription_activite/:userid",
@@ -51,6 +57,10 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginSignupComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
   },
   {
     path: "mes_activites/:userid",

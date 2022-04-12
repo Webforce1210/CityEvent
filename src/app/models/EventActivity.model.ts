@@ -1,19 +1,15 @@
 export class EventActivity {
-    id: string="";
-   title: string="";
-    type?: string ="";
-    adresse?: string = "";
-    date1?: string="";
-    date2?: string ="";
-    time1?: string="";
-    time2?: string="";
-    participants?: string="";
-    budget?: string="";
-description: string="";
+    id: string;
+    title: string;
+    adresse: string ="";
+    description: string = "";
+    date: string = "";
+    active: boolean = true;
+    role: string = "Participant";
 
-    constructor(id: string="") {
+    constructor(id: string = "", title: string = "") {
         this.id = id;
- 
+        this.title = title;
 
     }
 }

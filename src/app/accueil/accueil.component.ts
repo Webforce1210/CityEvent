@@ -17,7 +17,9 @@ lastEvents: EventActivity[] = [];
 
   ngOnInit(): void {
     this.lastEvents = this.EventServices.lastEvents;
-  }
+
+
+}
 
 
 }

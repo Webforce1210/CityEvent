@@ -1,0 +1,21 @@
+.footer {
+    height: 250px;
+}
+
+.footer, .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.logo > img {
+    width: 50px;
+}
