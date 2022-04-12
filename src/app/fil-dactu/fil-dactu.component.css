@@ -4,15 +4,31 @@
 /* div filtre */
 #filtre {
     width: 80%;
-    margin-left: 10%;
-    margin-top: 10%;
+    margin: 10% 10%;
     padding: 5%;
     background-color: rgb(225, 222, 222);
     border-radius: 10px;
     box-shadow: 8px 8px 8px  rgb(191, 191, 191);
 }
-select {
-    margin: 10px 0;
+label{
+    width: 90px;
 }
-/* div résultats */
-
+/* select {
+    margin: 10px 0;
+} */
+/* div cards */
+.card{
+    margin: 10px 5px;
+    max-width: 18rem;
+    /* border-top: 2px solid black; */
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px  rgb(191, 191, 191);
+    background-color: rgb(234, 234, 234);
+}
+.card-img-top{
+    border-radius: 10px 10px 0 0;
+}
+#infosActivite{
+    margin: 0px 20px 20px 20px;
+    border-radius: 10px;
+}

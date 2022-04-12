@@ -6,6 +6,7 @@ import { EventActivity } from '../models/EventActivity.model';
 import { EventActivitiesService } from '../event-activities.service';
 
 
+
 @Component({
   selector: 'app-fil-dactu',
   templateUrl: './fil-dactu.component.html',
@@ -31,25 +32,25 @@ export class FilDactuComponent implements OnInit {
 
     this.allEvents = this.EventServices.lastEvents;
 
-    this.user.events.forEach(event => {
-      const date = new Date(event.date);
-      const now = new Date();
-      if (date < now) {
-        this.pastActivities.push(event);
-      } else {
-        this.futurActivities.push(event);
-      }
-    });
+    // this.user.events.forEach(event => {
+    //   const date = new Date(event.date);
+    //   const now = new Date();
+    //   if (date < now) {
+    //     this.pastActivities.push(event);
+    //   } else {
+    //     this.futurActivities.push(event);
+    //   }
+    // });
   }
 
-  changeStatus(event: any, eventId: string) {
-    event.preventDefault();
-    this.user.events.forEach(activity => {
-      if (activity.id === eventId) {
-        activity.active = !activity.active;
-      }
-    });
-  }
+  // changeStatus(event: any, eventId: string) {
+  //   event.preventDefault();
+  //   this.user.events.forEach(activity => {
+  //     if (activity.id === eventId) {
+  //       activity.active = !activity.active;
+  //     }
+  //   });
+  // }
 
   private checkSession(): void {
     try {

@@ -1,17 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" onclick="window.history.back()" id="xbtn">
+        <button class="navbar-toggler" type="button" onclick="window.history.back()" id="xbtn" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-x"></i> 
         </button>
-        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="d-flex">
-            <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Connexion</button>
-            <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Inscription</button>
-        </form>
-        </div> -->
     </div>
 </nav>
+
+
+
 <!-- <h2>Add/ Remove Attributes </h2>
 <input #inputElement type='text'>
     <button (click)="addAttribute()">Set Attribute</button>

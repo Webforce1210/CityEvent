@@ -1,53 +1,115 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]">
+      <a class="navbar-brand" href="#"><img src="../../assets/img/pngegg.png" style="width: 20px;"></a>
+      <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex">
-          <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Connexion</button>
-          <button class="btn btn-outline-success m-2" type="submit" [routerLink]="['/login']">Inscription</button>
-      </form>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/mes_activites/:userid']">Activités</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/messages/:userid']">Messages</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/parametres/:userid']">Paramètres</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/paiement/:userid']">Paiements</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/contact/:userid']">Aides</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['']">Déconnexion</a>
+          </li>
+      </ul>
+      
       </div>
   </div>
 </nav>
 
 
-<div id="filtre">
+<!-- <div id="filtre">
   <h3 class="d-flex justify-content-center">Filtrer par :</h3>
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Lieu</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
+  
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Lieu :</label>
+    <select class="form-select" id="inputGroupSelect01">
+      <option selected>Tous</option>
+      <option value="{{optionLieu.adresse}}" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
+    </select>
+  </div>
 
-  <select class="form-select" aria-label="Default select example">
-    <option selected>Activité</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect02">Activité :</label>
+    <select class="form-select" id="inputGroupSelect02">
+      <option selected>Toutes</option>
+      <option value="{{optionActivite.activity}}" *ngFor="let optionActivite of allEvents">{{optionActivite.activity}}</option>
+    </select>
+  </div>
 </div>
 <br>
-<div class="d-flex justify-content-center" *ngFor="let item of allEvents">
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
+<div class="d-flex flex-wrap justify-content-around">
+
+<div class="card border border-primary" *ngFor="let item of allEvents">
+  <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title text-center">{{ item.title }}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{item.description}}</p>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
-    <li class="list-group-item">{{item.adresse}}</li>
-    <li class="list-group-item">{{item.activity}}</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+  <div id="infosActivite">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
+      <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
+      <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
+    </ul>
   </div>
 </div>
+
+</div> -->
+
+<div id="filtre">
+  <h3 class="d-flex justify-content-center">Filtrer par :</h3>
+  
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Lieu :</label>
+    <select class="form-select" id="inputGroupSelect01">
+      <option selected>Tous</option>
+      <option value="Lieuchoisi" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
+    </select>
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect02">Activité :</label>
+    <select class="form-select" id="inputGroupSelect02">
+      <option selected>Toutes</option>
+      <option value="{{optionActivite.activity}}" *ngFor="let optionActivite of allEvents">{{optionActivite.activity}}</option>
+    </select>
+  </div>
+</div>
+<!-- </ng-container> -->
 <br>
+<ng-container *ngFor="let item of allEvents">
+<div class="d-flex flex-wrap justify-content-around">
+  <!-- <ng-container *ngFor="let item of allEvents" *ngIf="item.adresse"> -->
+<div class="card border border-primary">
+  <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ item.title }}</h5>
+    <!-- <p class="card-text">{{item.description}}</p> -->
+  </div>
+  <div id="infosActivite">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
+      <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
+      <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
+    </ul>
+  </div>
 </div>
+
+</div>
+</ng-container>
