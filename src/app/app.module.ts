@@ -15,12 +15,13 @@ import { MesActivitesComponent } from './mes-activites/mes-activites.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
-import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { MessageGroupeComponent } from './message-groupe/message-groupe.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -38,17 +39,18 @@ import { RegisterComponent } from './register/register.component';
     MessageGroupeComponent,
     ParametresComponent,
     PaiementComponent,
-    ContactComponent,
     InscriptionActiviteComponent,
     NavbarComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

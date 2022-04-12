@@ -34,7 +34,6 @@ export class MessagesComponent implements OnInit {
   ngOnInit(): void {
     this.checkSession();
     this.mydiscussion = this.storage.AfficheDiscussion(this.userId);
-    console.log(this.mydiscussion);
     this.trieDisc();
     
 }

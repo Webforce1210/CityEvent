@@ -30,10 +30,7 @@ export class MessageGroupeComponent implements OnInit {
   ngOnInit(): void {
     this.checkSession();
     this.findDiscussion();
-    this.messages = this.userService.findDiscussionMessages(this.discussion.id)
-    console.log(this.messages);
-    this.ATTENTION();
-    
+    this.messages = this.userService.findDiscussionMessages(this.discussion.id);
   }
 
   private checkSession():void {
@@ -43,11 +40,6 @@ export class MessageGroupeComponent implements OnInit {
     } catch (error) {
       this.router.navigateByUrl('/login');
     }
-  }
-  ATTENTION(){
-    this.messages.forEach(e=>{
-      console.log(e.date);
-    })
   }
   addMessage(){
     const message = new MessagePrive(
@@ -68,8 +60,6 @@ export class MessageGroupeComponent implements OnInit {
 
   private getRouterParam(param: string): string {
     return this.route.snapshot.params[param];
-
   }
-
 }
 

@@ -6,16 +6,12 @@
             <h1>Messagerie</h1>
         </div>
 
-        <div>
-            <input class="form-control col-5" type="search" placeholder="Search" aria-label="Search">
-        </div>
-
         <div *ngFor="let discu of mydiscussion"  class="mt-3">  
             <div>
                 <p>{{discu.name}}</p>
                 <button type="button" class="btn btn-primary" [routerLink]="['/messages/',userId,discu.id]">{{discu.lastmessages}}</button>
             </div>
         </div>
-        <button type="button" class="btn btn-light">Contact</button>
+        <button type="button" class="btn btn-light" [routerLink]="['/contact/',userId]">Contact</button>
     </div>
 </div>

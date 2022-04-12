@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
-import { ListContact } from './models/Contact.model';
-let myData=require("../assets/contact.json");
+import { Contact } from './models/Contact.model';
+import { User } from './models/User.model';
+import { UserService } from './user.service';
+let myData = require("../assets/contact.json");
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
-  constructor() { }
+  Contacts:Contact[]=myData.listcontact;
 
-  Contacts:ListContact[]=myData.ListContact;
+  constructor(private userService: UserService) {}
 
-  getContactByid(id:string){
-
-    for(let contact of this.Contacts){
-      if(id === contact.id ){
-        console.log(contact)
-
+  addContactbyid(id:string){
+let listContact:User[]=[]
+    this.Contacts.forEach(element => {
+      if(element.propid===id){
+        element.idcontacts.forEach(e=> {
+          listContact.push(this.userService.findUserById(e))
+        });
       }
-    }
+    });return listContact
   }
 }

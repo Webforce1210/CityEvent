@@ -3,6 +3,7 @@ import { Discussion } from './models/Discussion.model';
 import { MessagePrive } from './models/MessagePrive.model';
 import { UserService } from './user.service';
 let myData = require("../assets/discussion.json");
+let uniqid=require('uniqid');
 
 
 @Injectable({
@@ -24,9 +25,12 @@ export class UserActivitiesService {
   public findDiscussionMessages(discId:string){
     let messages: MessagePrive[] = [];
     this.discussion.forEach(element=>{
+      element.messages.forEach(e => {
+        e.author = this.userService.findUserById(e.userid)
+      })
       if(element.id === discId ){
         messages = element.messages
-      }
+      };
     });
     return messages;
     
@@ -50,6 +54,13 @@ export class UserActivitiesService {
   }
 
 
+ public createDiscussion(destid:string){
+  let discussion:Discussion
+  discussion= new Discussion(
+    uniqid(),
+  )
+  discussion.userid=[this.UserId,destid]
+ }
 
 // recuperation de toutes les discussion de l'utilisateur
   public AfficheDiscussion(UserId:string){

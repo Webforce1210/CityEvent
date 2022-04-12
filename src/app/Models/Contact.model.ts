@@ -1,13 +1,13 @@
 import { User } from "./User.model";
 
 
-export class ListContact{
+export class Contact{
 
     id:string="";
-    users:User[]=[];
+    propid!:string;
+    idcontacts:string[]=[];
 
     constructor (){
-        
     }
 
 }

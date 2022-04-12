@@ -2,42 +2,21 @@
 
     "listcontact":[
         {
-            "id":"01",
-            "propid":3,
-            "contacts":[
-                {
-                    "id":1,
-                    "pseudo":"John",
-                    "avatar": null
-                },
-                {
-                    "id":2,
-                    "pseudo":"Jane",
-                    "avatar": "jane.png"
-                }
-            ]
+            "id":"1",
+            "propid":"3",
+            "idcontacts":["1","2"]
         },
         {
-            "id":"02",
-            "propid":4,
-            "contacts":[
-                {
-                    "id":1,
-                    "pseudo":"John",
-                    "avatar": null
-                },
-                {
-                    "id":2,
-                    "pseudo":"Jane",
-                    "avatar": "jane.png"
-                },
-                {
-                    "id":3,
-                    "pseudo":"Kelly",
-                    "avatar": null
-                }
-            ]
+            "id":"2",
+            "propid":"4",
+            "idcontacts":["1","2","3"]
+        },
+        {
+            "id":"3",
+            "propid":"1",
+            "idcontacts":["2","3"]
         }
         
+
     ]
 }
