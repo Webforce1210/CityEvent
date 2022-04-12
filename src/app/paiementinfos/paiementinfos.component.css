@@ -27,7 +27,22 @@
 
 }
 
+#navbar-default {
 
+    height: 100px;
+}
+
+
+
+#mobile-navbar, #navbar-mobile {
+
+    height: 100px;
+
+}
+
+#logo {
+    width: 100px;    
+    }
 
 #navbar-mobile {
 
@@ -163,7 +178,7 @@ margin: 20px auto;
 
 #creditcard {
 
-    margin : 0 auto;
+
     max-width: 500px;
 }
 
@@ -179,23 +194,43 @@ text-align: center;
     width: 500px;
     background-color: lightgrey;
     margin-bottom: 100px;
-    margin : 0 auto;
     
 }
 
-.card-info > h4 {
+h4 {
 
     font-size : 20px;
 }
 
-
+.btn-nav {
+    margin: 10px;
+    
+}
 .cardinfotext {
 
+width: 75%;
+margin: 0  auto;
+justify-content: center;
     background-color: white;
+    width: 90%;
+
 border-radius: 10px;
 text-align: center;
 }
 
 .logo2 {
     width: 100px;
+}
+
+input {
+
+    width: 75%;
+    margin: 0  auto;
+}
+
+#message {
+
+
+   color: red;
+
 }

@@ -18,6 +18,9 @@ import { PaiementComponent } from './paiement/paiement.component';
 import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
+import { FormsModule } from '@angular/forms';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +45,8 @@ import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component'
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule, 
+    CreditCardDirectivesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
