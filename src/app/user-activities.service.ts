@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Discussion } from './models/Discussion.model';
 import { MessagePrive } from './models/MessagePrive.model';
 import { UserService } from './user.service';
@@ -18,7 +19,7 @@ export class UserActivitiesService {
   mydiscussion:[] = [];
   lastMessage!:MessagePrive;
 
-  constructor(private userService:UserService){
+  constructor(private userService:UserService,private router:Router){
     this.discussion = myData.discussion;
   }
 // recuperation des messages de la discussion avec son id
@@ -54,12 +55,15 @@ export class UserActivitiesService {
   }
 
 
- public createDiscussion(destid:string){
+ public createDiscussion(userid:string,destid:string){
   let discussion:Discussion
+  let discussionid!:string
   discussion= new Discussion(
     uniqid(),
   )
-  discussion.userid=[this.UserId,destid]
+  discussionid = discussion.id
+  discussion.userid = [this.UserId,destid]
+  this.router.navigateByUrl(`/messages/${userid}/${discussionid}`);
  }
 
 // recuperation de toutes les discussion de l'utilisateur

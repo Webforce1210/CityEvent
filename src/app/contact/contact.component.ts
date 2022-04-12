@@ -53,9 +53,7 @@ export class ContactComponent implements OnInit {
         this.router.navigateByUrl(`/messages/${this.userId}/${discussionid}`);
       }
       else{
-
-        this.boo=false
-        console.log(this.boo);
+        this.messageService.createDiscussion(this.userId,destid)
       }
       
     });
