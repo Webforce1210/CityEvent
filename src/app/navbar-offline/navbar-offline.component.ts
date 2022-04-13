@@ -9,6 +9,11 @@ export class NavbarOfflineComponent implements OnInit {
 
   constructor() { }
 
+  previous(){
+    window.history.back();
+  }
+
+
   ngOnInit(): void {
   }
 
