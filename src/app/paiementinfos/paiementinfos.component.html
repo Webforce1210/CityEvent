@@ -1,0 +1,190 @@
+
+<div class="container-fluid bg-light" id="navbar-default">
+  <div class="row" >
+    <div class="col-9">
+      <img class="logo2" src="/assets/pinclipart_1.png" *ngIf="screen1">
+      <img class="logo2" src="/assets/pinclipart_1.png" *ngIf="screen2 || screen3" (click)="retour()">
+
+    </div>
+
+  <div class="col-3 d-flex justify-content-end align-items-center py-4 ">
+        <button [routerLink]="['/']" type="button" class="btn btn-outline-primary btn-nav">Accueil</button>
+        <button [routerLink]="['/profil/:userid']"type ="button" class="btn btn-outline-primary btn-nav">Profil</button>
+                     
+                 
+                   </div>
+               
+                 </div>
+         
+</div>
+
+
+
+<div id="mobile-navbar">
+<div class="container-fluid bg-light " id="navbar-mobile">
+    <div class="row">
+      <div class="col-9">
+         <img class="logo2" src="/assets/pinclipart_1.png" *ngIf="screen1">
+         <img class="logo2" src="/assets/pinclipart_1.png" *ngIf="screen2 || screen3" (click)="retour()">
+      </div>
+     <div class="col-3 py-4">
+        <div class="row" id="default-nav-buttons">
+            <div class="dropdown">
+                <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="/assets/icons8-menu-24.png">
+                </button>
+                <div class="dropdown-menu" >
+                  <a class="dropdown-item" href="#">Accueil</a>
+                  <a class="dropdown-item" href="#">Profil</a>
+                </div>
+              </div>
+                        
+                        <div>
+                      </div>
+                    </div>
+                    </div>
+            </div>
+</div>
+
+<!-- main -->
+
+<div *ngIf="cardmodify" class="container">
+
+<div class="text-center" id="message"></div>
+
+<div class="row d-flex justify-content-center ">
+
+  <h3 id="paiementinfo">Mode de paiement</h3>
+
+  <div class="col-lg-6 col-md-12">
+
+  <img  id="creditcard" src="/assets/creditcard.png">
+  </div>
+
+  <div class="col-lg-6 col-md-12">
+
+  <div class="rounded card-info mx-auto d-block ">
+
+  <form [formGroup]="cardForm" (ngSubmit)="changeCard()">
+
+<h4>Nom</h4>
+<input type="text" value="{{creditcardinfo.Name}}"  class="form-control" formControlName="cardNameValue" placeholder="Nom sur la carte" >
+<h4>Numéro de carte</h4>
+<input type="text" value="{{creditcardinfo.cardNumber}}" id="cc-number" class="form-control" id="cardNumberValue" formControlName="cardNumberValue" placeholder="0000 0000 0000 0000" type="tel" autocomplete="cc-number" ccNumber >
+<h4>Date d'expiration</h4>
+<input type="text" value="{{creditcardinfo.expirationDate}}" id="cc-exp-date"  class="form-control" formControlName="cardExpirationValue" placeholder="MM/AAAA" type="tel" autocomplete="cc-exp" ccExp>
+<h4>CVV /CVC</h4>
+<input type="text" value="{{creditcardinfo.securityCode}}" id="cc-cvc" class="form-control" formControlName="cardSecurityCodeValue" placeholder="000"  type="tel" autocomplete="off" ccCvc>
+
+<div class="d-flex flex-row justify-content-center">
+<div class="buttonscard"><button type="submit" id="majbtn"class="btn btn-primary m-4" (click)="findInvalidControls()">Valider</button></div>
+<div class="buttonscard "><button class="btn btn-danger m-4" (click)="paiement()">Retour</button></div>
+</div>
+
+</form>
+
+</div>
+</div>
+</div> 
+</div> 
+
+
+
+<!-- Menu mode de paiement -->
+
+<div class="container-fluid" *ngIf="screen1">
+<div class="paiement row align-items-center">
+    <div class="col-4"><img class="cb" src="/assets/card.png"></div>
+    <div class="col-8" (click)="paiement()"><h2>Mode de paiement</h2></div>
+</div>
+</div>
+
+
+<div class="container-fluid historique" *ngIf="screen1">
+<div class="paiement row align-items-center">
+    <div class="col-4" ><img class="calendar" src="/assets/calendrier.png"></div>
+    <div class="col-8"><h2 (click)="historique()">Historique de paiement</h2></div>
+</div>
+</div>
+
+<div class="container"*ngIf="screen3">
+<h3 class="historytitle">Historique de paiement</h3> 
+ <div class="history" *ngFor="let history of historiquePaiement">
+   <ul class="historylist">
+    <h4>Nom de l'activité : {{history.nomActivite}}</h4>
+<li>Date : {{history.Date}}</li>
+<li>Prix : {{history.somme}}</li>
+</ul>
+<hr>
+</div>
+</div>
+
+
+
+
+
+<div *ngIf="screen2" class="container">
+  <div class="text-center" id="messagesuccess"></div>
+
+  <h3 id="paiementinfo">Mode de paiement</h3>
+
+  <div class="row justify-content-center">
+ 
+  <div class="col-lg-6 col-md-12">
+    <img  id="creditcard" src="/assets/creditcard.png"></div>
+
+
+<div class="col-lg-6 col-md-12">
+  <div *ngIf="creditcardinfo.Name; else noCard" class="rounded card-info mx-auto d-block">
+<h4>Nom</h4>
+<p class="cardinfotext">{{creditcardinfo.Name}}</p>
+<h4>Numéro de carte</h4>
+<p class="cardinfotext" pattern="[0-9]" >{{creditcardinfo.cardNumber}}</p>
+<h4>Date d'expiration</h4>
+<p class="cardinfotext">{{creditcardinfo.expirationDate}}</p>
+<h4>CVV /CVC</h4>
+<p class="cardinfotext">{{creditcardinfo.securityCode}}</p>
+<div class="d-flex flex-row justify-content-center">
+<div class="buttonscard"><button class="btn btn-primary m-4" (click)="changeCardInfo()">Modifier</button></div>
+<div class="buttonscard "><button class="btn btn-danger m-4" (click)="deleteCard()">Supprimer</button></div>
+  </div>
+  </div>
+</div>
+
+<ng-template #noCard>
+<div class="col-lg-6 col-md-12">
+  <div class="rounded card-info mx-auto d-flex flex-column align-items-center justify-content-center">
+ <h4>Aucun moyen de paiement enregistré.</h4>
+
+<button class="d-block btn btn-primary m-4" (click)="changeCardInfo()">Ajouter</button>
+
+</div>
+
+</div>
+</ng-template>
+
+</div>
+</div>
+
+
+
+
+
+  <!-- footer -->
+  
+
+  <footer>
+    <div>
+    <div id="quick-menu" class="footermenu">
+        <div id="home"> <img class="icons" [routerLink]="['/']" src="/assets/logo.png"> </div>
+        <div id="map"><img class="icons" [routerLink]="['/map/:userid']" src="/assets/map.png"> </div>
+        <div id="event-creation"><img [routerLink]="['/creation_event/:userid']" class="icons" src="/assets/plus.png"></div>
+    </div>
+    
+    
+        <div class="footer-menu" id="footer2"><img id="logo-footer" align-middle src="/assets/logo.png"></div>
+    
+    
+      </div>
+    </footer>
+

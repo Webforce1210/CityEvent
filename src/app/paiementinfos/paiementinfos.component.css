@@ -1,0 +1,236 @@
+@media only screen and (max-width: 768px)
+{
+
+    #navbar-default {
+        display: none;
+        }
+
+.logo {
+    width: 100px;    
+    }
+
+.logo2 {
+    width: 80px;  
+    margin-top: 20px;  
+    }
+
+}
+
+
+
+@media only screen and (min-width: 769px) {
+
+
+#navbar-mobile {
+    display: none;
+}
+
+}
+
+#navbar-default {
+
+    height: 100px;
+}
+
+
+
+#mobile-navbar, #navbar-mobile {
+
+    height: 100px;
+
+}
+
+#logo {
+    width: 100px;    
+    }
+
+#navbar-mobile {
+
+    height: 100px;
+
+}
+
+#logo {
+    width: 100px;    
+    }
+
+    .logo2 {
+        width: 80px;  
+        margin-top: 20px;  
+        }
+
+#navbar-default {
+
+    height: 100px;
+}
+
+
+#afficher {
+
+    background-color: #262A8D;
+    border: #262A8D;
+}
+
+#quick-menu
+
+{
+
+    height: 80px;
+    background-color: #e4e4e4;
+}
+
+#quick-menu {
+display: flex;
+text-align: center;
+justify-content: center;
+
+
+
+}
+
+.icons {
+    width: 40px;
+    margin: 20px;
+
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    position : fixed;
+    bottom: 0;
+
+
+}
+
+#footer2 {
+
+    padding-top : 50px;
+    padding-bottom : 50px;
+    background-color: black;
+
+}
+
+.footermenu {
+
+    position: relative;
+}
+
+
+#logo-footer {
+border-radius: 100%;
+padding: 10px;
+width: 60px;
+background-color: white;
+}
+
+
+.paiement {
+
+
+    border-bottom: 2px solid black;
+    margin-top: 0px;
+
+}
+
+.cb {
+
+    width: 150px;
+}
+
+.calendar {
+
+    width: 100px;
+    margin : 30px;
+
+    
+}
+
+.paiement h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 20px;
+}
+
+
+.history {
+
+margin: 20px auto;
+    max-width: 1000px;
+    
+}
+
+.historytitle {
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.history h4 {
+    font-size: 20px;
+
+}
+
+
+
+#creditcard {
+
+
+    max-width: 500px;
+}
+
+#paiementinfo {
+    text-align: center;
+    margin: 30px;
+}
+
+.card-info {
+text-align: center;
+
+    height: 300px;
+    width: 500px;
+    background-color: lightgrey;
+    margin-bottom: 100px;
+    
+}
+
+h4 {
+
+    font-size : 20px;
+}
+
+.btn-nav {
+    margin: 10px;
+    
+}
+.cardinfotext {
+
+width: 75%;
+margin: 0  auto;
+justify-content: center;
+    background-color: white;
+    width: 90%;
+
+border-radius: 10px;
+text-align: center;
+}
+
+.logo2 {
+    width: 100px;
+}
+
+input {
+
+    width: 75%;
+    margin: 0  auto;
+}
+
+#message {
+
+
+   color: red;
+
+}

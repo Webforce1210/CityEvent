@@ -1,32 +1,37 @@
 {
+
     "lastActivities": [
         {
             "id": "0001",
             "title": "Event1",
             "adresse": "Lieu1",
             "description": "Description1",
-            "date": "2021-12-18T15:00:00"
+            "date": "2021-12-18T15:00:00",
+            "activity": "basket"
         },
         {
             "id": "0002",
             "title": "Event2",
             "adresse": "Lieu2",
             "description": "Description2",
-            "date": "2022-01-18T15:00:00"
+            "date": "2022-01-18T15:00:00",
+            "activity": "plongee"
         },
         {
             "id": "0003",
             "title": "Event3",
             "adresse": "Lieu3",
             "description": "Description3",
-            "date": "2022-03-18T15:00:00"
+            "date": "2022-03-18T15:00:00",
+            "activity": "foot"
         },
         {
             "id": "0004",
             "title": "Event4",
             "adresse": "Lieu4",
             "description": "Description4",
-            "date": "2022-09-18T15:00:00"
+            "date": "2022-09-18T15:00:00",
+            "activity": "theatre"
         }
     ],
     "usersList": [
@@ -35,8 +40,8 @@
             "pseudo": "John",
             "email": "email1@gmail.com",
             "password": "password1",
-            "avatar": null,
-            "cover": null,
+            "avatar": "benoit.jpg",
+            "cover": "wallpaper.jpg",
             "events": [
                 {
                     "id": "0001",
@@ -77,13 +82,13 @@
                 0,
                 0
             ],
-            "region": "Paris"
+            "region": "hautdefrance"
         },
         {
             "id": "2",
             "pseudo": "Jane",
             "avatar": "jane.png",
-            "cover": "cover_user.png",
+            "cover": "wallpaper2.jpg",
             "email": "email2@gmail.com",
             "password": "password2",
             "events": [
@@ -144,7 +149,7 @@
                 1,
                 1
             ],
-            "region": "Picardie"
+            "region": "iledefrance"
         },
         {
             "id": "3",
@@ -194,7 +199,7 @@
                 1,
                 0
             ],
-            "region": "Marseille"
+            "region": "auvergne"
         },
         {
             "id": "4",
@@ -261,7 +266,7 @@
                 0,
                 0
             ],
-            "region": "Vendée"
+            "region": "limousin"
         }
     ],
     "messagesChat": [
@@ -313,6 +318,7 @@
         "iledefrance",
         "limousin",
         "auvergne"
+        
     ],
     "hobbies": [
         "sport",
@@ -320,11 +326,20 @@
         "litterature",
         "art",
         "football",
-        "sport",
-        "vélo",
-        "Tricot",
-        "cinema",
+        "velo",
+        "tricot",
         "promenade",
         "natation"
-    ]
+    ],
+    "logoHobby" : {
+        "sport":"bi bi-heart-pulse icon-activity",
+        "cinema":"bi bi-film icon-activity",
+        "litterature": "bi bi-pen icon-activity",
+        "art":"bi bi-palette icon-activity",
+        "football":"bi bi-circle icon-activity",
+        "velo": "bi bi-bicycle icon-activity",
+        "Tricot":"bi bi-slack icon-activity",
+        "promenade":"bi bi-image icon-activity",
+        "natation":"bi bi-tsunami icon-activity"
+    }
 }

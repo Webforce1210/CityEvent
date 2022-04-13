@@ -1,0 +1,11 @@
+.avatar-container{
+    display:flex;
+}
+.avatar{
+    width: 75px;
+    height: 75px;
+}
+.pseudo{
+    margin-left: 10px;
+    align-self: center;
+}
