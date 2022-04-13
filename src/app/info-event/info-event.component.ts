@@ -57,7 +57,6 @@ export class InfoEventComponent implements OnInit {
       this.messageService.addMessage(message);
       this.messages.push(message);
       this.newMessageValue = new FormControl("");
-
     }
   }
 

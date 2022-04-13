@@ -95,7 +95,7 @@ export class PaiementinfosComponent implements OnInit {
   }
 
   findInvalidControls() {
-    const invalid = [];
+    const invalid:string[] = [];
     const controls = this.cardForm.controls;
     for (const name in controls) {
       if (controls[name].invalid) {

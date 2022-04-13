@@ -32,6 +32,13 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { ContactComponent } from './contact/contact.component';
 
 
+// import florent pour format date
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { ViewBandeauComponent } from './view-bandeau/view-bandeau.component';
+import { EditBandeauComponent } from './edit-bandeau/edit-bandeau.component';
+registerLocaleData(localeFr, 'fr');
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +60,8 @@ import { ContactComponent } from './contact/contact.component';
     NavbarComponent,
     FooterComponent,
     RegisterComponent,
+    ViewBandeauComponent,
+    EditBandeauComponent,
     ContactComponent,
     InfoEventOfflineComponent,
     NavbarOfflineComponent

@@ -11,6 +11,7 @@ export class EventActivity {
     participants?: string;
     description: string = "";
     date: string = "";
+    activity:string="";
     active: boolean = true;
     role: string = "Participant";
 
