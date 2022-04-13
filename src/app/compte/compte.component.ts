@@ -3,8 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../models/User.model';
 import { UserService } from '../user.service';
 import { FormControl } from '@angular/forms';
-import { isEmpty } from 'rxjs';
-import { userInfo } from 'os';
+let myLogo = require("../../assets/data.json");
 
 
 @Component({
@@ -20,28 +19,32 @@ export class CompteComponent implements OnInit {
   
   @ViewChild('inputElement', { static: false })
   inputElement!: ElementRef;
+  @ViewChild('btn', { static: false })
+  btn!: ElementRef;
 
 
-  constructor(private router:Router, private route:ActivatedRoute, private storage: UserService, private renderer: Renderer2) { }
-
-  logoHobby = {
-    surf : "bi bi-tsunami icon-activity",
-    science : "bi bi-robot icon-activity",
-    navigation : "bi bi-life-preserver icon-activity",
-    football: "bi bi-dribbble icon-activity",
-    sport: "bi bi-reddit icon-activity"
+  constructor(private router:Router, private route:ActivatedRoute, private storage: UserService, private renderer: Renderer2) {
+    this.logoHobby = myLogo.logoHobby;
   }
 
+  // logoHobby = {
+  //   surf : "bi bi-tsunami icon-activity",
+  //   science : "bi bi-robot icon-activity",
+  //   navigation : "bi bi-life-preserver icon-activity",
+  //   football: "bi bi-dribbble icon-activity",
+  //   sport: "bi bi-reddit icon-activity"
+  // }
+logoHobby: any[];
   // sport= "bi bi-dribbble icon-activity";
   user:User|null=null;
   // isReadOnly:boolean = true;
   isReadonly:boolean = true;
-
+  isView:boolean = true;
   nameValue = new FormControl ("");
 
   regionValue = new FormControl ("");
   // useravat2:string ='';
-  useravat2:string | null | undefined = null;
+  useravat2:string | null = null;
   
 
   ngOnInit(): void {
@@ -54,13 +57,13 @@ export class CompteComponent implements OnInit {
     this.nameValue.setValue(this.user.pseudo);
     this.regionValue.setValue(this.user.region);
   })
-    console.log(this.user);
-    console.log(this.user?.hobbies);
-    console.log((this.user?.cover));
+    // console.log(this.user);
+    // console.log(this.user?.hobbies);
+    // console.log((this.user?.cover));
     // console.log(this.useravat2);
-    this.useravat2 = this.user?.cover;
-   console.log(this.useravat2);
-   
+    this.useravat2 = this.user?.cover ? this.user.cover : 'wallpaper.jpg';
+  //  console.log(this.useravat2);
+  
     
   }
 // getBackground(){
@@ -76,7 +79,13 @@ export class CompteComponent implements OnInit {
   
   
   
+  switc(){
+    
+    this.isView = !this.isView;
+    // this.renderer.removeClass(this.btn.nativeElement, 'btn-danger');
+    // this.renderer.addClass(this.btn.nativeElement, 'btn-success');
   
+}
   
   
 

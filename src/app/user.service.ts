@@ -79,7 +79,7 @@ export class UserService {
     if(this.initialized) {
       return;
     } 
-    console.log(myData.usersList);
+    // console.log(myData.usersList);
     
     // for (const user of myData.usersList) {
     //   this.users.push(new User( user.pseudo, user.region, user.avatar, user.cover, user.hobbies))

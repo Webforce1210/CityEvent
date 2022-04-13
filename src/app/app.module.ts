@@ -25,6 +25,8 @@ import { RegisterComponent } from './register/register.component';
 // import florent pour format date
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ViewBandeauComponent } from './view-bandeau/view-bandeau.component';
+import { EditBandeauComponent } from './edit-bandeau/edit-bandeau.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -46,7 +48,9 @@ registerLocaleData(localeFr, 'fr');
     InscriptionActiviteComponent,
     NavbarComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    ViewBandeauComponent,
+    EditBandeauComponent
   ],
   imports: [
     BrowserModule,

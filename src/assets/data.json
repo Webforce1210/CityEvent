@@ -81,7 +81,7 @@
                 0,
                 0
             ],
-            "region": "Paris"
+            "region": "hautdefrance"
         },
         {
             "id": "2",
@@ -148,7 +148,7 @@
                 1,
                 1
             ],
-            "region": "Picardie"
+            "region": "iledefrance"
         },
         {
             "id": "3",
@@ -198,7 +198,7 @@
                 1,
                 0
             ],
-            "region": "Marseille"
+            "region": "auvergne"
         },
         {
             "id": "4",
@@ -265,7 +265,7 @@
                 0,
                 0
             ],
-            "region": "Vendée"
+            "region": "limousin"
         }
     ],
     "messagesChat": [
@@ -317,6 +317,7 @@
         "iledefrance",
         "limousin",
         "auvergne"
+        
     ],
     "hobbies": [
         "sport",
@@ -324,11 +325,20 @@
         "litterature",
         "art",
         "football",
-        "sport",
-        "vélo",
-        "Tricot",
-        "cinema",
+        "velo",
+        "tricot",
         "promenade",
         "natation"
-    ]
+    ],
+    "logoHobby" : {
+        "sport":"bi bi-heart-pulse icon-activity",
+        "cinema":"bi bi-film icon-activity",
+        "litterature": "bi bi-pen icon-activity",
+        "art":"bi bi-palette icon-activity",
+        "football":"bi bi-circle icon-activity",
+        "velo": "bi bi-bicycle icon-activity",
+        "Tricot":"bi bi-slack icon-activity",
+        "promenade":"bi bi-image icon-activity",
+        "natation":"bi bi-tsunami icon-activity"
+    }
 }

@@ -1,0 +1,54 @@
+/* réinitialisation pour les dimensions */
+* {
+    box-sizing: border-box;
+}
+
+/* redimensionnement du bouton x du compte pour avoir la meme taille que le hamburger */
+#xbtn{
+    height: 2em;
+    width: 2.8em;
+    padding: 0;
+}
+.bi-x{
+    font-size: 2.5rem;
+    margin: 0;
+    position: relative;
+    top:-2px
+}
+
+/* dimensionnement du header */
+header {
+    min-height: 110px;
+}
+.no-margin-right{
+    padding-right: 0;
+}
+#imgprofil{
+    border-radius: 100%; 
+    margin: 10%;
+    max-height: 6rem;
+}
+#boutons{
+    padding: 5px;
+}
+.bi-person-circle{
+    font-size: 1.5rem; 
+    color: rgb(255, 0, 234);
+}
+.bi-geo{
+    font-size: 1.5rem; 
+    color: orange;
+}
+#div-modif{
+    width: 1.3em;
+}
+.btn-danger{
+    padding: 0 5px;
+    position: absolute;
+    top: 40;
+    right: 2px;
+}
+#btn_modif{
+    font-size: 1rem;
+}
+
