@@ -31,6 +31,10 @@
                                     <p class="text mb-1">CVV/CVC</p> <input class="form-control mb-3 pt-2 " type="password" placeholder="123" [formControl] ="cvc" required>
                                 </div>
                             </div>
+                            <div>
+                                <input type="checkbox" (change)="checkCheckBoxValue($event)" id="savecard" name="savecard" value="saveCardInfos.value">
+                                <label for="savecard" style="font-style: italic; font-size: 13px;">Sauvegarder cette carte comme moyen de paiement.</label>
+                            </div>
                             <div class="col-12">
                                 <div class="btn btn-primary mb-3" (click) ="payer()"> <span class="ps-3">Payer</span> <span class="fas fa-arrow-right"></span> </div>
                             </div>

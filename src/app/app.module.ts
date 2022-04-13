@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -17,8 +18,15 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { MessageGroupeComponent } from './message-groupe/message-groupe.component';
+import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
+import { FormsModule } from '@angular/forms';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
+
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
+import { NavbarOfflineComponent } from './navbar-offline/navbar-offline.component';
 import { RegisterComponent } from './register/register.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { ContactComponent } from './contact/contact.component';
@@ -41,16 +49,21 @@ import { ContactComponent } from './contact/contact.component';
     ParametresComponent,
     PaiementComponent,
     InscriptionActiviteComponent,
+    PaiementinfosComponent,
     NavbarComponent,
     FooterComponent,
     RegisterComponent,
-    ContactComponent
+    ContactComponent,
+    InfoEventOfflineComponent,
+    NavbarOfflineComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule, 
+    CreditCardDirectivesModule,
     PickerModule
   ],
   providers: [],

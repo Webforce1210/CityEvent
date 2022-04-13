@@ -16,10 +16,10 @@ nom = new FormControl("");
 prenom = new FormControl("");
 lieu = new FormControl("");
 
-paiement: boolean = false;
+paiementButton: boolean = false;
 
 goToPayment(){
-  this.paiement = !this.paiement;
+  this.paiementButton = !this.paiementButton;
   console.log(this.nom.value, this.prenom.value, this.lieu.value);
 }
   ngOnInit(): void {

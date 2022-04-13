@@ -6,6 +6,7 @@ import { CompteComponent } from './compte/compte.component';
 import { ContactComponent } from './contact/contact.component';
 import { CreationEventComponent } from './creation-event/creation-event.component';
 import { FilDactuComponent } from './fil-dactu/fil-dactu.component';
+import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
 import { InfoEventComponent } from './info-event/info-event.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
@@ -13,6 +14,7 @@ import { MesActivitesComponent } from './mes-activites/mes-activites.component';
 import { MessageGroupeComponent } from './message-groupe/message-groupe.component';
 import { MessagesComponent } from './messages/messages.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RegisterComponent } from './register/register.component';
@@ -47,6 +49,10 @@ const routes: Routes = [
     component: InfoEventComponent
   },
   {
+    path: "info_event/:eventid",
+    component: InfoEventOfflineComponent
+  },
+  {
     path: "inscription_activite/:userid",
     component: InscriptionActiviteComponent
   },
@@ -73,6 +79,10 @@ const routes: Routes = [
   {
     path: "parametres/:userid",
     component: ParametresComponent
+  },
+  {
+    path: "parametres/paiementinfos/:userid",
+    component: PaiementinfosComponent
   },
   {
     path: "profil/:userid",

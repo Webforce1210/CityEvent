@@ -1,1 +1,142 @@
-<p>creation-event works!</p>
+    
+    <div class="container-fluid bg-light" id="navbar-default">
+        <div class="row" >
+          <div class="col-9">
+  <img id="logo" [routerLink]="['/map/:userid']" src="/assets/logo.png" *ngIf="screen1">
+  <img (click)="ecran1()" id="logo" src="/assets/pinclipart_1.png" *ngIf="screen2">
+
+          </div>
+
+         <div class="col-3 d-flex justify-content-end align-items-center py-4 ">
+               <button [routerLink]="['/']" type="button" class="btn btn-outline-primary">Accueil</button>
+               <button [routerLink]="['/profil/:userid']"type ="button" class="btn btn-outline-primary">Profil</button>
+                            
+                        
+                          </div>
+                      
+                        </div>
+                
+</div>
+
+<div id="mobile-navbar">
+    <div class="container-fluid bg-light " id="navbar-mobile">
+        <div class="row">
+          <div class="col-9">
+            <img id="logo" src="/assets/logo.png" *ngIf="screen1">
+            <img (click)="ecran1()" id="logo2" src="/assets/pinclipart_1.png" *ngIf="screen2">
+          </div>
+         <div class="col-3 py-4">
+            <div class="row" id="default-nav-buttons">
+                <div class="dropdown">
+                    <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="/assets/icons8-menu-24.png">
+                    </button>
+                    <div class="dropdown-menu" >
+                      <a class="dropdown-item" [routerLink]="['/']">Accueil</a>
+                      <a class="dropdown-item" [routerLink]="['/profil/:userid']">Profil</a>
+                    </div>
+                  </div>
+                            
+                            <div>
+                          </div>
+                        </div>
+                        </div>
+                </div>
+</div>
+
+
+<div id="cadre-contour" *ngIf="screen1">
+    <div id="cadre">
+        <h3 id="create-event">Création d'un événement</h3>
+        <div id="form">
+            <form id="formulaire">
+                <div class="form-group champ">
+                  <input type="text" class="form-control text-center" id="eventname" name="answer_a" placeholder="Nom de l'événement" [formControl]="eventNameValue">
+                </div>
+                <select class="form-select champ container-fluid text-center" id="select" [formControl]="selectTypeValue">
+                    <option value="">Type d'événement</option>
+                    <option value="Culture">Culture</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Gastronomie">Gastronomie</option>
+                  </select>
+                  <div class="form-group champ"> 
+    
+                    <input type="text" class="form-control text-center" id="event-address" value="" placeholder="Adresse de l'événement" [formControl]="addressValue">
+                  </div>
+
+
+                  <div class="form-group" id="datetime">            
+    <div class=" container-fluid my-4" id="date-picker">
+
+
+      <label for="select-date1">Date de début :</label>
+      <input type="date"  id="select-date1" class= "mx-4 datepicker" placeholder="Date de début" [formControl]="startDateValue">
+
+
+      <label  for="select-date2">Date de fin :</label>
+      <input type="date" id="select-date2" class= "mx-4 datepicker" placeholder="Date de fin (facultatif)" [formControl]="endDateValue">
+                </div>
+              </div>
+                
+                <div class="container-fluid" id="hour-picker">
+                              <label for="select-hour1">Heure de début :</label>
+                    <input type="time" size="2" class="mx-4 champ text-center" id="select-hour1"  min="00:00" max="23:59" required [formControl]="startTimeValue" >
+               
+              
+                    <label for="select-hour2">Heure de fin (facultatif) :</label>
+                    <input type="time" class=" mx-4 champ text-center" id="select-hour2" min="00:00" max="23:59" [formControl]="endTimeValue">
+                  </div> 
+    
+                  <div class="form-group champ text-center">
+                    <input type="text" class="form-control text-center" id="pax" placeholder="Nombre de participants" [formControl]="participantsValue">
+                  </div>
+    
+
+
+                  <div class="form-group champ">
+                    <input type="text" class="form-control text-center" id="budget" placeholder="Budget nécessaire" required [formControl]="priceValue">
+                  </div>
+              </form>
+    
+        </div>
+    
+        <div id="bouton-1">
+        <button (click)="ecran2()" type="button" class="btn btn-primary" id="bouton">Suivant</button>
+    </div>
+    </div>
+    </div>
+
+
+
+    <div id="cadre-contour"  *ngIf="screen2">
+        <div id="cadre">
+            <h3 id="create-event">Création d'un événement</h3>
+            <div id="form">
+                <form>
+                  <div class="form-group champ" id="text-area">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Description de l'événement" [formControl]="descriptionValue"></textarea>
+                  </div>   
+                  </form>
+        
+            </div>
+        
+            <div id="bouton-1">
+            <button (click)="add()"type="button" class="btn btn-primary" id="bouton">Créer</button>
+        </div>
+        </div>
+        </div>
+        
+    
+    
+    <div class="carte" id="carte"></div>
+    
+    
+    <div class="container-fluid d-flex" id="quick-menu">
+        <div id="home"> <img class="icons" [routerLink]="['/']" src="/assets/logo.png"> </div>
+        <div id="map"><img class="icons" [routerLink]="['/map/:userid']" src="/assets/map.png"> </div>
+        
+    </div>
+    
+    <footer>
+        <div><img id="logo-footer" align-middle src="/assets/logo.png"></div>
+    </footer>

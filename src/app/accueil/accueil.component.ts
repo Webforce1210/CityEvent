@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventActivitiesService } from '../event-activities.service';
 import { EventActivity } from '../models/EventActivity.model';
 
+
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',

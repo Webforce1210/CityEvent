@@ -1,13 +1,13 @@
 export class CreditCardInfo {
-    id: string = "";
-    userId: string = "";
-    username: string = "";
-    cardNumber: number = 0;
-    expirationDate: string = "";
+    nomPrenom: string = "";
+    numeroDeCarte: number = 0;
+    dateDexpiration: string = "";
     cvc: number = 0;
 
-    constructor(id: string = "", userId: string = "") {
-        this.id = id;
-        this.userId = userId;
+    constructor(nomPrenom: string = "", numeroDeCarte: number = 0, dateDexpiration: string = "", cvc: number = 0) {
+        this.nomPrenom = nomPrenom;
+        this.numeroDeCarte = numeroDeCarte;
+        this.dateDexpiration = dateDexpiration;
+        this.cvc = cvc;
     }
 }
