@@ -52,7 +52,7 @@ export class ContactComponent implements OnInit {
         discussionid=element.id
         this.router.navigateByUrl(`/messages/${this.userId}/${discussionid}`);
       }
-      else{
+      else if(!element.userid.includes(destid)){
         this.messageService.createDiscussion(this.userId,destid)
       }
       
