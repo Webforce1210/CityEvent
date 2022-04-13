@@ -4,44 +4,49 @@
     <h1>Participer a l'activité</h1>
     <div class="innerDivDetails">
         <div>
-            <div class="mb-3">
+        <form [formGroup]="inscriptionForm">
+            <div class="mb-3 form-group">
                 <label for="exampleFormControlInput1" class="form-label">Nom</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nom" [formControl] ="nom">
+                <input type="text" class="form-control" formControlName="nom" id="exampleFormControlInput1" placeholder="Nom" required>
+                <span *ngIf="nom.invalid" class="error">Entrez votre nom</span>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="exampleFormControlInput1" class="form-label">Prenom</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Prenom" [formControl] ="prenom">
+                <input type="text" class="form-control" formControlName="prenom" id="exampleFormControlInput1" placeholder="Prenom" required>
+                <span *ngIf="prenom.invalid" class="error">Entrez votre prenom</span>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="exampleFormControlTextarea1" class="form-label">Lieu</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Lieu" [formControl] ="lieu"></textarea>
-            </div>    
+                <input type="text" class="form-control" formControlName="lieu" id="exampleFormControlTextarea1" placeholder="Lieu" required>
+                <span *ngIf="lieu.invalid" class="error">Entrez l'adresse de l'evenement</span>
+            </div>
+        </form>   
                 <div>
                     <p>Aimez vous les sensations fortes?</p>
                     <div>
-                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <input type="radio" id="oui" name="question_inscription1" value="oui" checked>
                         <label for="oui">Oui</label>
                     </div>
                     <div>
-                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <input type="radio" id="oui" name="question_inscription1" value="non">
                         <label for="non">Non</label>
                     </div>
                     <p>Avez vous deja fait du sport?</p>
                     <div>
-                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <input type="radio" id="oui" name="question_inscription2" value="oui" checked>
                         <label for="oui">Oui</label>
                     </div>
                     <div>
-                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <input type="radio" id="oui" name="question_inscription2" value="non">
                         <label for="non">Non</label>
                     </div>
                     <p>Aimez vous le sport?</p>
                     <div>
-                        <input type="radio" id="oui" name="question_inscription" value="oui" checked>
+                        <input type="radio" id="oui" name="question_inscription3" value="oui" checked>
                         <label for="oui">Oui</label>
                     </div>
                     <div>
-                        <input type="radio" id="oui" name="question_inscription" value="non">
+                        <input type="radio" id="oui" name="question_inscription3" value="non">
                         <label for="non">Non</label>
                     </div>
                 </div>
@@ -51,7 +56,7 @@
         </div>
     </div>
     <div>
-        <button href="#" id="paymentButton" class="btn btn-outline-danger" (click)= "goToPayment()">Payer et Participer</button>
+        <button [disabled]="!inscriptionForm.valid" href="#" id="paymentButton" class="btn btn-outline-danger" (click)= "goToPayment()">Payer et Participer</button>
     </div>
 </div>
 

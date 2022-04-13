@@ -11,6 +11,7 @@
                     <div class="card px-4 form_container">
                         <p class="h8 py-3">Details de paiement</p>
                         <div class="row gx-3">
+                            <form>
                             <div class="col-12">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Nom et Prénom</p> <input class="form-control mb-3" type="text" placeholder="Nom" [formControl] ="nomPrenom" required>
@@ -21,6 +22,7 @@
                                     <p class="text mb-1">Numero de carte</p> <input class="form-control mb-3" type="text" placeholder="1234-5678-9101-1121" [formControl] ="numeroDeCarte" required>
                                 </div>
                             </div>
+                            <div class="row">
                             <div class="col-6">
                                 <div class="d-flex flex-column">
                                     <p class="text mb-1">Date d'expiration</p> <input class="form-control mb-3" type="text" placeholder="MM/AA" [formControl] ="dateDexpiration" required>
@@ -31,6 +33,8 @@
                                     <p class="text mb-1">CVV/CVC</p> <input class="form-control mb-3 pt-2 " type="password" placeholder="123" [formControl] ="cvc" required>
                                 </div>
                             </div>
+                        </div>
+                            </form>
                             <div>
                                 <input type="checkbox" (change)="checkCheckBoxValue($event)" id="savecard" name="savecard" value="saveCardInfos.value">
                                 <label for="savecard" style="font-style: italic; font-size: 13px;">Sauvegarder cette carte comme moyen de paiement.</label>

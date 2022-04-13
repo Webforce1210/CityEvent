@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EventActivity } from '../models/EventActivity.model';
 let uniqid = require('uniqid');
 import { NOMEM } from 'dns';
@@ -15,12 +15,10 @@ import { ThisReceiver } from '@angular/compiler';
 
 export class PaiementComponent implements OnInit {
 
-
-
-  nomPrenom = new FormControl("");
-  numeroDeCarte = new FormControl("");
-  dateDexpiration = new FormControl("");
-  cvc = new FormControl("");
+  nomPrenom = new FormControl("", Validators.required);
+  numeroDeCarte = new FormControl("", Validators.required);
+  dateDexpiration = new FormControl("", Validators.required);
+  cvc = new FormControl("", Validators.required);
   saveCardInfos = new FormControl(false);
 
 
