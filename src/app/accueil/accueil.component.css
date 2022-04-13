@@ -2,6 +2,10 @@
     height: 8rem;
 }
 
+#connexion{
+    margin-right: 2rem;
+}
+
 .teamBackground{
     background: url(/assets/img/team.jpg);
     background-size: cover;
@@ -13,6 +17,7 @@
 
 #logo{
     max-height: 7rem;
+    margin-left: 2rem;
 }
 
 #appleLogo{

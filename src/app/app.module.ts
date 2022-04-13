@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+
+import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -17,9 +18,15 @@ import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
+import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
+import { FormsModule } from '@angular/forms';
+import { CreditCardDirectivesModule } from 'angular-cc-library';
+
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
+import { NavbarOfflineComponent } from './navbar-offline/navbar-offline.component';
 import { RegisterComponent } from './register/register.component';
 
 @NgModule({
@@ -39,13 +46,19 @@ import { RegisterComponent } from './register/register.component';
     PaiementComponent,
     ContactComponent,
     InscriptionActiviteComponent,
+    PaiementinfosComponent,
     NavbarComponent,
     FooterComponent,
+    InfoEventOfflineComponent,
+    NavbarOfflineComponent,
     RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule, 
+    CreditCardDirectivesModule,
     FormsModule,
     ReactiveFormsModule
   ],

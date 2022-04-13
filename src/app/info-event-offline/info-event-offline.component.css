@@ -1,0 +1,94 @@
+.event__header {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.event__header__title {
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    min-width: 240px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.event__header__title h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.map>img {
+    max-width: 100%;
+}
+
+.user-group {
+    margin: 4rem auto;
+    max-width: 350px;
+}
+
+.admin {
+    color: #262A8D;
+}
+
+.avatar-container {
+    position: relative;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+    text-align: center;
+}
+
+.flag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.chat-block {
+    border-radius: 20px;
+    border: 1px solid #000;
+    margin: 20px;
+}
+
+.chat-block .content-block {
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.message-container {
+    margin: 20px;
+}
+
+.add-message {
+    border-radius: 5px;
+    color: #fff;
+    padding: 20px;
+    background-color: #000;
+    margin: 10px;
+}
+
+.content::after {
+    content: ' ';
+    display: block;
+    height: 0;
+    width: 0;
+    border-top: 30px solid #000;
+    border-right: 30px solid transparent;
+    border-left: 30px solid transparent;
+    margin-left: 25px;
+}
+
+@media (min-width:800px) {
+    .map>img {
+        max-width: 700px;
+    }
+
+    .chat-block .content {
+        max-width: 55%;
+    }
+}

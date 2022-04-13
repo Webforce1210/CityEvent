@@ -1,17 +1,19 @@
-<nav id="navbar1" class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
     <img src="/assets/img/pngegg.png" height="70" width="70" alt="logoimg" id="logo" />
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      
+  </div>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <div id="connexion">
       <form class="d-flex">
         <button class="btn btn-outline-primary m-2" type="submit" [routerLink]="['/login']">Connexion</button>
         <button class="btn btn-outline-primary m-2" type="submit" [routerLink]="['/register']">Inscription</button>
       </form>
     </div>
-  </div>
+</div>
 </nav>
 
 
@@ -22,29 +24,23 @@
   <h2 id="teamText">Rejoignez votre communauté</h2>
 </div>
 <div id="mapDiv">
-  <!-- <div class="mapDivText">
-        <h3 class="mapText">Profitez de votre quartier avec City Event</h3>
-    </div> -->
   <img src="/assets/img/map.png" alt="mapimg" class="mapImg" />
 </div>
 <div class="card-group d-flex flex-wrap justify-content-center">
-  <div *ngFor="let activite of lastEvents" class="row align-items-start cardModify">
-    <div class="card" style="width: 18rem;">
-      <img src="/assets/img/tour.jpeg" alt="tourimg" class="tourImg" />
-      <div class="card-body">
-        <h5 class="card-title">{{ activite.title }}</h5>
-        <p class="card-text">{{ activite.description }}</p>
-        <p class="card-text">{{ activite.adresse }}</p>
-        <button href="#" class="btn btn-outline-danger">En savoir plus</button>
-      </div>
+    <div *ngFor="let activite of lastEvents" class="row align-items-start cardModify">
+        <div class="card" style="width: 18rem;">
+            <img src="/assets/img/tour.jpeg" alt="tourimg" class="tourImg"/>
+            <div class="card-body">
+              <h5 class="card-title">{{ activite.title }}</h5>
+              <p class="card-text">{{ activite.description }}</p>
+              <p class="card-text">{{ activite.adresse }}</p>
+              <button href="#" class="btn btn-outline-danger" [routerLink]="['/info_event/', activite.id]">En savoir plus</button>
+            </div>
+        </div>
     </div>
   </div>
-</div>
 
-<!-- <footer>
-    <div id="footerDiv">
-        <p class="footerText">Ⓒ City Event</p>
-    </div>
-</footer> -->
+
+
 
 <app-footer></app-footer>
