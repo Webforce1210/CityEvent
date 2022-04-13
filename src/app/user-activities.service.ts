@@ -22,6 +22,7 @@ export class UserActivitiesService {
   constructor(private userService:UserService,private router:Router){
     this.discussion = myData.discussion;
   }
+
 // recuperation des messages de la discussion avec son id
   public findDiscussionMessages(discId:string){
     let messages: MessagePrive[] = [];
@@ -55,16 +56,16 @@ export class UserActivitiesService {
   }
 
 
- public createDiscussion(userid:string,destid:string){
-  let discussion:Discussion
-  let discussionid!:string
-  discussion= new Discussion(
-    uniqid(),
-  )
-  discussionid = discussion.id
-  discussion.userid = [this.UserId,destid]
-  this.router.navigateByUrl(`/messages/${userid}/${discussionid}`);
- }
+  public createDiscussion(userid:string,destid:string){
+    let discussion:Discussion
+    let discussionid!:string
+    discussion= new Discussion(
+      uniqid(),
+    )
+    discussionid = discussion.id
+    discussion.userid = [this.UserId,destid]
+    this.router.navigateByUrl(`/messages/${userid}/${discussionid}`);
+  }
 
 // recuperation de toutes les discussion de l'utilisateur
   public AfficheDiscussion(UserId:string){
@@ -96,11 +97,9 @@ export class UserActivitiesService {
       return discussion;
     }
   }
+
   public addMessage(message: MessagePrive) {
     message.author = this.userService.findUserById(message.userid);
     this.messages.push(message);
   }
 }
-
-
-

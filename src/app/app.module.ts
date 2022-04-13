@@ -23,6 +23,7 @@ import { RegisterComponent } from './register/register.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { ContactComponent } from './contact/contact.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

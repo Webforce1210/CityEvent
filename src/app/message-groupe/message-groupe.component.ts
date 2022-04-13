@@ -5,6 +5,7 @@ import { Discussion } from '../models/Discussion.model';
 import { MessagePrive } from '../models/MessagePrive.model';
 import { UserActivitiesService } from '../user-activities.service';
 import { UserService } from '../user.service';
+
 let uniqid= require('uniqid');
 
 @Component({
@@ -18,6 +19,8 @@ export class MessageGroupeComponent implements OnInit {
   messages:MessagePrive[]=[];
   newMessageValue= new FormControl("");
   discussion!:Discussion;
+  public textArea: string = '';
+  public isEmojiPickerVisible!: boolean;
 
 
   constructor(
@@ -60,6 +63,13 @@ export class MessageGroupeComponent implements OnInit {
 
   private getRouterParam(param: string): string {
     return this.route.snapshot.params[param];
+  }
+
+
+  
+  public addEmoji(event:any) {
+    this.textArea = `${this.textArea}${event.emoji.native}`;
+    this.isEmojiPickerVisible = false;
   }
 }
 

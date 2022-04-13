@@ -1,5 +1,4 @@
 {
-
     "listcontact":[
         {
             "id":"1",
@@ -16,7 +15,5 @@
             "propid":"1",
             "idcontacts":["2","3"]
         }
-        
-
     ]
 }
