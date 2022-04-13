@@ -12,6 +12,7 @@ import { InscriptionActiviteComponent } from './inscription-activite/inscription
 import { LoginSignupComponent } from './login-signup/login-signup.component';
 import { MesActivitesComponent } from './mes-activites/mes-activites.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RegisterComponent } from './register/register.component';
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: "parametres/:userid",
     component: ParametresComponent
+  },
+  {
+    path: "parametres/paiementinfos/:userid",
+    component: PaiementinfosComponent
   },
   {
     path: "profil/:userid",

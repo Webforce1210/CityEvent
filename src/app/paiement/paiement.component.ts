@@ -52,5 +52,8 @@ export class PaiementComponent implements OnInit {
     console.log(this.saveCardInfos);
   }
 
+
+  }
+
   
-}
+
