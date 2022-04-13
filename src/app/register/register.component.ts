@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
     this.validatePassword();
     this.validateConfirm();
 
-    if (!this.error) {
+    if (!this.error && this.isValid()) {
       this.changeStep(event);
       this.toggle('#alert', 'none');
     } else {
@@ -98,42 +98,41 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  isValid() {
+    return !this.nameValue.invalid &&
+      !this.emailValue.invalid &&
+      !this.passwordValue.invalid &&
+      this.passwordValue.value === this.confirmValue.value;
+  }
+
   validateName() {
     if (this.nameValue.invalid) {
-      this.error = true;
       this.toggle("#name-feedback", 'block');
     } else {
-      this.error = false;
       this.toggle("#name-feedback", 'none');
     }
   }
 
   validateEmail() {
     if (this.emailValue.invalid) {
-      this.error = true;
       this.toggle("#email-feedback", 'block');
     } else {
-      this.error = false;
       this.toggle("#email-feedback", 'none');
     }
   }
 
   validatePassword() {
     if (this.passwordValue.invalid) {
-      this.error = true;
       this.toggle("#password-feedback", 'block');
     } else {
-      this.error = false;
       this.toggle("#password-feedback", 'none');
     }
   }
 
   validateConfirm() {
     if (this.passwordValue.value !== this.confirmValue.value) {
-      this.error = true;
       this.toggle("#confirm-feedback", 'block');
     } else {
-      this.error = false;
       this.toggle("#confirm-feedback", 'none');
     }
   }

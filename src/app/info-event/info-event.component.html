@@ -46,11 +46,12 @@
                     </svg>
                     <span class="px-3">{{event.adresse}}</span>
                 </p>
-                <figure class="map text-center">
-                    <img src="/assets/map.png" alt="carte où se trouve l'événement">
-                </figure>
             </article>
             <article class="tab-pane fade" id="participants" role="tabpanel" aria-labelledby="participants-tab">
+                <div class="my-5" *ngIf="participants.length == 0">
+                    <p>Aucun participant</p>
+                </div>
+
                 <div class="user-group" *ngFor="let user of participants">
                     <div class="d-flex align-self-center">
                         <div class="avatar-container">
