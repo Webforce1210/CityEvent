@@ -6,18 +6,16 @@
         </button>
     </div>
 </nav>
-<button #btn [className]="isView ? 'btn btn-danger' : 'btn btn-success'" (click)="switc()">
-    <i class="bi bi-pencil-square" *ngIf="isView" id="btn_modif"></i>
-    <i class="bi bi-check-all" *ngIf="!isView" id="btn_modif2"></i>
+
+<button #btn [className]="isView ? 'btn btn-danger btn_modif' : 'btn btn-success btn_modif'" 
+            [type]="isView ? 'button' : 'submit'" (click)="switc()" id="btnmodif">
+    <i class="bi bi-pencil-square" *ngIf="isView"></i>
+    <i class="bi bi-check-all" *ngIf="!isView"></i>
 </button>
 <app-view-bandeau *ngIf="isView"></app-view-bandeau>
 <app-edit-bandeau *ngIf="!isView"></app-edit-bandeau>
-<!-- <h2>Add/ Remove Attributes </h2>
-<input #inputElement type='text'>
-    <button (click)="addAttribute()">Set Attribute</button>
-    <button (click)="removeAttribute()">Remove Attribute</button> -->
-    
 
+<!-- ///////////////  header modifier avec appel des app view et edit ///////////-->
 <!-- <header  class="container-fluid"  [ngStyle]="{'background-image': 'url(./../assets/avatars/'+useravat2+')' , 'background-repeat': 'no-repeat' , 'background-size' : 'cover' }" >
     <div class="container d-flex">
         
@@ -59,17 +57,11 @@
 
 
 <div id="boutons" class="d-flex justify-content-around flex-wrap inline-block">
-<!-- <button *ngFor="let logoActivity of Users"></button> -->
-<!-- {{user ? user.hobbies : ''}} -->
+
 <div class="d-flex no-wrap" *ngIf="user !== null">
     <div *ngFor="let hobby of user.hobbies">
-        <button class="btn btn-light btn-activity">
-            <i [ngClass]="[
-                logoHobby[hobby]        
-            ]"
-            ></i>
-            <!-- [ngClass]="[ isFavorite ? 'btn-success' : 'btn-danger']"
-logoHobby[hobby] -->
+        <button class="btn btn-light btn-activity shadow-sm rounded">
+            <i [ngClass]="[logoHobby[hobby]]"></i>
         </button>
     </div>
 </div>
