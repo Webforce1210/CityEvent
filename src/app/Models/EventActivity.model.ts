@@ -17,6 +17,5 @@ export class EventActivity {
     constructor(id: string = "", title: string = "") {
         this.id = id;
         this.title = title;
-
     }
 }

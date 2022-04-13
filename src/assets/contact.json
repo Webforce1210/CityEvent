@@ -1,0 +1,19 @@
+{
+    "listcontact":[
+        {
+            "id":"1",
+            "propid":"3",
+            "idcontacts":["1","2"]
+        },
+        {
+            "id":"2",
+            "propid":"4",
+            "idcontacts":["1","2","3"]
+        },
+        {
+            "id":"3",
+            "propid":"1",
+            "idcontacts":["2","3"]
+        }
+    ]
+}

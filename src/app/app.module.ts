@@ -16,8 +16,8 @@ import { MesActivitesComponent } from './mes-activites/mes-activites.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ParametresComponent } from './parametres/parametres.component';
 import { PaiementComponent } from './paiement/paiement.component';
-import { ContactComponent } from './contact/contact.component';
 import { InscriptionActiviteComponent } from './inscription-activite/inscription-activite.component';
+import { MessageGroupeComponent } from './message-groupe/message-groupe.component';
 import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
 import { FormsModule } from '@angular/forms';
 import { CreditCardDirectivesModule } from 'angular-cc-library';
@@ -28,6 +28,9 @@ import { FooterComponent } from './footer/footer.component';
 import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
 import { NavbarOfflineComponent } from './navbar-offline/navbar-offline.component';
 import { RegisterComponent } from './register/register.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { ContactComponent } from './contact/contact.component';
+
 
 @NgModule({
   declarations: [
@@ -42,16 +45,18 @@ import { RegisterComponent } from './register/register.component';
     InfoEventComponent,
     MesActivitesComponent,
     MessagesComponent,
+    MessageGroupeComponent,
     ParametresComponent,
     PaiementComponent,
-    ContactComponent,
     InscriptionActiviteComponent,
     PaiementinfosComponent,
     NavbarComponent,
     FooterComponent,
+    RegisterComponent,
+    ContactComponent,
     InfoEventOfflineComponent,
-    NavbarOfflineComponent,
-    RegisterComponent
+    NavbarOfflineComponent
+
   ],
   imports: [
     BrowserModule,
@@ -59,8 +64,7 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     FormsModule, 
     CreditCardDirectivesModule,
-    FormsModule,
-    ReactiveFormsModule
+    PickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
