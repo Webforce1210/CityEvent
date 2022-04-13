@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { EventActivitiesService } from '../event-activities.service';
 import { MessageService } from '../message.service';
 import { EventActivity } from '../models/EventActivity.model';
 import { Message } from '../models/Message.model';
 import { User } from '../models/User.model';
 import { UserService } from '../user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 let uniqid = require('uniqid');
 

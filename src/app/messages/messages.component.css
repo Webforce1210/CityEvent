@@ -1,0 +1,75 @@
+#chat{
+    margin: 5px;
+    border: 1px black solid;
+    padding: 3px;
+}
+
+svg{
+    color: white;
+}
+
+#text{
+    width: 100%;
+}
+
+#fleche{
+    color: black;
+}
+
+#tabs{
+    display: flex;
+    justify-content: center;
+}
+
+.mes1{
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+}
+
+.mes2{
+    padding: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+.mess{
+    max-width: 35px;
+    max-height: 35px;
+}
+
+.mes1 p{
+    margin: 5px;
+    padding: 5px;
+    border: black 1px solid;
+    border-radius:  50%;
+}
+
+.mes2 p{
+    margin: 5px;
+    padding: 5px;
+    background: #262A8D;
+    color: white;
+    border-radius: 50%;
+}
+#footer{
+    background: #141516;
+}
+
+#footer img{
+    background-color: white;
+    border-radius: 50%;
+    max-width:  7%;
+    max-height: 7%;  
+}
+
+#bar-mes{
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    background-color: black;
+}
+.contact{
+    display: flex;
+    justify-content: right;
+}

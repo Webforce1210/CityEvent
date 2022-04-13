@@ -3,7 +3,7 @@ import { EventActivity } from "./EventActivity.model";
 
 export class User {
     hobbies: string[] = [];
-    stars: number[] = [0, 0, 0, 0, 0];
+    stars?: number[] = [0, 0, 0, 0, 0];
     cover?: string | null;
     region?: string;
     email?: string;
