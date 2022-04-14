@@ -5,12 +5,12 @@ export class EventActivity {
     budget?: string;
     date1?: string;
     date2?: string;
-    time1?: string;
+    time1?: string; 
     time2?: string;
     type?: string;
     participants?: string;
     description: string = "";
-    date: string = "";
+    date: string = ""; // = date1 + time1 Florent
     activity:string="";
     active: boolean = true;
     role: string = "Participant";
