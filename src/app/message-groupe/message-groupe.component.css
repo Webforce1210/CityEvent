@@ -38,3 +38,16 @@
     background-color: #000;
     margin: 10px;
 }
+
+#smileTony{
+    width: 1.5em;
+    height: 1.5em;
+    max-width: 33px;
+    max-height: 33px;
+}
+#btnsmile{
+    padding: 6px;
+}
+#inputmess{
+    padding: 6px 9px;
+}
