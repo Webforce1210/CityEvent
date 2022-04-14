@@ -68,7 +68,7 @@ registerLocaleData(localeFr, 'fr');
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule, 
+    FormsModule,
     CreditCardDirectivesModule,
     PickerModule
   ],
