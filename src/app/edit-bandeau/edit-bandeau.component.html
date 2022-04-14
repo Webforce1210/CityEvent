@@ -1,39 +1,44 @@
 <header  class="container-fluid"  [ngStyle]="{'background-image': 'url(./../assets/avatars/'+useravat2+')' , 'background-repeat': 'no-repeat' , 'background-size' : 'cover' }" >
     <div class="container d-flex">
-
+        <form method="post">
         <div class="row justify-content-around">
-            
+            <div class="col wlp-upload">
+                <label for="file-input">
+                  <!-- <img src="../../assets/avatars/{{user ? user.cover :''}}" id="wlpprofil"/> -->
+                  <i class="bi bi-image btn btn-light"  id="btnwlp"></i>
+                </label>
+                <input id="file-input" type="file"/>
+              </div>
             <div class="col-3 align-self-center container">
-                <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil" alt="image de profil">
+                <div class="image-upload">
+                    <label for="file-input">
+                      <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil"/>
+                      <i class="bi bi-person-bounding-box btn btn-light" id="btnimg"></i>
+                    </label>
+                    <input id="file-input" type="file"/>
+                  </div>
+                <!-- <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil" alt="image de profil"> -->
             </div>
+            <div class="col-1"></div>
             <div class="col-7 align-self-center" id="inputgroup">
-                <div class="input-group input-group-sm">
-                    <div class="input-group-text border-0 bg-transparent ">
+                <div class="input-group" style="width: auto;">
+                    <div class="input-group-text bg-transparent  border-0">
                         <i class="bi bi-person-circle"></i>
                     </div>
-                    <input  type="text" class="form-control user border-0" value="{{user ? user.pseudo: ''}}">
+                    <input  type="text" class="form-control form-control-sm user border-0" placeholder="{{user ? user.pseudo: ''}}">
                 </div>
 
-    <!-- <div class="mb-3">
-        <label for="formFile" class="form-label">Default file input example</label>
-        <input class="form-control" type="file" id="formFile">
-    </div> -->
-
-                <div class="input-group input-group-sm">
+                <div class="input-group">
                     <div class="input-group-text bg-transparent border-0 ">
                         <i class="bi bi-geo"></i>
                     </div>
-                    <!-- <input  type="text" class="form-control user textarea-autosize border-0" value="{{user ? user.region: ''}}"> -->
-                    <select class="form-select" id="inputGroupSelect01">
-                        <option value="Lieuchoisi" *ngFor="let reg of myregion" selected="{{user ? user.region: ''}}">{{reg}}</option></select>
+                    <select class="form-select form-select-sm" id="inputGroupSelect01">
+                        <option value="Lieuchoisi" *ngFor="let reg of myregion" value="{{user ? user.region: ''}}">{{reg}}</option>
+                    </select>
                 </div>
-
-                
             </div>
-            
         </div>
-        
+        </form>
     </div>
     
 </header>
-<p>edit-bandeau works!</p>

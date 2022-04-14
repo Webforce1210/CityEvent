@@ -19,18 +19,45 @@
 /* dimensionnement du header */
 header {
     min-height: 110px;
+    padding: 0;
 }
-.no-margin-right{
+/* .no-margin-right{
     padding-right: 0;
-}
+} */
 #imgprofil{
     border-radius: 100%; 
     margin: 10%;
     max-height: 6rem;
 }
-#boutons{
-    padding: 5px;
+.image-upload>input {
+    display: none;
+  }
+#btnimg{
+    position: absolute;
+    top: 130px;
+    /* left: 20px; */
+    padding: 0px 3px;
 }
+.wlp-upload>input {
+    display: none;
+}
+.wlp-upload {
+    padding: 0;
+    margin: 0;
+}
+#btnwlp{
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    padding: 0px 3px;
+}
+/* #wlpprofil{
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    max-height: 80px;
+} */
+
 .bi-person-circle{
     font-size: 1.5rem; 
     color: rgb(255, 0, 234);
@@ -38,9 +65,6 @@ header {
 .bi-geo{
     font-size: 1.5rem; 
     color: orange;
-}
-#div-modif{
-    width: 1.3em;
 }
 .btn-danger{
     padding: 0 5px;
@@ -50,4 +74,13 @@ header {
 }
 #btn_modif{
     font-size: 1rem;
+}
+input{
+    padding:6px;
+}
+/* select{
+    padding:6px;
+} */
+#inputgroup{
+    padding: 0;
 }
