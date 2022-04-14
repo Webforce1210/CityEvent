@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,8 +20,6 @@ import { MessageGroupeComponent } from './message-groupe/message-groupe.componen
 import { PaiementinfosComponent } from './paiementinfos/paiementinfos.component';
 import { FormsModule } from '@angular/forms';
 import { CreditCardDirectivesModule } from 'angular-cc-library';
-
-
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { InfoEventOfflineComponent } from './info-event-offline/info-event-offline.component';
