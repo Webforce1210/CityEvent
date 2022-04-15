@@ -103,7 +103,7 @@ header {
         background-clip: text;
         -webkit-text-fill-color: transparent;
 }
-.fixe-bottom {
+/* .fixe-bottom {
     height: 10%;
     background: black; 
     text-align:center;
@@ -117,4 +117,4 @@ header {
     padding: 5px; 
     margin: auto; 
     border-radius: 60px;
-}
+} */

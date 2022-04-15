@@ -37,6 +37,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { ViewBandeauComponent } from './view-bandeau/view-bandeau.component';
 import { EditBandeauComponent } from './edit-bandeau/edit-bandeau.component';
+import { FooterFloComponent } from './footer-flo/footer-flo.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -64,7 +65,8 @@ registerLocaleData(localeFr, 'fr');
     EditBandeauComponent,
     ContactComponent,
     InfoEventOfflineComponent,
-    NavbarOfflineComponent
+    NavbarOfflineComponent,
+    FooterFloComponent
 
   ],
   imports: [

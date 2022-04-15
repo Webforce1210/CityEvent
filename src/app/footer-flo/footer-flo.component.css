@@ -1,0 +1,15 @@
+.fixe-bottom {
+    height: 10%;
+    background: black; 
+    text-align:center;
+    padding: 20px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+#footerimg{
+    height: 60px;
+    background: white; 
+    padding: 5px; 
+    margin: auto; 
+    border-radius: 60px;
+}
