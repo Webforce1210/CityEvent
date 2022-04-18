@@ -14,7 +14,7 @@ import { CompteComponent } from '../compte/compte.component';
   styleUrls: ['./nav-flo.component.css']
 })
 export class NavFloComponent implements OnInit {
-  // @Input() userId!: string | null;
+  
   user!: User;
   pastActivities: EventActivity[] = [];
   futurActivities: EventActivity[] = [];
