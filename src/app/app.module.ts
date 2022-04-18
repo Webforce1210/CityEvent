@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import httpClientModule, { HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
@@ -77,7 +78,8 @@ registerLocaleData(localeFr, 'fr');
     ReactiveFormsModule,
     FormsModule, 
     CreditCardDirectivesModule,
-    PickerModule
+    PickerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
