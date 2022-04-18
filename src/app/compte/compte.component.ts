@@ -49,15 +49,10 @@ export class CompteComponent implements OnInit {
     
     this.nameValue.setValue(this.user.pseudo);
     this.regionValue.setValue(this.user.region);
-  })
-    // console.log(this.user);
-    // console.log(this.user?.hobbies);
-    // console.log((this.user?.cover));
-    // console.log(this.useravat2);
-    this.useravat2 = this.user?.cover ? this.user.cover : 'wallpaper.jpg';
-  //  console.log(this.useravat2);
-  
+    })
     
+    this.useravat2 = this.user?.cover ? this.user.cover : 'wallpaper.jpg';
+  
   }
 
 
@@ -69,22 +64,20 @@ export class CompteComponent implements OnInit {
   switchbtn(){
     
     this.isView = !this.isView;
-    // this.renderer.removeClass(this.btn.nativeElement, 'btn-danger');
-    // this.renderer.addClass(this.btn.nativeElement, 'btn-success');
   
-}
-
-  updateTask(){ // A finir
-
-    if(this.user){
-    this.user.pseudo = this.nameValue.value;
-    this.user.region = this.regionValue.value;
-  }else{
-    alert('attention pas de tache en cours');
   }
-    this.storage.update(this.user);
-    this.router.navigate(['/compte/1']);
-    }
+
+  // updateTask(){ // A finir
+
+  //   if(this.user){
+  //   this.user.pseudo = this.nameValue.value;
+  //   this.user.region = this.regionValue.value;
+  // }else{
+  //   alert('attention pas de tache en cours');
+  // }
+  //   this.storage.update(this.user);
+  //   this.router.navigate(['/compte/1']);
+  //   }
   
 // addAttribute() {
 //   this.renderer.setAttribute(this.inputElement.nativeElement, 'readOnly', 'isReadOnly' );
@@ -96,9 +89,9 @@ export class CompteComponent implements OnInit {
 
   
 // bouton modification  -> popup modifier ou voir en tant que invité
-toggleReadonly() {
-  this.isReadonly = !this.isReadonly;
+  toggleReadonly() {
+    this.isReadonly = !this.isReadonly;
 
-}
+  }
 
 }

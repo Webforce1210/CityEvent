@@ -74,20 +74,20 @@
 
 
 <div class="d-grid gap-2 m-2 col-11 mx-auto">
-    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/mes_activites/:userid']"> <i class="bi bi-activity"></i> Activités </button>
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/mes_activites/',user ? user.id : '']"> <i class="bi bi-activity"></i> Activités </button>
     <!-- routerLink Activity -->
 
-    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/messages','dfjdfjd']"><i class="bi bi-envelope"></i> Messages</button>
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/messages',user ? user.id : '']"><i class="bi bi-envelope"></i> Messages</button>
     <!-- routerLink Messagerie -->
 
-    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/parametres/:userid']">
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/parametres/',user ? user.id : '']">
         <i class="bi bi-tools"></i> Paramètres</button>
     <!-- routerLink Params -->
 
-    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/parametres/paiementinfos/:userid']"><i class="bi bi-credit-card"></i> Paiements</button>
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/parametres/paiementinfos/',user ? user.id : '']"><i class="bi bi-credit-card"></i> Paiements</button>
     <!-- routerLink Paiement -->
 
-    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/contact/:userid']"> <i class="bi bi-patch-question"></i> Aides</button>
+    <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['/contact/',user ? user.id : '']"> <i class="bi bi-patch-question"></i> Aides</button>
     <!-- routerLink Aides -->
 
     <button class="btn btn-outline-secondary btn-lg btn-menu" type="button" [routerLink]="['']"> <i class="bi bi-power"></i> Déconnexion </button>
@@ -96,7 +96,5 @@
 </div>
 
 
-<!-- <div class="fixe-bottom">
-    <img src="/assets/img/pngegg.png" alt="logo" id="footerimg">
-</div> -->
+
 <app-footer-flo></app-footer-flo>
