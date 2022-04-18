@@ -1,34 +1,33 @@
 <header  class="container-fluid"  [ngStyle]="{'background-image': 'url(./../assets/avatars/'+useravat2+')' , 'background-repeat': 'no-repeat' , 'background-size' : 'cover' }" >
-    <div class="container d-flex">
+    <div class="container">
         <form method="post">
-        <div class="row justify-content-around">
-            <div class="col wlp-upload">
+        <div class="row">
+            <div class="col wlp-upload pos-rel"> <!--modif wallpaper-->
                 <label for="file-input">
-                  <!-- <img src="../../assets/avatars/{{user ? user.cover :''}}" id="wlpprofil"/> -->
                   <i class="bi bi-image btn btn-light"  id="btnwlp"></i>
                 </label>
                 <input id="file-input" type="file"/>
-              </div>
-            <div class="col-3 align-self-center container">
-                <div class="image-upload">
+            </div>
+            <div class="col-3 align-self-center container image-upload pos-rel"> <!--modif image profil-->
+                <!-- <div class="image-upload"> -->
                     <label for="file-input">
                       <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil"/>
                       <i class="bi bi-person-bounding-box btn btn-light" id="btnimg"></i>
                     </label>
                     <input id="file-input" type="file"/>
-                  </div>
+                  <!-- </div> -->
                 <!-- <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil" alt="image de profil"> -->
             </div>
-            <div class="col-1"></div>
-            <div class="col-7 align-self-center" id="inputgroup">
-                <div class="input-group" style="width: auto;">
+            <div class="col"></div>
+            <div class="col-6 align-self-center" id="inputgroup">
+                <div class="input-group input-group-sm" >
                     <div class="input-group-text bg-transparent  border-0">
                         <i class="bi bi-person-circle"></i>
                     </div>
                     <input  type="text" class="form-control form-control-sm user border-0" placeholder="{{user ? user.pseudo: ''}}">
                 </div>
 
-                <div class="input-group">
+                <div class="input-group input-group-sm">
                     <div class="input-group-text bg-transparent border-0 ">
                         <i class="bi bi-geo"></i>
                     </div>
@@ -37,8 +36,8 @@
                     </select>
                 </div>
             </div>
+            <div class="col"></div>
         </div>
         </form>
     </div>
-    
 </header>

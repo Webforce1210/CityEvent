@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['']"><img src="../../assets/img/pngegg.png" height="40"></a>
+        <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="switchnav()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/mes_activites/', user.id]">Activités</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/messages/', user.id]">Messages</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/parametres/', user.id]">Paramètres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/paiement/', user.id]">Paiements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/contact/', user.id]">Aides</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" [routerLink]="['']">Déconnexion</a>
+            </li>
+        </ul>
+        
+        </div>
+    </div>
+</nav>
+
+<!-- <nav class="navbar navbar-light bg-light" >
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">compte</a>
+        <button class="navbar-toggler" type="button" onclick="window.history.back()" id="xbtn" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="switchnav()">
+            <i class="bi bi-x"></i> 
+        </button>
+    </div>
+</nav> -->

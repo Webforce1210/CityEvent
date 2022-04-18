@@ -26,7 +26,7 @@ header {
 } */
 #imgprofil{
     border-radius: 100%; 
-    margin: 10%;
+    margin: 6px;
     max-height: 6rem;
 }
 
@@ -38,15 +38,15 @@ header {
     font-size: 1.5rem; 
     color: orange;
 }
-.btn-danger{
+/* .btn-danger{
     padding: 0 5px;
     position: absolute;
     top: 40;
     right: 2px;
-}
-#btn_modif{
+} */
+/* #btn_modif{
     font-size: 1rem;
-}
+} */
 input{
     padding: 6px;
 }

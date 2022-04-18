@@ -23,27 +23,20 @@ export class CompteComponent implements OnInit {
   btn!: ElementRef;
 
 
-  constructor(private router:Router, private route:ActivatedRoute, private storage: UserService, private renderer: Renderer2) {
+  constructor(public router:Router, private route:ActivatedRoute, private storage: UserService, private renderer: Renderer2) {
     this.logoHobby = myLogo.logoHobby;
   }
 
-  // logoHobby = {
-  //   surf : "bi bi-tsunami icon-activity",
-  //   science : "bi bi-robot icon-activity",
-  //   navigation : "bi bi-life-preserver icon-activity",
-  //   football: "bi bi-dribbble icon-activity",
-  //   sport: "bi bi-reddit icon-activity"
-  // }
-logoHobby: any[];
-  // sport= "bi bi-dribbble icon-activity";
+  logoHobby: any[];
+
   user:User|null=null;
-  // isReadOnly:boolean = true;
+
   isReadonly:boolean = true;
   isView:boolean = true;
   nameValue = new FormControl ("");
 
   regionValue = new FormControl ("");
-  // useravat2:string ='';
+  
   useravat2:string | null = null;
   
 
@@ -52,7 +45,7 @@ logoHobby: any[];
     this.route.paramMap.subscribe(param=>{
     
     this.user = this.storage.findUserById(param.get('userid')) as User; //userid
-    // console.log(this.user,'userssssssssssssssss');
+    
     
     this.nameValue.setValue(this.user.pseudo);
     this.regionValue.setValue(this.user.region);
@@ -66,37 +59,21 @@ logoHobby: any[];
   
     
   }
-// getBackground(){
-//   if(this.user?.cover == ''){
-//     return this.useravat = 'wallpaper.jpg';
-//   } else{
-//     this.useravat = this.user?.cover;
-//   }
-// }
+
 
     
   useravat : string = "wallpaper.jpg"; // faire l'acquisition en dynamique
   
   
   
-  switc(){
+  switchbtn(){
     
     this.isView = !this.isView;
     // this.renderer.removeClass(this.btn.nativeElement, 'btn-danger');
     // this.renderer.addClass(this.btn.nativeElement, 'btn-success');
   
 }
-  
-  
 
-  // modif(){
-  //   if(this.isReadOnly == true){
-  //     this.isReadOnly = false;
-  //   }else if(this.isReadOnly == false){
-  //     this.isReadOnly = true;
-  //   }
-
-  // }
   updateTask(){ // A finir
 
     if(this.user){

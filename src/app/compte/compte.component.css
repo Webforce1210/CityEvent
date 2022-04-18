@@ -15,8 +15,12 @@
     position: relative;
     top:-2px
 }
+#bande{
+    position: relative;
+}
 #btnmodif{
     z-index: 1;
+    top: 2px;
 }
 /* dimensionnement du header */
 header {
@@ -25,6 +29,7 @@ header {
     /* position: absolute; */
     
 }
+
 .no-margin-right{ 
     /* border-radius: 100%;  */
     /* margin: 10%;  */

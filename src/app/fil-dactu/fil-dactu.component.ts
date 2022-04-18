@@ -5,16 +5,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EventActivity } from '../models/EventActivity.model';
 import { EventActivitiesService } from '../event-activities.service';
 
-
-
 @Component({
   selector: 'app-fil-dactu',
   templateUrl: './fil-dactu.component.html',
   styleUrls: ['./fil-dactu.component.css']
 })
 export class FilDactuComponent implements OnInit {
-
-  // @Input() userId!: string;
 
   user!: User;
   pastActivities: EventActivity[] = [];
@@ -32,25 +28,7 @@ export class FilDactuComponent implements OnInit {
 
     this.allEvents = this.EventServices.lastEvents;
 
-    // this.user.events.forEach(event => {
-    //   const date = new Date(event.date);
-    //   const now = new Date();
-    //   if (date < now) {
-    //     this.pastActivities.push(event);
-    //   } else {
-    //     this.futurActivities.push(event);
-    //   }
-    // });
   }
-
-  // changeStatus(event: any, eventId: string) {
-  //   event.preventDefault();
-  //   this.user.events.forEach(activity => {
-  //     if (activity.id === eventId) {
-  //       activity.active = !activity.active;
-  //     }
-  //   });
-  // }
 
   private checkSession(): void {
     try {
@@ -60,16 +38,8 @@ export class FilDactuComponent implements OnInit {
       this.router.navigateByUrl('/login');
     }
   }
+
+  public compteview() {
+    this.compteview=this.compteview;
+  }
 }
-
-// 
-// lastEvents: EventActivity[] = [];
-
-//   ngOnInit(): void {
-//     this.lastEvents = this.EventServices.lastEvents;
-
-
-// }
-
-
-// }

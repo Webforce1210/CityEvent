@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+.navbar-brand{
+    padding: 0;
+}
 /* div filtre */
 #filtre {
     width: 80%;

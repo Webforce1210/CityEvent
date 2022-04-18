@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+#filtre {
+    width: 90%;
+    margin: 5% 5%;
+    padding: 5%;
+    background-color: rgb(225, 222, 222);
+    border-radius: 10px;
+    box-shadow: 8px 8px 8px  rgb(191, 191, 191);
+}
+#homebar{
+    font-size: 2rem;
+    /* color: cornflowerblue; */
+}
+#mapbar{
+    font-size: 2rem;
+    color: cornflowerblue;
+}
+#plusbar{
+    font-size: 2rem;
+    /* color: cornflowerblue; */
+}
+#search{
+    border-radius: 60px;
+    border: 2px solid rgba(38, 42, 141, 0.80) ;
+}
+#btnsearch{
+    background-color: rgba(38, 42, 141, 0.80);
+    padding: 0 7px;
+    border-radius: 8px;
+}
+#iconsearch{
+    font-size: 1em;
+    color: white;
+    /* margin: 0; */
+}
+.filter{
+    padding: 2px;
+}
+.col{
+    padding: 0 4px;
+}
+#btnfilter{
+    background-color: rgba(38, 42, 141, 0.80);
+    color: white;
+    padding: 0 4px;
+    text-align: center;
+    margin: 2px;
+    border-radius: 8px;
+}

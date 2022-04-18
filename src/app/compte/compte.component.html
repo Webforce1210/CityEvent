@@ -6,15 +6,17 @@
         </button>
     </div>
 </nav>
+<!-- <app-nav-flo></app-nav-flo> -->
 
+<div id="bande">
 <button #btn [className]="isView ? 'btn btn-danger btn_modif' : 'btn btn-success btn_modif'" 
-            [type]="isView ? 'button' : 'submit'" (click)="switc()" id="btnmodif">
+            [type]="isView ? 'button' : 'submit'" (click)="switchbtn()" id="btnmodif">
     <i class="bi bi-pencil-square" *ngIf="isView"></i>
     <i class="bi bi-check-all" *ngIf="!isView"></i>
 </button>
 <app-view-bandeau *ngIf="isView"></app-view-bandeau>
 <app-edit-bandeau *ngIf="!isView"></app-edit-bandeau>
-
+</div>
 <!-- ///////////////  header modifier avec appel des app view et edit ///////////-->
 <!-- <header  class="container-fluid"  [ngStyle]="{'background-image': 'url(./../assets/avatars/'+useravat2+')' , 'background-repeat': 'no-repeat' , 'background-size' : 'cover' }" >
     <div class="container d-flex">

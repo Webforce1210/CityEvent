@@ -1,14 +1,14 @@
 <header  class="container-fluid"  [ngStyle]="{'background-image': 'url(./../assets/avatars/'+useravat2+')' , 'background-repeat': 'no-repeat' , 'background-size' : 'cover' }" >
-    <div class="container d-flex">
+    <div class="container">
 
         <div class="row justify-content-around">
             <div class="col"></div>
             <div class="col-3 align-self-center container">
                 <img src="../../assets/avatars/{{user ? user.avatar :''}}" id="imgprofil" alt="image de profil">
             </div>
-            <div class="col-1"></div>
-            <div class="col-7 align-self-center" id="inputgroup">
-                <div class="input-group input-group-sm" style="width: auto;">
+            <div class="col"></div>
+            <div class="col-6 align-self-center" id="inputgroup">
+                <div class="input-group input-group-sm" >
                 
                     <div class="input-group-text bg-transparent border-0 ">
                         <i class="bi bi-person-circle"></i>
@@ -23,12 +23,9 @@
                     </div>
                     <input type="text" class="form-control form-control-sm user textarea-autosize bg-transparent border-0 text-white" value="{{user ? user.region: ''}}" readonly>
                 </div>
-
-                
             </div>
-        
+            <div class="col"></div>
         </div>
         
     </div>
-    
 </header>
