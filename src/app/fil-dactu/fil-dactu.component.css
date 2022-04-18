@@ -1,9 +1,7 @@
 * {
     box-sizing: border-box;
 }
-.navbar-brand{
-    padding: 0;
-}
+
 /* div filtre */
 #filtre {
     width: 80%;
@@ -16,14 +14,10 @@
 label{
     width: 90px;
 }
-/* select {
-    margin: 10px 0;
-} */
 /* div cards */
 .card{
     margin: 10px 5px;
     max-width: 18rem;
-    /* border-top: 2px solid black; */
     border-radius: 10px;
     box-shadow: 8px 8px 8px  rgb(191, 191, 191);
     background-color: rgb(234, 234, 234);

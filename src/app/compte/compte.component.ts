@@ -57,38 +57,18 @@ export class CompteComponent implements OnInit {
 
 
     
-  useravat : string = "wallpaper.jpg"; // faire l'acquisition en dynamique
+  // useravat : string = "wallpaper.jpg"; // faire l'acquisition en dynamique
   
   
   
   switchbtn(){
-    
     this.isView = !this.isView;
-  
   }
 
-  // updateTask(){ // A finir
-
-  //   if(this.user){
-  //   this.user.pseudo = this.nameValue.value;
-  //   this.user.region = this.regionValue.value;
-  // }else{
-  //   alert('attention pas de tache en cours');
-  // }
-  //   this.storage.update(this.user);
-  //   this.router.navigate(['/compte/1']);
-  //   }
   
-// addAttribute() {
-//   this.renderer.setAttribute(this.inputElement.nativeElement, 'readOnly', 'isReadOnly' );
-// }
-// removeAttribute() {
-//   this.renderer.removeAttribute(this.inputElement.nativeElement, 'readOnly');
-// }
-
 
   
-// bouton modification  -> popup modifier ou voir en tant que invité
+// bouton modification  -> popup modifier ou voir en tant que invité, profil?
   toggleReadonly() {
     this.isReadonly = !this.isReadonly;
 

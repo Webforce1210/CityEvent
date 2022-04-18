@@ -1,41 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#" [routerLink]="['']"><img src="../../assets/img/pngegg.png" height="40"></a>
-      <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/mes_activites/:userid']">Activités</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/messages/:userid']">Messages</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/parametres/:userid']">Paramètres</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/paiement/:userid']">Paiements</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/contact/:userid']">Aides</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['']">Déconnexion</a>
-          </li>
-      </ul>
-      
-      </div>
-  </div>
-</nav>
 
+<app-nav-flo></app-nav-flo>
 
 
 <div id="filtre">
   <h3 class="d-flex justify-content-center">Filtrer par :</h3>
-  
   <div class="input-group mb-3">
     <label class="input-group-text" for="inputGroupSelect01">Lieu :</label>
     <select class="form-select" id="inputGroupSelect01">
@@ -43,7 +11,6 @@
       <option value="Lieuchoisi" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
     </select>
   </div>
-
   <div class="input-group mb-3">
     <label class="input-group-text" for="inputGroupSelect02">Activité :</label>
     <select class="form-select" id="inputGroupSelect02">
@@ -52,34 +19,33 @@
     </select>
   </div>
 </div>
-<!-- </ng-container> -->
+
 
 
 <div class="container d-flex flex-wrap justify-content-around">
-<ng-container *ngFor="let item of allEvents">
-<!-- <div class="d-flex flex-wrap justify-content-around"> -->
-  <!-- <ng-container *ngFor="let item of allEvents" *ngIf="item.adresse"> -->
-<div class="card border border-primary" [routerLink]="['/info_event/',item.id,user.id]">
-  <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title text-center">{{ item.title }}</h5>
-    <!-- <p class="card-text">{{item.description}}</p> -->
-  </div>
-  <div id="infosActivite">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
-      <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
-      <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
-    </ul>
-  </div>
+  <ng-container *ngFor="let item of allEvents">
+
+    <div class="card border border-primary" [routerLink]="['/info_event/',item.id,user.id]">
+      <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ item.title }}</h5>
+      </div>
+      <div id="infosActivite">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
+          <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
+          <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
+        </ul>
+      </div>
+    </div>
+
+  </ng-container>
 </div>
 
-<!-- </div> -->
-</ng-container>
-</div>
 <div class="container-fluid d-flex justify-content-around" id="quick-menu">
   <div id="homebar" [routerLink]="['/fil_dactu/', user.id]"><i class="bi bi-house-door-fill"></i></div>
   <div id="mapbar" [routerLink]="['/map/', user.id]"><i class="bi bi-geo-alt-fill"></i></div>
   <div id="plusbar" [routerLink]="['/creation_event/', user.id]"><i class="bi bi-plus-circle-fill"></i></div>
 </div>
+
 <app-footer-flo></app-footer-flo>

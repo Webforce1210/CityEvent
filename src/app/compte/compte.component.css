@@ -24,17 +24,10 @@
 }
 /* dimensionnement du header */
 header {
-    /* background: url(../../assets/img/wallpaper.jpg) no-repeat center / cover;  */
     min-height: 110px;
-    /* position: absolute; */
-    
 }
 
 .no-margin-right{ 
-    /* border-radius: 100%;  */
-    /* margin: 10%;  */
-    /* height: 80%;  */
-    /* max-height: 200px; */
     padding-right: 0;
 }
 #imgprofil{
@@ -45,9 +38,6 @@ header {
 #boutons{
     padding: 5px;
 }
-/* .form-control{
-    font-size: 1.5rem;
-} */
 .bi-person-circle{
     font-size: 1.5rem; 
     color: rgb(255, 0, 234);
@@ -55,22 +45,18 @@ header {
 .bi-geo{
     font-size: 1.5rem; 
     color: orange; 
-    /* transform:rotate(-15deg); */
 }
-
 .btn_modif{
     padding: 0 5px;
     position: absolute;
     top: 60px;
     right: 2px;
 }
-
 .icon-activity{
     font-size: 1.5rem;
 }
 .btn-activity{
     margin: 3px;
-    /* border-radius: 10px; */
 }
 .btn-menu{
     font-size: 1.8em; 
@@ -78,7 +64,6 @@ header {
     color:black;
     text-align: left; 
     padding-left: 20%;
-    /* justify-content: center; */
 }
 .bi-activity{
     font-size: 2rem;
@@ -96,7 +81,6 @@ header {
 .bi-credit-card{
     font-size: 2rem;
     color:rgb(187, 11, 134);
-    /* height: 36px; */
 }
 .bi-patch-question{
     font-size: 2rem;
@@ -108,18 +92,3 @@ header {
         background-clip: text;
         -webkit-text-fill-color: transparent;
 }
-/* .fixe-bottom {
-    height: 10%;
-    background: black; 
-    text-align:center;
-    padding: 20px;
-    margin-bottom: 0px;
-    margin-top: 20px;
-}
-#footerimg{
-    height: 60px;
-    background: white; 
-    padding: 5px; 
-    margin: auto; 
-    border-radius: 60px;
-} */
