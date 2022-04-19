@@ -12,10 +12,6 @@ export class MessageService {
 
   constructor(private userService: UserService) {
     this.messages = myData.messagesChat;
-
-    this.messages.forEach(message => {
-      message.author = this.userService.findUserById(message.userid);
-    })
   }
 
   public findEventMessages(eventId: string): Message[] {
@@ -31,7 +27,6 @@ export class MessageService {
   }
 
   public addMessage(message: Message) {
-    message.author = this.userService.findUserById(message.userid);
     this.messages.push(message);
   }
 }

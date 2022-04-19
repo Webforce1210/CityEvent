@@ -11,8 +11,8 @@ import { UserService } from '../user.service';
 })
 export class MesActivitesComponent implements OnInit {
   user!: User;
-  pastActivities: EventActivity[] = [];
-  futurActivities: EventActivity[] = [];
+  pastActivities: number = 0;
+  futurActivities: number = 0;
 
   constructor(
     private userService: UserService,
@@ -22,22 +22,27 @@ export class MesActivitesComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkSession();
+  }
 
-    this.user.events.forEach(event => {
-      const date = new Date(event.date);
-      const now = new Date();
-      if (date < now) {
-        this.pastActivities.push(event);
-      } else {
-        this.futurActivities.push(event);
-      }
-    });
+  isPastActivity(event) {
+    const date = new Date(event.event.date_debut.date);
+    const now = new Date();
+
+    let status = date < now;
+
+    if (status) {
+      this.pastActivities++;
+    } else {
+      this.futurActivities++;
+    }
+
+    return status;
   }
 
   changeStatus(event: any, eventId: string) {
     event.preventDefault();
     this.user.events.forEach(activity => {
-      if (activity.id === eventId) {
+      if (activity.event.id === parseInt(eventId)) {
         activity.active = !activity.active;
       }
     });

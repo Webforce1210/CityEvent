@@ -16,10 +16,9 @@ let uniqid = require('uniqid');
 })
 export class InfoEventComponent implements OnInit {
 
-  userId!: string;
+  userId!: number;
   event!: EventActivity;
   notFound: boolean = false;
-  participants: User[] = [];
   messages: Message[] = [];
   newMessageValue = new FormControl("");
   error: boolean = false;
@@ -35,11 +34,6 @@ export class InfoEventComponent implements OnInit {
   ngOnInit(): void {
     this.checkSession();
     this.findEvent();
-    if (!this.notFound) {
-      this.participants = this.userService.findEventParticipants(this.event.id);
-      this.messages = this.messageService.findEventMessages(this.event.id);
-    }
-    console.log(this.event);
   }
 
   appendMessage() {
@@ -63,6 +57,10 @@ export class InfoEventComponent implements OnInit {
   private findEvent(): void {
     try {
       this.event = this.eventService.getEventById(this.getRouterParam('eventid'));
+      this.event.messageActivites.forEach(item => {
+        const message = new Message(item.id, item.user.id, item.message, this.event.id, item.date.date);
+        this.messages.push(message);
+      });
     } catch (error) {
       this.notFound = true;
     }
@@ -71,7 +69,7 @@ export class InfoEventComponent implements OnInit {
   private checkSession(): void {
     try {
       const id: string = this.getRouterParam('userid');
-      this.userId = this.userService.findUserById(id).id;
+      this.userId = parseInt(this.userService.findUserById(id).id);
     } catch (error) {
       this.router.navigateByUrl('/login');
     }

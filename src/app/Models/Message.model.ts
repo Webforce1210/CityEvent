@@ -1,12 +1,12 @@
 import { User } from "./User.model";
 
 export class Message {
-    author!: User;
+    author!: { id: string, pseudo: string, avatar: string };
     createdAt!: Date;
 
     constructor(
-        public id: string,
-        public userid: string,
+        public id: string | number,
+        public userid: string | number,
         public message: string,
         public eventId: string,
         public date: string

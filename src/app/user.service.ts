@@ -27,7 +27,7 @@ export class UserService {
     );
   }
 
-  findUserById(id: string | null) { // | null
+  findUserById(id: string | number | null) { // | null
     const req = this.http.get<User>(`${this.baseUrl}/user/${id}`);
     const user = new User("0", "Pseudo", [], "wallpaper.jpg");
     user.cover = "wallpaper.jpg";
@@ -56,38 +56,70 @@ export class UserService {
     return user;
   }
 
-  findEventParticipants(eventId: any): User[] {
-    const users: User[] = [];
-
-
-
-    this.users.forEach(user => {
-      const events = user.events;
-      if (events.length > 0) {
-        const item = events.find(event => event.id === eventId);
-        if (item !== undefined) {
-          users.push(new User(user.id, user.pseudo, [item], user.avatar));
-        }
-      }
-    });
-    return users;
-  }
-
   findUserForLogin(email: string, password: string) {
-    let user: User | null = null;
+    const data = {
+      email: email,
+      password: password
+    };
+    const user = new User("1", "Pseudo", [], "wallpaper.jpg");
 
-    for (let i = 0; i < this.users.length; i++) {
-      if (email === this.users[i].email && password === this.users[i].password) {
-        user = this.users[i];
-        break;
+    const req = this.http.post(`${this.baseUrl}/login`, data);
+
+
+    user.cover = "wallpaper.jpg";
+    req.subscribe(
+      (res: any) => {
+        user.pseudo = res.pseudo;
+        user.name = res.name;
+        user.email = res.email;
+        user.id = res.id;
+        user.events = res.userEvents;
+        user.hobbies = res.hobbies;
+        if (res.cover) {
+          user.cover = res.cover;
+        }
+        user.avatar = res.avatar;
+        user.region = res.region;
+        user.stars = [];
+        for (let i = 0; i < res.stars; i++) {
+          user.stars[i] = 1;
+        }
+
+        return res;
       }
-    }
+    );
 
     return user;
   }
 
   appendUser(user: User) {
-    this.users.push(user);
+    const response = {
+      userId: 0,
+      status: '',
+      message: ''
+    };
+
+    const data = {
+      pseudo: user.pseudo,
+      email: user.email,
+      password: user.password,
+      region: user.region,
+      hobbies: user.hobbies
+    }
+    const req = this.http.post(`${this.baseUrl}/register`, data);
+    req.subscribe(
+      (res: any) => {
+        response.status = res.status;
+        if (res.status === 'success') {
+          response.userId = res.userId;
+        } else {
+          response.message = res.message;
+        }
+        return res;
+      }
+    );
+
+    return response;
   }
 
   findHobbies() {

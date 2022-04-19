@@ -22,7 +22,6 @@ export class EventActivitiesService {
     const req = this.http.post(`${this.baseUrl}/event/filter`, data);
     req.subscribe(
       (res: any) => {
-        console.log(res);
         res.forEach(item => {
           const event = new EventActivity();
           event.id = item.id;
@@ -31,6 +30,7 @@ export class EventActivitiesService {
           event.adresse = item.adresse;
           event.activity = item.type_activite;
           event.description = item.description;
+          event.date_debut = item.date_debut;
           events.push(event);
         })
         return res;
@@ -42,28 +42,50 @@ export class EventActivitiesService {
   }
 
   getEventById(id: string): EventActivity {
-    const data = this.lastEvents.find(event => event.id === id);
-    if (data === undefined) {
-      throw new Error('Event not found');
-    } else {
-      const event = new EventActivity(data.id, data.title);
-      event.adresse = data.adresse;
-      event.description = data.description;
-      event.date = data.date;
-      return event;
-    }
+    const event = new EventActivity();
+
+    const req = this.http.get(`${this.baseUrl}/event/${id}`);
+    req.subscribe(
+      (res: any) => {
+        event.id = res.id;
+        event.title = res.title;
+        event.budget = res.budget;
+        event.adresse = res.adresse;
+        event.activity = res.type_activite;
+        event.description = res.description;
+        event.date_debut = res.date_debut;
+        event.userEvents = res.userEvents;
+        event.messageActivites = res.messageActivites;
+        return res;
+      },
+      (err) => {
+        throw new Error('Event not found: ' + err);
+      }
+    );
+
+    return event;
   }
 
-  getEventsById(eventsId: any[]): EventActivity[] {
+  getLastEvents() {
     const events: EventActivity[] = [];
-    this.lastEvents.forEach(element => {
-      const id = parseInt(element.id);
-      if (eventsId.find(item => item === id)) {
-        const eventUser = new EventActivity(element.id, element.title);
-        eventUser.adresse = element.adresse;
-        events.push(eventUser);
+    const req = this.http.get(`${this.baseUrl}/event/last`);
+    req.subscribe(
+      (res: any) => {
+        res.forEach(item => {
+          const event = new EventActivity();
+          event.id = item.id;
+          event.title = item.title;
+          event.budget = item.budget;
+          event.adresse = item.adresse;
+          event.activity = item.type_activite;
+          event.description = item.description;
+          event.date_debut = item.date_debut;
+          events.push(event);
+        })
+        return res;
       }
-    });
+    );
+
     return events;
   }
 }

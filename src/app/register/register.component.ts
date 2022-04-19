@@ -89,10 +89,9 @@ export class RegisterComponent implements OnInit {
       newUser.hobbies = this.selectedHobbies;
       newUser.region = this.selectedRegion;
       newUser.cover = null;
-      console.log(newUser);
-      this.userService.appendUser(newUser);
+      const response = this.userService.appendUser(newUser);
       this.toggle('#alert', 'none');
-      this.router.navigate(["/profil/", newUser.id]);
+      this.router.navigate(["/login"]);
     } else {
       this.toggle('#alert', 'block');
     }

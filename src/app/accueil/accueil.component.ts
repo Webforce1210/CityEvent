@@ -13,13 +13,9 @@ export class AccueilComponent implements OnInit {
 
   constructor(private EventServices: EventActivitiesService) { }
 
-lastEvents: EventActivity[] = [];
+  lastEvents: EventActivity[] = [];
 
   ngOnInit(): void {
-    this.lastEvents = this.EventServices.lastEvents;
-
-
-}
-
-
+    this.lastEvents = this.EventServices.getLastEvents();
+  }
 }

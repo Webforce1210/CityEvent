@@ -19,8 +19,7 @@ export class ProfilComponent implements OnInit {
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router,
-    private eventService: EventActivitiesService
+    private router: Router
   ) { }
 
   ngOnInit(): void {

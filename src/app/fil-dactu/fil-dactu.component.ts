@@ -29,7 +29,7 @@ export class FilDactuComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkSession();
-    this.allEvents = this.EventServices.getEvents('adresse', 'sport');
+    this.allEvents = this.EventServices.getEvents('tous', 'tous');
   }
 
   selectChangeHandler(event: any) {

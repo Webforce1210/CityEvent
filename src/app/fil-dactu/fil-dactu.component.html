@@ -40,7 +40,7 @@
   <div class="input-group mb-3">
     <label class="input-group-text" for="lieux">Lieu :</label>
     <select class="form-select" id="lieux" (focusout)="selectChangeHandler($event)">
-      <option selected>Tous</option>
+      <option selected value="tous">Tous</option>
       <option value="{{optionLieu.adresse}}" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
     </select>
   </div>
@@ -48,7 +48,8 @@
   <div class="input-group mb-3">
     <label class="input-group-text" for="hobbies">Activité :</label>
     <select class="form-select" id="hobbies" (focusout)="selectChangeHandler($event)">
-      <option value="sport" selected>Sport</option>
+      <option selected value="tous">Tous</option>
+      <option value="sport">Sport</option>
       <option value="cinema">Cinema</option>
       <option value="culture">Culture</option>
     </select>
@@ -69,8 +70,8 @@
         </div>
         <div id="infosActivite">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' :
-              undefined : 'fr'}}</li>
+            <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date_debut.date | date:'d MMMM y'}}
+            </li>
             <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
             <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
           </ul>
