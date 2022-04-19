@@ -5,17 +5,18 @@
 <div id="filtre">
   <h3 class="d-flex justify-content-center">Filtrer par :</h3>
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect01">Lieu :</label>
-    <select class="form-select" id="inputGroupSelect01">
+    <label class="input-group-text" for="lieux">Lieu :</label>
+    <select class="form-select" id="lieux" (focusout)="selectChangeHandler($event)">
       <option selected>Tous</option>
-      <option value="Lieuchoisi" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
+      <option value="{{optionLieu.adresse}}" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
     </select>
   </div>
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect02">Activité :</label>
-    <select class="form-select" id="inputGroupSelect02">
-      <option selected>Toutes</option>
-      <option value="{{optionActivite.activity}}" *ngFor="let optionActivite of allEvents">{{optionActivite.activity}}</option>
+    <label class="input-group-text" for="hobbies">Activité :</label>
+    <select class="form-select" id="hobbies" (focusout)="selectChangeHandler($event)">
+      <option value="sport" selected>Sport</option>
+      <option value="cinema">Cinema</option>
+      <option value="culture">Culture</option>
     </select>
   </div>
 </div>

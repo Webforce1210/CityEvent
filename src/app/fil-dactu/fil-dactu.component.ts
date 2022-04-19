@@ -13,21 +13,39 @@ import { EventActivitiesService } from '../event-activities.service';
 export class FilDactuComponent implements OnInit {
 
   user!: User;
-  pastActivities: EventActivity[] = [];
-  futurActivities: EventActivity[] = [];
   allEvents: EventActivity[] = [];
+  selectedLieu: string | null = null;
+  selectedHobbies: string | null = null;
 
   constructor(private userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
     private EventServices: EventActivitiesService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.checkSession();
+    this.allEvents = this.EventServices.getEvents('adresse', 'sport');
+  }
 
-    this.allEvents = this.EventServices.lastEvents;
+  selectChangeHandler(event: any) {
+    if (event.target.id === "lieux") {
+      this.selectedLieu = event.target.value;
+    } else {
+      this.selectedHobbies = event.target.value;
+    }
 
+    let adresse = 'adresse';
+    if (this.selectedLieu !== null) {
+      adresse = this.selectedLieu;
+    }
+
+    let hobbies = 'sport';
+    if (this.selectedHobbies !== null) {
+      hobbies = this.selectedHobbies;
+    }
+
+    this.allEvents = this.EventServices.getEvents(adresse, hobbies);
   }
 
   private checkSession(): void {
@@ -37,9 +55,5 @@ export class FilDactuComponent implements OnInit {
     } catch (error) {
       this.router.navigateByUrl('/login');
     }
-  }
-
-  public compteview() {
-    this.compteview=this.compteview;
   }
 }

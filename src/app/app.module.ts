@@ -31,7 +31,7 @@ import { NavbarOfflineComponent } from './navbar-offline/navbar-offline.componen
 import { RegisterComponent } from './register/register.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { ContactComponent } from './contact/contact.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 // import florent pour format date
 import { registerLocaleData } from '@angular/common';
@@ -76,7 +76,7 @@ registerLocaleData(localeFr, 'fr');
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule, 
+    FormsModule,
     CreditCardDirectivesModule,
     PickerModule,
     HttpClientModule

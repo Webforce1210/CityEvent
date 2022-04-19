@@ -14,8 +14,7 @@ export class ProfilComponent implements OnInit {
 
   userId!: string;
   user!: User;
-  events: EventActivity[] = [];
-  styles = { background: '#0d6efd' };
+  events: any[] = [];
 
   constructor(
     private userService: UserService,
@@ -28,14 +27,7 @@ export class ProfilComponent implements OnInit {
     try {
       this.userId = this.route.snapshot.params['userid'];
       this.user = this.userService.findUserById(this.userId);
-      if (this.user.cover !== null) {
-        this.styles.background = `center / cover no-repeat url(/assets/avatars/${this.user.cover})`;
-      }
-      const eventIds: string[] = [];
-      this.user.events.forEach(event => {
-        eventIds.push(event.id);
-      });
-      this.events = this.eventService.getEventsById(eventIds);
+      this.events = this.user.events;
     } catch (error) {
       this.router.navigateByUrl('/login');
     }

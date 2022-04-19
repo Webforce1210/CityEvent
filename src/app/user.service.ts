@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from './models/User.model';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 let myData = require("../assets/data.json");
 
 @Injectable({
@@ -7,28 +9,51 @@ let myData = require("../assets/data.json");
 })
 export class UserService {
 
-  users: User[];
+  baseUrl = 'http://127.0.0.1:8000';
 
-  constructor() {
+  users!: User[];
+
+  constructor(private http: HttpClient) {
     this.users = myData.usersList;
+    this.request();
   }
 
-  findUserById(id: string| null): User{ // | null
+  async request(url = `${this.baseUrl}/user`) {
+    const req = this.http.get<User[]>(url);
+    await req.subscribe(
+      (res: any) => {
+        return res;
+      }
+    );
+  }
 
-    if( id === null){
-      throw new Error("id is null");
-    }
-    const user = this.users.find(user => user.id === id);
-    if (user === undefined) {
-      throw new Error('User not found');
-    } else {
-      const entity = new User(user.id, user.pseudo, user.events, user.avatar);
-      entity.hobbies = user.hobbies;
-      entity.stars = user.stars;
-      entity.cover = user.cover;
-      entity.region = user.region;
-      return entity;
-    }
+  findUserById(id: string | null) { // | null
+    const req = this.http.get<User>(`${this.baseUrl}/user/${id}`);
+    const user = new User("0", "Pseudo", [], "wallpaper.jpg");
+    user.cover = "wallpaper.jpg";
+    req.subscribe(
+      (res: any) => {
+        user.pseudo = res.pseudo;
+        user.name = res.name;
+        user.email = res.email;
+        user.id = res.id;
+        user.events = res.userEvents;
+        user.hobbies = res.hobbies;
+        if (res.cover) {
+          user.cover = res.cover;
+        }
+        user.avatar = res.avatar;
+        user.region = res.region;
+        user.stars = [];
+        for (let i = 0; i < res.stars; i++) {
+          user.stars[i] = 1;
+
+        }
+
+        return res;
+      }
+    );
+    return user;
   }
 
   findEventParticipants(eventId: any): User[] {
@@ -41,7 +66,7 @@ export class UserService {
       if (events.length > 0) {
         const item = events.find(event => event.id === eventId);
         if (item !== undefined) {
-          users.push(new User(user.id, user.pseudo,  [item], user.avatar));
+          users.push(new User(user.id, user.pseudo, [item], user.avatar));
         }
       }
     });
@@ -76,28 +101,28 @@ export class UserService {
   //import Flo
   initialized: boolean = false;
   init() {
-    if(this.initialized) {
+    if (this.initialized) {
       return;
-    } 
+    }
     // console.log(myData.usersList);
-    
+
     // for (const user of myData.usersList) {
     //   this.users.push(new User( user.pseudo, user.region, user.avatar, user.cover, user.hobbies))
     //   //user.id,
     // }
     this.initialized = true;
-    };
+  };
 
-    update(user:User | null){
+  update(user: User | null) {
 
-      for(let i=0;i<this.users.length;i++){
-        if(user && user.id ===this.users[i].id ){
-          this.users[i].pseudo = user.pseudo;
-          this.users[i].region= user.region;
-        }
+    for (let i = 0; i < this.users.length; i++) {
+      if (user && user.id === this.users[i].id) {
+        this.users[i].pseudo = user.pseudo;
+        this.users[i].region = user.region;
       }
-    
     }
+
+  }
 
 
 
