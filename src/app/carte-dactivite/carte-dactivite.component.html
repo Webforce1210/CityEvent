@@ -41,8 +41,8 @@
 
 
 <div class="container-fluid d-flex justify-content-around" id="quick-menu">
-    <div id="homebar" [routerLink]="['/fil_dactu/:userid']"><i class="bi bi-house-door-fill"></i></div>
-    <div id="mapbar" [routerLink]="['/map/:userid']"><i class="bi bi-geo-alt-fill"></i></div>
-    <div id="plusbar" [routerLink]="['/creation_event/:userid']"><i class="bi bi-plus-circle-fill"></i></div>
+  <div id="homebar" [routerLink]="['/fil_dactu/', user.id]"><i class="bi bi-house-door-fill"></i></div>
+  <div id="mapbar" [routerLink]="['/map/', user.id]"><i class="bi bi-geo-alt-fill"></i></div>
+  <div id="plusbar" [routerLink]="['/creation_event/', user.id]"><i class="bi bi-plus-circle-fill"></i></div>
 </div>
 <app-footer-flo></app-footer-flo>
