@@ -5,7 +5,7 @@ import { MessagePrive } from './models/MessagePrive.model';
 import { UserService } from './user.service';
 let myData = require("../assets/discussion.json");
 let uniqid=require('uniqid');
-
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
