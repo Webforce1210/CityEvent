@@ -12,10 +12,10 @@ export class User {
     constructor(
         public id: string,
         public pseudo: string,
-        public events: EventActivity[],
+        public events: any[],
         public avatar?: string | null,
         public name?: string
-        
+
         // public region: string,
         // public cover: string,
         // public hobbies?: string

@@ -1,6 +1,7 @@
 <app-navbar [userId]="userId"></app-navbar>
 <div class="container">
-    <header class="text-white p-3 d-flex flex-wrap position-relative" [ngStyle]="styles">
+    <header class="text-white p-3 d-flex flex-wrap position-relative"
+        [ngStyle]="{'background': 'center / cover no-repeat url(/assets/avatars/'+user.cover+')' }">
         <div class="header__avatar">
             <div class="rounded-circle bg-secondary avatar" *ngIf="user.avatar === null; else userAvatar"></div>
             <ng-template #userAvatar>
@@ -45,10 +46,10 @@
         <hr class="separator">
         <section class="profile__events">
             <h2 class="text-center my-2 fw-bold text-uppercase mb-5">Mes événements</h2>
-            <p class="text-center" *ngIf="events.length < 1">Vous n'avez aucun événement.</p>
-            <article class="card my-3 shadow-sm" *ngFor="let event of events">
-                <div class="card-body">
-                    <h3 class="card-title text-center text-uppercase">{{event.title}}</h3>
+            <p class="text-center" *ngIf="user.events.length < 1">Vous n'avez aucun événement.</p>
+            <article class="card my-3 shadow-sm" *ngFor="let event of user.events">
+                <div class="card-body" *ngIf="event.active">
+                    <h3 class="card-title text-center text-uppercase">{{event.event.title}}</h3>
                     <img src="/assets/event_image.png" class="card-img" alt="illustration de l'event">
                     <div class="row g-md-5 mt-2">
                         <p class="col text-center">
@@ -57,7 +58,7 @@
                                 <path
                                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                             </svg>
-                            <span class="px-3">{{event.date | date: 'd/MM/yyyy à HH:mm'}}</span>
+                            <span class="px-3">{{event.event.date_debut.date | date: 'd/MM/yyyy à HH:mm'}}</span>
                         </p>
                         <p class="col text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -65,11 +66,11 @@
                                 <path
                                     d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
                             </svg>
-                            <span class="px-3">{{event.adresse}}</span>
+                            <span class="px-3">{{event.event.adresse}}</span>
                         </p>
                     </div>
                     <div class="text-center">
-                        <a [routerLink]="['/info_event', event.id, user.id]" class="btn btn-outline-primary">Voir
+                        <a [routerLink]="['/info_event', event.event.id, user.id]" class="btn btn-outline-primary">Voir
                             plus</a>
                     </div>
                 </div>
