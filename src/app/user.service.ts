@@ -47,9 +47,7 @@ export class UserService {
         user.stars = [];
         for (let i = 0; i < res.stars; i++) {
           user.stars[i] = 1;
-
         }
-
         return res;
       }
     );

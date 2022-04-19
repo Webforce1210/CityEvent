@@ -69,9 +69,9 @@ export class CompteComponent implements OnInit {
 
   
 // bouton modification  -> popup modifier ou voir en tant que invité, profil?
-  toggleReadonly() {
-    this.isReadonly = !this.isReadonly;
+  // toggleReadonly() {
+  //   this.isReadonly = !this.isReadonly;
 
-  }
+  // }
 
 }
