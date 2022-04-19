@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { EventActivity } from './models/EventActivity.model';
+
 let myData = require("../assets/data.json");
 
 @Injectable({
@@ -8,9 +9,37 @@ let myData = require("../assets/data.json");
 })
 export class EventActivitiesService {
 
-  constructor() { }
+  baseUrl = 'http://127.0.0.1:8000';
+
+  constructor(private http: HttpClient) { }
 
   lastEvents: EventActivity[] = myData.lastActivities;
+
+  getEvents(lieu: string, categorie: string) {
+    const data = { adresse: lieu, hobbies: categorie };
+
+    const events: EventActivity[] = [];
+    const req = this.http.post(`${this.baseUrl}/event/filter`, data);
+    req.subscribe(
+      (res: any) => {
+        console.log(res);
+        res.forEach(item => {
+          const event = new EventActivity();
+          event.id = item.id;
+          event.title = item.title;
+          event.budget = item.budget;
+          event.adresse = item.adresse;
+          event.activity = item.type_activite;
+          event.description = item.description;
+          events.push(event);
+        })
+        return res;
+      }
+    );
+
+    return events;
+
+  }
 
   getEventById(id: string): EventActivity {
     const data = this.lastEvents.find(event => event.id === id);
