@@ -55,25 +55,27 @@
   </div>
 </div>
 <!-- </ng-container> -->
-<br>
-<ng-container *ngFor="let item of allEvents">
-  <div class="d-flex flex-wrap justify-content-around">
-    <!-- <ng-container *ngFor="let item of allEvents" *ngIf="item.adresse"> -->
-    <div class="card border border-primary">
-      <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title text-center">{{ item.title }}</h5>
-        <!-- <p class="card-text">{{item.description}}</p> -->
-      </div>
-      <div id="infosActivite">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' :
-            undefined : 'fr'}}</li>
-          <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
-          <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
-        </ul>
-      </div>
-    </div>
 
-  </div>
-</ng-container>
+
+<div class="container d-flex flex-wrap justify-content-around">
+  <ng-container *ngFor="let item of allEvents">
+    <div class="d-flex flex-wrap justify-content-around">
+      <!-- <ng-container *ngFor="let item of allEvents" *ngIf="item.adresse"> -->
+      <div class="card border border-primary">
+        <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ item.title }}</h5>
+          <!-- <p class="card-text">{{item.description}}</p> -->
+        </div>
+        <div id="infosActivite">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' :
+              undefined : 'fr'}}</li>
+            <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
+            <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>

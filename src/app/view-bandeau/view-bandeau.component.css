@@ -19,18 +19,17 @@
 /* dimensionnement du header */
 header {
     min-height: 110px;
+    padding:0;
 }
-.no-margin-right{
+/* .no-margin-right{
     padding-right: 0;
-}
+} */
 #imgprofil{
     border-radius: 100%; 
     margin: 10%;
     max-height: 6rem;
 }
-#boutons{
-    padding: 5px;
-}
+
 .bi-person-circle{
     font-size: 1.5rem; 
     color: rgb(255, 0, 234);
@@ -38,9 +37,6 @@ header {
 .bi-geo{
     font-size: 1.5rem; 
     color: orange;
-}
-#div-modif{
-    width: 1.3em;
 }
 .btn-danger{
     padding: 0 5px;
@@ -51,4 +47,9 @@ header {
 #btn_modif{
     font-size: 1rem;
 }
-
+input{
+    padding: 6px;
+}
+#inputgroup{
+    padding: 0;
+}
