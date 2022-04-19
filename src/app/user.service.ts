@@ -33,7 +33,6 @@ export class UserService {
     user.cover = "wallpaper.jpg";
     req.subscribe(
       (res: any) => {
-        console.log(res);
         user.pseudo = res.pseudo;
         user.name = res.name;
         user.email = res.email;
@@ -51,7 +50,6 @@ export class UserService {
 
         }
 
-        console.log(user);
         return res;
       }
     );

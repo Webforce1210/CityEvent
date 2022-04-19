@@ -17,40 +17,40 @@ export class FilDactuComponent implements OnInit {
   // @Input() userId!: string;
 
   user!: User;
-  pastActivities: EventActivity[] = [];
-  futurActivities: EventActivity[] = [];
   allEvents: EventActivity[] = [];
+  selectedLieu: string | null = null;
+  selectedHobbies: string | null = null;
 
   constructor(private userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
     private EventServices: EventActivitiesService
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.checkSession();
-
-    this.allEvents = this.EventServices.lastEvents;
-
-    // this.user.events.forEach(event => {
-    //   const date = new Date(event.date);
-    //   const now = new Date();
-    //   if (date < now) {
-    //     this.pastActivities.push(event);
-    //   } else {
-    //     this.futurActivities.push(event);
-    //   }
-    // });
+    this.allEvents = this.EventServices.getEvents('adresse', 'sport');
   }
 
-  // changeStatus(event: any, eventId: string) {
-  //   event.preventDefault();
-  //   this.user.events.forEach(activity => {
-  //     if (activity.id === eventId) {
-  //       activity.active = !activity.active;
-  //     }
-  //   });
-  // }
+  selectChangeHandler(event: any) {
+    if (event.target.id === "lieux") {
+      this.selectedLieu = event.target.value;
+    } else {
+      this.selectedHobbies = event.target.value;
+    }
+
+    let adresse = 'adresse';
+    if (this.selectedLieu !== null) {
+      adresse = this.selectedLieu;
+    }
+
+    let hobbies = 'sport';
+    if (this.selectedHobbies !== null) {
+      hobbies = this.selectedHobbies;
+    }
+
+    this.allEvents = this.EventServices.getEvents(adresse, hobbies);
+  }
 
   private checkSession(): void {
     try {
@@ -61,15 +61,3 @@ export class FilDactuComponent implements OnInit {
     }
   }
 }
-
-// 
-// lastEvents: EventActivity[] = [];
-
-//   ngOnInit(): void {
-//     this.lastEvents = this.EventServices.lastEvents;
-
-
-// }
-
-
-// }

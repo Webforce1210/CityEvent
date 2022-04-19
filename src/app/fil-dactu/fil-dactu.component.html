@@ -1,54 +1,56 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#" [routerLink]="['']"><img src="../../assets/img/pngegg.png" style="width: 20px;"></a>
-      <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-      
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/mes_activites/:userid']">Activités</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/messages/:userid']">Messages</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/parametres/:userid']">Paramètres</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/paiement/:userid']">Paiements</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/contact/:userid']">Aides</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" [routerLink]="['']">Déconnexion</a>
-          </li>
+    <a class="navbar-brand" href="#"><img src="../../assets/img/pngegg.png" style="width: 20px;"></a>
+    <button class="navbar-toggler" type="button" [routerLink]="['/compte', user.id]" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"
+            [routerLink]="['/mes_activites/:userid']">Activités</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/messages/:userid']">Messages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/parametres/:userid']">Paramètres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/paiement/:userid']">Paiements</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/contact/:userid']">Aides</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['']">Déconnexion</a>
+        </li>
       </ul>
-      
-      </div>
+
+    </div>
   </div>
 </nav>
 
-
-
 <div id="filtre">
   <h3 class="d-flex justify-content-center">Filtrer par :</h3>
-  
+
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect01">Lieu :</label>
-    <select class="form-select" id="inputGroupSelect01">
+    <label class="input-group-text" for="lieux">Lieu :</label>
+    <select class="form-select" id="lieux" (focusout)="selectChangeHandler($event)">
       <option selected>Tous</option>
-      <option value="Lieuchoisi" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
+      <option value="{{optionLieu.adresse}}" *ngFor="let optionLieu of allEvents">{{optionLieu.adresse}}</option>
     </select>
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect02">Activité :</label>
-    <select class="form-select" id="inputGroupSelect02">
-      <option selected>Toutes</option>
-      <option value="{{optionActivite.activity}}" *ngFor="let optionActivite of allEvents">{{optionActivite.activity}}</option>
+    <label class="input-group-text" for="hobbies">Activité :</label>
+    <select class="form-select" id="hobbies" (focusout)="selectChangeHandler($event)">
+      <option value="sport" selected>Sport</option>
+      <option value="cinema">Cinema</option>
+      <option value="culture">Culture</option>
     </select>
   </div>
 </div>
@@ -56,26 +58,24 @@
 
 
 <div class="container d-flex flex-wrap justify-content-around">
-<ng-container *ngFor="let item of allEvents">
-<!-- <div class="d-flex flex-wrap justify-content-around"> -->
-  <!-- <ng-container *ngFor="let item of allEvents" *ngIf="item.adresse"> -->
-<div class="card border border-primary">
-  <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title text-center">{{ item.title }}</h5>
-    <!-- <p class="card-text">{{item.description}}</p> -->
-  </div>
-  <div id="infosActivite">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' : undefined : 'fr'}}</li>
-      <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
-      <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
-    </ul>
-  </div>
-</div>
+  <ng-container *ngFor="let item of allEvents">
+    <div class="d-flex flex-wrap justify-content-around">
+      <!-- <ng-container *ngFor="let item of allEvents" *ngIf="item.adresse"> -->
+      <div class="card border border-primary">
+        <img src="../../assets/img/tour.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ item.title }}</h5>
+          <!-- <p class="card-text">{{item.description}}</p> -->
+        </div>
+        <div id="infosActivite">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="bi bi-calendar-check"></i> {{item.date | date:'d MMMM y, à H:mm' :
+              undefined : 'fr'}}</li>
+            <li class="list-group-item"><i class="bi bi-pin-map-fill"></i> {{item.adresse}}</li>
+            <li class="list-group-item"><i class="bi bi-heart-pulse"></i> {{item.activity}}</li>
+          </ul>
+        </div>
+      </div>
 
-<!-- </div> -->
-</ng-container>
-</div>
-
-<app-footer></app-footer>
+    </div>
+  </ng-container>
