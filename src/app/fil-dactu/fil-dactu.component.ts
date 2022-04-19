@@ -13,6 +13,8 @@ import { EventActivitiesService } from '../event-activities.service';
 export class FilDactuComponent implements OnInit {
 
   user!: User;
+  event!: EventActivity;
+  notFound: boolean = false;
   allEvents: EventActivity[] = [];
   selectedLieu: string | null = null;
   selectedHobbies: string | null = null;
@@ -20,14 +22,25 @@ export class FilDactuComponent implements OnInit {
   constructor(private userService: UserService,
     private route: ActivatedRoute,
     private router: Router,
-    private EventServices: EventActivitiesService
+    private EventServices: EventActivitiesService,
+    private eventService: EventActivitiesService
   ) { }
 
   ngOnInit(): void {
     this.checkSession();
+    this.findEvent();
     this.allEvents = this.EventServices.getEvents('adresse', 'sport');
   }
-
+  private findEvent(): void {
+    try {
+      this.event = this.eventService.getEventById(this.getRouterParam('eventid'));
+    } catch (error) {
+      this.notFound = true;
+    }
+  }
+  private getRouterParam(param: string): string {
+    return this.route.snapshot.params[param];
+  }
   selectChangeHandler(event: any) {
     if (event.target.id === "lieux") {
       this.selectedLieu = event.target.value;
